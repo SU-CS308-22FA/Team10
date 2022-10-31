@@ -1,25 +1,25 @@
 .login_container {
 	width: 100%;
 	min-height: 100vh;
-	background-color: #f5f5f5;
+	background-color: #b6baf3;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .login_form_container {
-	width: 900px;
-	height: 500px;
+	width: 1000px;
+	height: 600px;
 	display: flex;
 	border-radius: 10px;
 	box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
 		0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
 }
 
-.left {
+.left{
 	flex: 2;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	background-color: white;
@@ -31,6 +31,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	color: #3b3db1;
 }
 
 .form_container h1 {
@@ -60,29 +61,29 @@
 	text-align: center;
 }
 
-.right {
+.bottom {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: #3bb19b;
+	background-color: #3b3db1;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
 
-.right h1 {
-	margin-top: 0;
-	color: white;
+.bottom h1 {
+	margin-top: 30;
+	color: rgb(252, 253, 254);
 	font-size: 40px;
-	align-self: center;
+	text-align: center;
 }
 
 .white_btn,
 .green_btn {
 	border: none;
 	outline: none;
-	padding: 12px 0;
+	padding: 25px 0;
 	background-color: white;
 	border-radius: 20px;
 	width: 180px;
@@ -92,7 +93,7 @@
 }
 
 .green_btn {
-	background-color: #3bb19b;
+	background-color: #3b3db1;
 	color: white;
 	margin: 10px;
 }
