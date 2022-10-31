@@ -1,8 +1,13 @@
-const router = require("express").Router();
-const { User, validate } = require("../models/user");
+const express = require('express');
+const router = express.Router();
+//const { User, validate } = require("../models/user");
+const { User, validator } = require("../models/user");
 const bcrypt = require("bcrypt");
+const validate = require('../middleware/validate');
+const isValidObjectId = require('../middleware/isValidObjectId');
+const asyncHandler = require('../middleware/asyncHandler');
 
-router.post("/", async (req, res) => {
+router.post("/", asyncHandler(async (req, res) => {
 	try {
 		const { error } = validate(req.body);
 		if (error)
@@ -22,6 +27,41 @@ router.post("/", async (req, res) => {
 	} catch (error) {
 		res.status(500).send({ message: "Internal Server Error" });
 	}
-});
+}));
+
+router.get(
+	"/",
+	asyncHandler(async(req,res)=>{
+		const user = await User.find();
+		res.send(user);
+	})
+)
+
+router.get(
+	"/:id",
+	isValidObjectId,
+	asyncHandler(async(req,res)=>{
+		const user = await User.findById(req.params.id);
+		res.send(user);
+	})
+)
+
+router.put(
+	"/:id",
+	[isValidObjectId,validate(validator)],
+	asyncHandler(async(req,res)=>{
+		await User.findByIdAndUpdate({_id: req.params.id},req.body);
+		res.status(200).send("Updated successfully")
+	})
+)
+
+router.delete(
+	"/:id",
+	isValidObjectId,
+	asyncHandler(async(req,res)=>{
+		await User.findByIdAndDelete(req.params.id);
+		res.status(200).send("User deleted successfully")
+	})
+);
 
 module.exports = router;

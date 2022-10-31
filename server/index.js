@@ -6,6 +6,7 @@ const connection = require("./db");
 const userRoutes = require("./routes/user");
 const authRoutes = require("./routes/auth");
 
+
 // database connection
 connection();
 
