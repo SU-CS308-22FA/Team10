@@ -3,13 +3,14 @@ const router = express.Router();
 //const { User, validate } = require("../models/user");
 const { User, validator } = require("../models/user");
 const bcrypt = require("bcrypt");
+
 const validate = require('../middleware/validate');
 const isValidObjectId = require('../middleware/isValidObjectId');
 const asyncHandler = require('../middleware/asyncHandler');
 
 router.post("/", asyncHandler(async (req, res) => {
 	try {
-		const { error } = validate(req.body);
+		const { error } = validator(req.body);
 		if (error)
 			return res.status(400).send({ message: error.details[0].message });
 
@@ -21,8 +22,10 @@ router.post("/", asyncHandler(async (req, res) => {
 
 		const salt = await bcrypt.genSalt(Number(process.env.SALT));
 		const hashPassword = await bcrypt.hash(req.body.password, salt);
+		
 
 		await new User({ ...req.body, password: hashPassword }).save();
+		
 		res.status(201).send({ message: "User created successfully" });
 	} catch (error) {
 		res.status(500).send({ message: "Internal Server Error" });
