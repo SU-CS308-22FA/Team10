@@ -2,11 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "./server/index.js",
+      "src": "./backend/index.js",
       "use": "@vercel/node"
     },
     {
-      "src": "./client/build",
+      "src": "./frontend/build",
       "use": "@vercel/static"
     }
   ],
@@ -14,7 +14,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/server/index.js"
+      "destination": "/backend/index.js"
     }
   ]
 }
