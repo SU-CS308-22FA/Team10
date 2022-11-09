@@ -12,6 +12,7 @@ import DeleteProfile from "./components/UserPage/DeleteProfile";
 import 'react-toastify/dist/ReactToastify.css';
 import "./App.css";
 import UserPage from "./components/UserPage/UserPage";
+import PlayersPage from "./components/PlayersPage/PlayersPage";
 function randomName() {
     return "Anonymous " 
 }
@@ -40,6 +41,7 @@ function App() {
 				<Route path="/login" exact element={<Login />} />
 			    <Route path="/" element ={<Navigate replace to="/login" />} />
 
+				<Route path="/players" exact element={<PlayersPage />} />
 				<Route path="/profile" exact element={<UserPage />} />
 				<Route path="/profile/update" exact element={<EditableUserProfile />} />
 				<Route path="/profile/delete" exact element={<DeleteProfile />} />
