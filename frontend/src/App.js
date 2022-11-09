@@ -16,7 +16,7 @@ function randomName() {
     return "Anonymous " 
 }
 function App() {
-	const user = localStorage.getItem("user");
+	const user = sessionStorage.getItem("user");
 	const [editMode, setEditMode] = useState(false);
 
     const [firstName, setName] = useState(randomName());

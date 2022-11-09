@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 export default function DeleteProfile({}) {
   const navigate = useNavigate();
   console.log("Delete Profile");
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(sessionStorage.getItem("user"));
 
   const [email, setEmail] = useState(user.email);
   const handleDeleteClicked = async (e) => {
@@ -23,7 +23,7 @@ export default function DeleteProfile({}) {
       const {
         data: { user: updatedUser, message: message },
       } = await axios.delete(url, { email });
-      localStorage.setItem("user", JSON.stringify(updatedUser));
+      sessionStorage.setItem("user", JSON.stringify(updatedUser));
       navigate("/login");
     } catch (error) {
       if (
