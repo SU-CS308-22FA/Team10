@@ -18,8 +18,8 @@ const Login = () => {
       const url = "https://weeklysoccer.vercel.app//api/auth";
       const { data: res } = await axios.post(url, data);
       console.log(res);
-      localStorage.setItem("token", res.data);
-      localStorage.setItem("user", JSON.stringify(res.user));
+      sessionStorage.setItem("token", res.data);
+      sessionStorage.setItem("user", JSON.stringify(res.user));
       window.location = "/";
     } catch (error) {
       if (

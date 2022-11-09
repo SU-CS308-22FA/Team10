@@ -9,7 +9,7 @@ import styles from "./styles.module.css";
 export default function EditableUserProfile({}) {
   const navigate = useNavigate();
   console.log("Edit User Profile");
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(sessionStorage.getItem("user"));
 
   const [firstName, setName] = useState(user.firstName);
   const [lastName, setLastName] = useState(user.lastName);
@@ -25,7 +25,7 @@ export default function EditableUserProfile({}) {
       const {
         data: { user: updatedUser, message: message },
       } = await axios.put(url, { firstName, lastName, email: user.email });
-      localStorage.setItem("user", JSON.stringify(updatedUser));
+      sessionStorage.setItem("user", JSON.stringify(updatedUser));
 
       navigate("/profile");
     } catch (error) {

@@ -13,7 +13,7 @@ const UserPage = () =>{
 
 	});
   console.log("USERPAGE")
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(sessionStorage.getItem("user"));
   const navigate = useNavigate();
   const handleChange = event => {
     setData(event.target.value);
