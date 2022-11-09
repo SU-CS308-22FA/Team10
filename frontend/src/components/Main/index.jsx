@@ -8,8 +8,8 @@ import UserPage from '../UserPage/UserPage'
 
 const Main = () => {
 	const handleLogout = () => {
-		localStorage.removeItem("token");
-		localStorage.removeItem("user");
+		sessionStorage.removeItem("token");
+		sessionStorage.removeItem("user");
 		window.location.reload();
 	};
 
@@ -26,7 +26,7 @@ const Main = () => {
 					value= "undefined"
 					
 					>
-						<Tab LinkComponent={NavLink} to="/" label="Players" />
+						<Tab LinkComponent={NavLink} to="/players" label="Players" />
 						<Tab LinkComponent={NavLink} to="/" label="Matches" />
 						<Tab LinkComponent={NavLink} to="/" label="Referees" />
 						<Tab LinkComponent={NavLink} to="/profile" label="My Profile" />
