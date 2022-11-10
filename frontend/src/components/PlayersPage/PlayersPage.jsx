@@ -2,16 +2,27 @@ import styles from "./styles.modules.css";
 import React from "react";
 import { AppBar, Tab, Tabs, Toolbar} from "@mui/material";
 import { NavLink } from "react-router-dom";
-import image1 from "../img/img1.jpeg"
 
+import ImageSlider from "./ImageSlider";
 const PlayersPage = () => {
+	const slides=[
+		{url: "player_messi.png", title: "messi" },
+		{url: "player_ronaldo.png", title: "ronaldo" },
+		
+		
+	]
+	const containerStyles = {
+		width: "1792px",
+		height: "600px",
+		margin: "0 auto",
+	  };
     return (
 		<div className={styles.main_container}>
 			<AppBar sx={{ backgroundColor: "#3b3db1" }} position="sticky">
 				<Toolbar>
 					<Tabs
 					sx={{ ml: "auto" }}
-					textColor="inherit"
+					textColor="inherit	"
 					indicatorColor="primary"
 					value= "undefined"
 					
@@ -24,8 +35,10 @@ const PlayersPage = () => {
 
 				</Toolbar>
 			</AppBar>
+			<div style={containerStyles}>
 			
-			<img src={image1} alt="Messi" className="img"/>
+				<ImageSlider slides={slides}/>
+			</div>
 		</div>
     );
 }
