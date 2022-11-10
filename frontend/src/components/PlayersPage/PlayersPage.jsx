@@ -10,18 +10,10 @@ import { NavLink } from "react-router-dom";
 import Card from "./Cards/Cards";
 import ImageSlider from "./ImageSlider";
 
+
 const PlayersPage = () => {
-	const slides=[
-		{url: "player_messi.png", title: "messi" },
-		{url: "player_ronaldo.png", title: "ronaldo" },
-		
-		
-	]
-	const containerStyles = {
-		width: "1792px",
-		height: "600px",
-		margin: "0 auto",
-	  };
+	
+	
 	
     return (
 		<div className={styles.main_container}>
@@ -42,10 +34,12 @@ const PlayersPage = () => {
 
 				</Toolbar>
 			</AppBar>
-			<div style={containerStyles}>
 			
-				<ImageSlider slides={slides}/>
-			</div>
+			
+			<ImageSlider/>
+			
+			<br/>
+			<br/>
 			<Card/>
 		</div>
     );

@@ -8,19 +8,79 @@ import img3 from "../assets/68863-1591599151.webp"
 class Cards extends Component{
     render(){
         return(
-            <div className="container-fluid d-flex justify-content-center">
-                <div className="row">
-                    <div className="col-md-4">
-                        <Card imgsrc={img1} title="Fernando"/>
+            <div class="row row-cols-1 row-cols-md-6 g-4">
+                <div class="col">
+                    <div class="card h-100 text-center">
+                    <img src={img1} class="card-img-top" alt="..."/>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="#" className="btn btn-outline-success">Go to profile</a>
                     </div>
-                    <div className="col-md-4">
-                        <Card imgsrc={img2} title="bilmemne"/>
                     </div>
-                    <div className="col-md-4">
-                        <Card imgsrc={img3} title="bilmemne2"/>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center">
+                    <img src={img2} class="card-img-top" alt="..."/>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="#" className="btn btn-outline-success">Go to profile</a>
+                    </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center">
+                    <img src={img2} class="card-img-top" alt="..."/>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" className="btn btn-outline-success">Go to profile</a>
+                    </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center">
+                    <img src={img3} class="card-img-top" alt="..."/>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="#" className="btn btn-outline-success">Go to profile</a>
+                    </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center">
+                    <img src={img3} class="card-img-top" alt="..."/>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting tedfgkljdflkgkdfjkfjdlkjklxt below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="#" className="btn btn-outline-success">Go to profile</a>
+                    </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center">
+                    <img src={img3} class="card-img-top" alt="..."/>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting tedfgkljdflkgkdfjkfjdlkjklxt below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="#" className="btn btn-outline-success">Go to profile</a>
+                    </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center">
+                    <img src={img3} class="card-img-top" alt="..."/>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting tedfgkljdflkgkdfjkfjdlkjklxt below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="#" className="btn btn-outline-success">Go to profile</a>
+                    </div>
                     </div>
                 </div>
             </div>
+
         );
     }
 }
