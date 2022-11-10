@@ -1,7 +1,8 @@
 import styles from "./styles.modules.css";
 import React from "react";
-import { AppBar, Tab, Tabs, Toolbar, Typography } from "@mui/material";
+import { AppBar, Tab, Tabs, Toolbar} from "@mui/material";
 import { NavLink } from "react-router-dom";
+import image1 from "../img/img1.jpeg"
 
 const PlayersPage = () => {
     return (
@@ -24,7 +25,7 @@ const PlayersPage = () => {
 				</Toolbar>
 			</AppBar>
 			
-				
+			<img src={image1} alt="Messi" className="img"/>
 		</div>
     );
 }

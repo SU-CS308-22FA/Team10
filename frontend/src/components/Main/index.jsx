@@ -5,6 +5,7 @@ import { AppBar, Tab, Tabs, Toolbar, Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import UserPage from '../UserPage/UserPage'
+import image from "../img/weekly_soccer.png"
 
 const Main = () => {
 	const handleLogout = () => {
@@ -26,6 +27,7 @@ const Main = () => {
 					value= "undefined"
 					
 					>
+						<img src={image}/>
 						<Tab LinkComponent={NavLink} to="/players" label="Players" />
 						<Tab LinkComponent={NavLink} to="/" label="Matches" />
 						<Tab LinkComponent={NavLink} to="/" label="Referees" />
