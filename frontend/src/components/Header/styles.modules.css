@@ -26,7 +26,12 @@
 	margin-right: 20px;
 }
 
+.img{
+	height: 700px;
+	width: 1792px;
+}
+
 .photo {
-	height: 100px;
-      width: 80px; 
+	height: 50px;
+      width: 170px; 
 }
