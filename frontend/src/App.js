@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import "./App.css";
 import UserPage from "./components/UserPage/UserPage";
 import PlayersPage from "./components/PlayersPage/PlayersPage";
+import AboutUs from "./components/AboutUs/AboutUs.jsx";
 function randomName() {
     return "Anonymous " 
 }
@@ -40,7 +41,7 @@ function App() {
 				<Route path="/signup" exact element={<Signup />} />
 				<Route path="/login" exact element={<Login />} />
 			    <Route path="/" element ={<Navigate replace to="/login" />} />
-
+				<Route path="/aboutUs" exact element={<AboutUs/>} />
 				<Route path="/players" exact element={<PlayersPage />} />
 				<Route path="/profile" exact element={<UserPage />} />
 				<Route path="/profile/update" exact element={<EditableUserProfile />} />
