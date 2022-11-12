@@ -32,6 +32,16 @@
 }
 
 .photo {
-	height: 50px;
-      width: 170px; 
+	height: 64px;
+      width: 182px; 
 }
+
+
+
+
+.centered-tabs > nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+  }
+ 
