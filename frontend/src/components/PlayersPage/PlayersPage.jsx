@@ -15,7 +15,7 @@ const PlayersPage = () => {
 			
 			<ImageSlider/>
 			
-			<h1>This Week's Players</h1>
+			<p className="title">This Week's Players</p>
 			
 			<Cards/>
 		</div>

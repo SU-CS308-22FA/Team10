@@ -31,8 +31,12 @@
 	width: 1792px;
 }
 
-h1{
+.title{
 	text-align: center;
 	padding: 3rem;
-	color: rgb(170, 114, 223);
+	color:#3b3db1;
+	font-weight: bold;
+	font-family: "Playfair Display";
+	font-size: 6em;
+
 }

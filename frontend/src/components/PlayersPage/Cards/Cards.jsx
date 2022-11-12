@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./card-style.css"
 import { Component } from 'react';
+import { Link } from "react-router-dom";
 import img1 from "../assets/58088-1572949088.webp"
 import img2 from "../assets/318077-1660050345.webp"
 import img3 from "../assets/68863-1591599151.webp"
@@ -11,7 +12,7 @@ const Cards = () => {
           image: img1,
           title: "Project 1",
           text: "Static Website",
-          link:"#"
+          link:"/"
         },
         {
           image:
@@ -51,14 +52,14 @@ const Cards = () => {
           image: img1,
           title: "Project 1",
           text: "Static Website",
-          link:"#"
+          link:"/"
         },
         {
           image:
             img2,
           title: "Project 2",
           text: "Newsletter Sign Up",
-          link:"#"
+          link:"/"
         },
         {
           image:
@@ -80,7 +81,11 @@ const Cards = () => {
                     <div class="card-body text-dark">
                         <h5 class="card-title">{card.title}</h5>
                         <p class="card-text">{card.text}</p>
-                        <a href={card.link} className="btn btn-outline-success">Go to profile</a>
+                        <Link to={card.link}>
+                            <button type="button" className="_btn">
+                               Go to profile
+                            </button>
+                         </Link>
                     </div>
                     </div>
                 </div>
