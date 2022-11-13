@@ -1,9 +1,10 @@
+/*
 import React from "react";
-
+import img from "./assets/team-4-800x800.jpg";
 // reactstrap components
 import { Button, Card, Container, Row, Col } from "reactstrap";
 
-class Profile extends React.Component {
+class PlayerProfile extends React.Component {
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
@@ -14,7 +15,8 @@ class Profile extends React.Component {
       <>
         <main className="profile-page" ref="Main">
           <section className="section-profile-cover section-shaped my-0">
-            {/* Circles background */}
+            {}
+            //Circles background
             <div className="shape shape-style-1 shape-default alpha-4">
               <span />
               <span />
@@ -24,7 +26,8 @@ class Profile extends React.Component {
               <span />
               <span />
             </div>
-            {/* SVG separator */}
+            {}
+            // SVG separator
             <div className="separator separator-bottom separator-skew">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -49,11 +52,7 @@ class Profile extends React.Component {
                     <Col className="order-lg-2" lg="3">
                       <div className="card-profile-image">
                         <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("assets/img/team-4-800x800.jpg")}
-                          />
+                          <img alt="..." className="rounded-circle" src={img} />
                         </a>
                       </div>
                     </Col>
@@ -143,4 +142,4 @@ class Profile extends React.Component {
   }
 }
 
-export default PlayerProfile;
+export default PlayerProfile; */
