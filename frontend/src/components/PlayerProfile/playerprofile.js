@@ -143,4 +143,4 @@ class Profile extends React.Component {
   }
 }
 
-export default playerprofile;
+export default PlayerProfile;
