@@ -11,29 +11,34 @@ const Header = () => {
 
     return (
          <AppBar sx={{ backgroundColor: "#3b3db1" }} position="sticky">
-            <Toolbar>
-                <Tabs
-                sx={{ ml: "auto" }}
+            
+            <Toolbar className={"justify-content-center"}>
+            
+                <Tabs 
+              
+                sx={{ ms: "auto" }}
+                
                 textColor="inherit"
                 indicatorColor="primary"
-                value= "undefined"
+                value = "undefined"
+                
                 
                 >
                     
-                    <img className = "photo" src={image}/>
-                    <Tab LinkComponent={NavLink} to="/" label="Home" />
-                    <Tab LinkComponent={NavLink} to="/aboutUs" label="About Us" />
-                    <Tab/>
-                    <Tab/>
-                    <Tab/>
-                    <Tab/>
-                    <Tab/>
-                    <Tab/>
-                    <Tab/>
-                    <Tab/><Tab/>
+                    <Typography variant="title" marginRight={108}>
+                        <a href="/">
+                            <img src={image} width={182} height={64} />
+                         </a>
+                         
+                    </Typography>
+                    
+                    
+                   
+                   
                     <Tab LinkComponent={NavLink} to="/players" label="Players" />
                     <Tab LinkComponent={NavLink} to="/" label="Matches" />
                     <Tab LinkComponent={NavLink} to="/" label="Referees" />
+                    <Tab LinkComponent={NavLink} to="/aboutUs" label="About Us" />
                     <Tab LinkComponent={NavLink} to="/profile" label="My Profile" />
                 </Tabs>
 
