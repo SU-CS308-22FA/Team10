@@ -4,7 +4,7 @@ import Main from "./components/Main";
 import Signup from "./components/SignUp";
 import Login from "./components/Login";
 import { useState } from "react";
-import PlayerProfile from "./components/PlayerProfile";
+import PlayerProfile from "./components//PlayerProfile/PlayerProfile.jsx";
 import { ToastContainer } from "react-toastify";
 import EditableUserProfile from "./components/UserPage/EditableUserProfile";
 
