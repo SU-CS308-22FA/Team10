@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Assets
-import ContactImg3 from "../../assets/img/contact-3.png";
+import ContactImg3 from "./assets/img/contact-3.png";
 
 export default function Contact() {
   return (

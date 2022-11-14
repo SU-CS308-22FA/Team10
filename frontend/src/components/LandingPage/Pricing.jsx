@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Components
-import PricingTable from "../Elements/PricingTable";
+import PricingTable from "./PricingTable";
 
 export default function Pricing() {
   return (
@@ -11,7 +11,8 @@ export default function Pricing() {
           <HeaderInfo>
             <h1 className="font40 extraBold">Check Our Pricing</h1>
             <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut
               <br />
               labore et dolore magna aliquyam erat, sed diam voluptua.
             </p>
@@ -92,10 +93,6 @@ const TableBox = styled.div`
   @media (max-width: 860px) {
     width: 100%;
     max-width: 370px;
-    margin: 0 auto
+    margin: 0 auto;
   }
 `;
-
-
-
-

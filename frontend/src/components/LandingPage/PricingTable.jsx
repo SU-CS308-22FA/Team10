@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // Components
-import FullButton from "../Buttons/FullButton";
+import FullButton from "./FullButton";
 
 export default function PricingTable({ price, title, text, offers, action }) {
   return (

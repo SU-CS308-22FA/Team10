@@ -2,12 +2,12 @@ import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 // Assets
-import ClientLogo01 from "../../assets/img/clients/logo01.svg"
-import ClientLogo02 from "../../assets/img/clients/logo02.svg";
-import ClientLogo03 from "../../assets/img/clients/logo03.svg";
-import ClientLogo04 from "../../assets/img/clients/logo04.svg";
-import ClientLogo05 from "../../assets/img/clients/logo05.svg";
-import ClientLogo06 from "../../assets/img/clients/logo06.svg";
+import ClientLogo01 from "./assets/svg/logo01.svg";
+import ClientLogo02 from "./assets/svg/logo02.svg";
+import ClientLogo03 from "./assets/svg/logo03.svg";
+import ClientLogo04 from "./assets/svg/logo04.svg";
+import ClientLogo05 from "./assets/svg/logo05.svg";
+import ClientLogo06 from "./assets/svg/logo06.svg";
 
 export default function ClientSlider() {
   const settings = {

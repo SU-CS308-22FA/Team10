@@ -7,6 +7,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Main from "./components/Main";
 import Signup from "./components/SignUp";
 import Login from "./components/Login";
+import Landing from "./components/LandingPage/Landing";
 import { useState } from "react";
 import PlayerProfileComponent from "./pages/PlayerProfile/PlayerProfileComponent.jsx";
 import { ToastContainer } from "react-toastify";
@@ -54,6 +55,7 @@ function App() {
           exact
           element={<PlayerProfileComponent />}
         />
+        <Route path="/" exact element={<Landing />} />
       </Routes>
     </div>
   );
