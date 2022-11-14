@@ -16,13 +16,17 @@
 }
 
 .heading-img-div {
+  margin-left: 5%;
   align-items: center;
   justify-content: center;
+  max-height: 400px;
+  max-width: 250px;
 }
 
 .heading-text-div {
   text-align: center;
   justify-content: center;
+  margin-right: 5%;
 }
 
 .heading-img-div > * {
@@ -31,8 +35,8 @@
 }
 
 .heading-text {
-  font-size: 56px;
-  font-weight: 400;
+  font-size: 64px;
+  font-weight: 500;
   line-height: 1.1;
   text-align: center;
   margin-top: 100px;

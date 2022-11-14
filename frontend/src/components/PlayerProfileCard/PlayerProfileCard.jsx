@@ -2,7 +2,7 @@ import React from "react";
 import "./PlayerProfileCard.css";
 import { Fade, Flip } from "react-reveal";
 import { style } from "glamor";
-
+import img1 from "./Paris_Saint-Germain.png";
 function PlayerProfileCard(props) {
   const playerinfo = props.playerinfo;
   const theme = props.theme;
@@ -41,7 +41,7 @@ function PlayerProfileCard(props) {
       boxShadow: `0 5px 15px #3B3DB1`,
     },
     "@media (max-width: 768px)": {
-      width: "100%",
+      width: "33.3%",
     },
   });
 
@@ -68,8 +68,7 @@ function PlayerProfileCard(props) {
 
   return (
     <div className="playerinfo-card">
-      <Flip left duration={2000}></Flip>
-      <Fade right duration={2000} distance="40px">
+      <Fade left duration={2000} distance="40px">
         <div {...card_body}>
           <div className="body-header" style={{ backgroundColor: "#3B3DB1" }}>
             <div className="body-header-title">
@@ -94,25 +93,6 @@ function PlayerProfileCard(props) {
                 </p>
               );
             })}
-            <a
-              href={playerinfo.website_link}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none", textAlign: "center" }}
-            >
-              <p
-                className="content-list"
-                {...button_visit}
-                style={{
-                  marginRight: "23px",
-                  textDecoration: "none",
-                  float: "right",
-                  backgroundColor: "#3B3DB1",
-                }}
-              >
-                Visit Website
-              </p>
-            </a>
           </div>
         </div>
       </Fade>

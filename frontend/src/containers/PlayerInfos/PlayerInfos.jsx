@@ -6,31 +6,51 @@ import { Fade } from "react-reveal";
 const playerinfos = {
   playerinfos: [
     {
-      title: "Shantilal Shah Engineering College",
-      subtitle: "Bachelor in Information Technology",
-      logo_path: "ssec.png",
-      alt_name: "SSEC",
-      duration: "2021 - Present",
+      title: "Personal Information",
       descriptions: [
-        "⚡ I'm currently pursuing my bachelors in Information Technology.",
-        // "⚡ I have studied core subjects like Data Structures, DBMS, Networking, Security, etc.",
-        // "⚡ I have also completed various online courses for Backend , Web , Mobile App Development, etc.",
-        // "⚡ I have implemented several projects based on what I've leart under my Computer Engineering course. ",
+        "Full name:	Lionel Andrés Messi",
+        "Date of birth:	24 June 1987 (age 35)",
+        "Place of birth:	Rosario, Santa Fe, Argentina",
+        "Height:	1.70 m",
+        "Position(s):	Forward",
       ],
-      website_link: "http://www.ssgec.ac.in/",
     },
     {
-      title: "Dr. S. & S. S. Ghandhy College Of Engineering & Technology",
-      subtitle: "Diploma in Information Technology",
-      logo_path: "ssgandhy.png",
-      alt_name: "SSGC",
-      duration: "2018 - 2021",
+      title: "Club Information",
+      descriptions: ["Current team:	Paris Saint-Germain", "Number:	30"],
+    },
+    {
+      title: "Youth Career",
       descriptions: [
-        "⚡ I have studied core subjects like Data Structures, DBMS, Networking, Security, etc.",
-        "⚡ I have also completed various online courses for Backend , Web , Mobile App Development, etc.",
-        "⚡ I have implemented several projects based on what I've leart under my Computer Engineering course. ",
+        "1992–1995:	Grandoli",
+        "1995–2000:	Newell's Old Boys",
+        "2000–2003:	Barcelona",
       ],
-      website_link: "http://www.ssgc.cteguj.in/",
+    },
+    {
+      title: "Senior Career",
+      descriptions: [
+        "2003–2004:	Barcelona C",
+        "2004–2005:	Barcelona B",
+        "2004–2021:	Barcelona",
+        "2021–	Paris Saint-Germain",
+      ],
+    },
+    {
+      title: "National Team",
+      descriptions: [
+        "2004-2005: 	Argentina U20",
+        "2008: 	Argentina U23",
+        "2005- 	Argentina",
+      ],
+    },
+    {
+      title: "Honours",
+      descriptions: [
+        "2005 Netherlands FIFA World Youth Championship Winner",
+        "2021 Brazil Copa America Winner",
+        "2022 England CONMEBOL-UEFA Cup of Champions Winner",
+      ],
     },
   ],
 };
@@ -40,13 +60,6 @@ function PlayerInfos(props) {
 
   return (
     <div className="main" id="playerinfos">
-      <div className="playerinfos-header-div">
-        <Fade bottom duration={2000} distance="20px">
-          <h1 className="playerinfos-header" style={{ color: "#343434" }}>
-            Rewards
-          </h1>
-        </Fade>
-      </div>
       <div className="playerinfos-body-div">
         {playerinfos.playerinfos.map((playerinfo) => {
           return <PlayerProfileCard playerinfo={playerinfo} theme={theme} />;
