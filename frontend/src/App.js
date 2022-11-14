@@ -1,19 +1,23 @@
-import { Route, Routes, Navigate } from "react-router-dom";
 import React from "react";
+import "./App.css";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./theme";
+import { GlobalStyles } from "./global";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Main from "./components/Main";
 import Signup from "./components/SignUp";
 import Login from "./components/Login";
 import { useState } from "react";
-import PlayerProfile from "./components/PlayerProfile/PlayerProfilePage.jsx";
+import PlayerProfileComponent from "./pages/PlayerProfile/PlayerProfileComponent.jsx";
 import { ToastContainer } from "react-toastify";
 import EditableUserProfile from "./components/UserPage/EditableUserProfile";
-
 import DeleteProfile from "./components/UserPage/DeleteProfile";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import UserPage from "./components/UserPage/UserPage";
 import PlayersPage from "./components/PlayersPage/PlayersPage";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
+
 function randomName() {
   return "Anonymous ";
 }
@@ -34,18 +38,24 @@ function App() {
   }
 
   return (
-    <Routes>
-      {user && <Route path="/" exact element={<Main />} />}
-      <Route path="/signup" exact element={<Signup />} />
-      <Route path="/login" exact element={<Login />} />
-      <Route path="/" element={<Navigate replace to="/login" />} />
-      <Route path="/aboutUs" exact element={<AboutUs />} />
-      <Route path="/players" exact element={<PlayersPage />} />
-      <Route path="/profile" exact element={<UserPage />} />
-      <Route path="/profile/update" exact element={<EditableUserProfile />} />
-      <Route path="/profile/delete" exact element={<DeleteProfile />} />
-      <Route path="/player-profile-page" exact element={<PlayerProfile />} />
-    </Routes>
+    <div>
+      <Routes>
+        {user && <Route path="/" exact element={<Main />} />}
+        <Route path="/signup" exact element={<Signup />} />
+        <Route path="/login" exact element={<Login />} />
+        <Route path="/" element={<Navigate replace to="/login" />} />
+        <Route path="/aboutUs" exact element={<AboutUs />} />
+        <Route path="/players" exact element={<PlayersPage />} />
+        <Route path="/profile" exact element={<UserPage />} />
+        <Route path="/profile/update" exact element={<EditableUserProfile />} />
+        <Route path="/profile/delete" exact element={<DeleteProfile />} />
+        <Route
+          path="/player-profile-page"
+          exact
+          element={<PlayerProfileComponent />}
+        />
+      </Routes>
+    </div>
   );
 }
 

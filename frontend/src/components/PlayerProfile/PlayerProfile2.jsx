@@ -112,7 +112,7 @@ class PlayerProfile extends React.Component {
                       Solution Manager - Creative Tim Officer
                     </div>
                     <div>
-                      <i className="ni education_hat mr-2" />
+                      <i className="ni playerprofile_hat mr-2" />
                       University of Computer Science
                     </div>
                   </div>

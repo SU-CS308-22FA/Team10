@@ -12,15 +12,18 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.1.3",
     "bootstrap": "^5.2.2",
+    "glamor": "^2.20.40",
     "joi": "^17.6.4",
     "mdb-react-ui-kit": "^5.0.0",
     "react": "^18.2.0",
     "react-app-rewired": "^2.2.1",
     "react-dom": "^18.2.0",
+    "react-reveal": "^1.2.2",
     "react-router-dom": "^6.4.2",
     "react-scripts": "^5.0.1",
     "react-toastify": "^9.1.1",
     "reactstrap": "^9.1.5",
+    "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
