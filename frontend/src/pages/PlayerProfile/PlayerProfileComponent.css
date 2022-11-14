@@ -21,25 +21,23 @@
   justify-content: center;
   max-height: 400px;
   max-width: 250px;
+  margin-top: 60px;
 }
 
 .heading-text-div {
   text-align: center;
   justify-content: center;
   margin-right: 5%;
-}
-
-.heading-img-div > * {
-  max-width: 20%;
-  height: 20px;
+  margin-left: 2%;
 }
 
 .heading-text {
-  font-size: 64px;
+  font-size: 50px;
   font-weight: 500;
   line-height: 1.1;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 70px;
+  margin-bottom: 20px;
 }
 
 .heading-sub-text {

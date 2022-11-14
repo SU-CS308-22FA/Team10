@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
+import ReactRoundedImage from "react-rounded-image";
 import PlayerInfos from "../../containers/PlayerInfos/PlayerInfos";
 import "./PlayerProfileComponent.css";
 import { Fade } from "react-reveal";
-import img1 from "./58088-1572949088.webp";
+import img1 from "./messi.jpg";
 import Header from "../../components/Header/Header";
 function PlayerProfile(props) {
   const theme = props.theme;
@@ -12,7 +13,17 @@ function PlayerProfile(props) {
       <div className="basic-playerprofile">
         <Fade bottom duration={2000} distance="40px">
           <div className="heading-div">
-            <img src={img1} class="heading-img-div" />
+            <div className="heading-img-div">
+              <ReactRoundedImage
+                image={img1}
+                roundedColor="#FFFFFF"
+                imageWidth="250"
+                imageHeight="250"
+                roundedSize="13"
+                borderRadius="100"
+                hoverColor="#3b3db1"
+              />
+            </div>
             <div className="heading-text-div">
               <h1 className="heading-text" style={{ color: "#3B3DB1" }}>
                 Lionel Messi
@@ -20,7 +31,14 @@ function PlayerProfile(props) {
               <p className="heading-text-div" style={{ color: "#7F8DAA" }}>
                 Lionel Andrés Messi, is an Argentine professional footballer who
                 plays as a forward for Ligue 1 club Paris Saint-Germain and
-                captains the Argentina national team.
+                captains the Argentina national team. Widely regarded as one of
+                the greatest players of all time, Messi has won a record seven
+                Ballon d'Or awards, a record six European Golden Shoes, and in
+                2020 was named to the Ballon d'Or Dream Team. Until leaving the
+                club in 2021, he had spent his entire professional career with
+                Barcelona, where he won a club-record 35 trophies, including ten
+                La Liga titles, seven Copa del Rey titles and four UEFA
+                Champions Leagues.
               </p>
             </div>
           </div>
