@@ -12,6 +12,8 @@ import "./App.css";
 import UserPage from "./components/UserPage/UserPage";
 import PlayersPage from "./components/PlayersPage/PlayersPage";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
+import MatchesPage from "./components/MatchesPage/MatchPage";
+
 function randomName() {
   return "Anonymous ";
 }
@@ -42,6 +44,7 @@ function App() {
       <Route path="/profile" exact element={<UserPage />} />
       <Route path="/profile/update" exact element={<EditableUserProfile />} />
       <Route path="/profile/delete" exact element={<DeleteProfile />} />
+      <Route path="/matches" exact element={<MatchesPage />} />
     </Routes>
   );
 }
