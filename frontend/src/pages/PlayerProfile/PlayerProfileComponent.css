@@ -16,7 +16,7 @@
 }
 
 .heading-img-div {
-  margin-left: 5%;
+  margin-left: 40%;
   align-items: center;
   justify-content: center;
   max-height: 400px;
@@ -27,8 +27,8 @@
 .heading-text-div {
   text-align: center;
   justify-content: center;
-  margin-right: 5%;
-  margin-left: 2%;
+  margin-right: 3%;
+  margin-left: 3%;
 }
 
 .heading-text {

@@ -16,14 +16,16 @@ function PlayerProfile(props) {
             <div className="heading-img-div">
               <ReactRoundedImage
                 image={img1}
-                roundedColor="#FFFFFF"
+                roundedColor="#3b3db1"
                 imageWidth="250"
                 imageHeight="250"
                 roundedSize="13"
                 borderRadius="100"
-                hoverColor="#3b3db1"
+                hoverColor="#FFFFFF"
               />
             </div>
+          </div>
+          <div className="heading-div">
             <div className="heading-text-div">
               <h1 className="heading-text" style={{ color: "#3B3DB1" }}>
                 Lionel Messi
