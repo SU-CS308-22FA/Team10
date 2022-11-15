@@ -66,6 +66,7 @@ function PlayerProfileCard(props) {
   });
 
   return (
+    
     <div className="playerinfo-card">
       <Fade left duration={2000} distance="40px">
         <div {...card_body}>
@@ -90,12 +91,14 @@ function PlayerProfileCard(props) {
                 <p className="content-list" style={{ color: "#343434" }}>
                   {sentence}
                 </p>
+                
               );
             })}
           </div>
         </div>
       </Fade>
     </div>
+    
   );
 }
 
