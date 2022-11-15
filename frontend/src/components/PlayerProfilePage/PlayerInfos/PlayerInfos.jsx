@@ -1,6 +1,6 @@
 import React from "react";
 import "./PlayerInfos.css";
-import PlayerProfileCard from "../../components/PlayerProfileCard/PlayerProfileCard.jsx";
+import PlayerProfileCard from "../PlayerProfileCard/PlayerProfileCard";
 import { Fade } from "react-reveal";
 
 const playerinfos = {

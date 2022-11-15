@@ -2,7 +2,6 @@ import React from "react";
 import "./PlayerProfileCard.css";
 import { Fade, Flip } from "react-reveal";
 import { style } from "glamor";
-import img1 from "./Paris_Saint-Germain.png";
 function PlayerProfileCard(props) {
   const playerinfo = props.playerinfo;
   const theme = props.theme;

@@ -8,7 +8,7 @@ import Main from "./components/Main";
 import Signup from "./components/SignUp";
 import Login from "./components/Login";
 import { useState } from "react";
-import PlayerProfileComponent from "./pages/PlayerProfile/PlayerProfileComponent.jsx";
+import PlayerProfileComponent from "./components/PlayerProfilePage/PlayerProfileComponent.jsx";
 import { ToastContainer } from "react-toastify";
 import EditableUserProfile from "./components/UserPage/EditableUserProfile";
 import DeleteProfile from "./components/UserPage/DeleteProfile";

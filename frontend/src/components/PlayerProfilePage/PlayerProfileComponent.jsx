@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import ReactRoundedImage from "react-rounded-image";
-import PlayerInfos from "../../containers/PlayerInfos/PlayerInfos";
+import PlayerInfos from "./PlayerInfos/PlayerInfos";
 import "./PlayerProfileComponent.css";
 import { Fade } from "react-reveal";
 import img1 from "./messi.jpg";
-import Header from "../../components/Header/Header";
+import Header from "../Header/Header";
 function PlayerProfile(props) {
   const theme = props.theme;
   return (
