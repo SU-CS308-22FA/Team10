@@ -41,6 +41,7 @@ function App() {
       <Route path="/aboutUs" exact element={<AboutUs />} />
       <Route path="/players" exact element={<PlayersPage />} />
       <Route path="/profile" exact element={<UserPage />} />
+      
       <Route path="/profile/update" exact element={<EditableUserProfile />} />
       <Route path="/profile/delete" exact element={<DeleteProfile />} />
     </Routes>

@@ -10,6 +10,9 @@ const Cards = () => {
     const cardInfo = [
         
           {
+            id:1,
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/AUT_vs._TUR_2016-03-29_%28303%29.jpg/1200px-AUT_vs._TUR_2016-03-29_%28303%29.jpg",
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Harun Tekin",
             club: "Fenerbahçe",
             age: 29,
@@ -19,9 +22,12 @@ const Cards = () => {
             nationality: "Turkey",
             new_foreign: 0,
             club_id: 1,
-            new_signing: 1
+            new_signing: 1,
+            link:"/1"
           },
           {
+            image: "https://trthaberstatic.cdn.wp.trt.com.tr/resimler/1590000/fenerbahce-berke-ozer-1591043_2.jpg",
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Berke Özer",
             club: "Fenerbahçe",
             age: 18,
@@ -34,6 +40,8 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            image: "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcS4D95DoIkXV0X2IlVupNhOhkhsLz8n5BHaOuEpWJzwxRLRHqUuFVqK1T4e14rbc5aK",
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Volkan Demirel",
             club: "Fenerbahçe",
             age: 37,
@@ -46,6 +54,8 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            image: "https://pbs.twimg.com/media/DVdXlfaW4AAt-E3.jpg",
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Carlos Kameni",
             club: "Fenerbahçe",
             age: 35,
@@ -58,6 +68,8 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            image: "https://media.fenerbahce.org/FB/media/FB/pic_lib/erten_57239_4307848.jpg",
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Erten Ersu",
             club: "Fenerbahçe",
             age: 24,
@@ -70,6 +82,8 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            image: "https://s.hs-data.com/bilder/spieler/gross/123385.jpg?fallback=png",
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Serdar Aziz",
             club: "Fenerbahçe",
             age: 28,
@@ -82,6 +96,8 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            image: "https://i.hbrcdn.com/haber/2020/05/03/eski-fenerbahceli-roman-neustadter-sari-13185402_2451_amp.jpg",
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Roman Neustädter",
             club: "Fenerbahçe",
             age: 31,
@@ -94,6 +110,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Martin Skrtel",
             club: "Fenerbahçe",
             age: 34,
@@ -106,6 +123,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Sadik Ciftpinar",
             club: "Fenerbahçe",
             age: 26,
@@ -118,6 +136,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Hasan Ali Kaldirim",
             club: "Fenerbahçe",
             age: 29,
@@ -130,6 +149,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Ismail Köybasi",
             club: "Fenerbahçe",
             age: 29,
@@ -142,6 +162,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Mauricio Isla",
             club: "Fenerbahçe",
             age: 30,
@@ -154,6 +175,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Sener Özbayrakli",
             club: "Fenerbahçe",
             age: 29,
@@ -166,6 +188,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Jailson",
             club: "Fenerbahçe",
             age: 23,
@@ -178,6 +201,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Mehmet Topal",
             club: "Fenerbahçe",
             age: 33,
@@ -190,6 +214,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Oguz Kagan Güctekin",
             club: "Fenerbahçe",
             age: 20,
@@ -202,6 +227,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Eljif Elmas",
             club: "Fenerbahçe",
             age: 19,
@@ -214,6 +240,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Tolgay Arslan",
             club: "Fenerbahçe",
             age: 28,
@@ -226,6 +253,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Tolga Cigerci",
             club: "Fenerbahçe",
             age: 27,
@@ -238,6 +266,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Nabil Dirar",
             club: "Fenerbahçe",
             age: 33,
@@ -250,6 +279,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Miha Zajc",
             club: "Fenerbahçe",
             age: 24,
@@ -262,6 +292,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Yassine Benzia",
             club: "Fenerbahçe",
             age: 24,
@@ -274,6 +305,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Alper Potuk",
             club: "Fenerbahçe",
             age: 28,
@@ -286,6 +318,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Mehmet Ekici",
             club: "Fenerbahçe",
             age: 29,
@@ -298,6 +331,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Ferdi Kadioglu",
             club: "Fenerbahçe",
             age: 19,
@@ -310,6 +344,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "André Ayew",
             club: "Fenerbahçe",
             age: 29,
@@ -322,6 +357,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Mathieu Valbuena",
             club: "Fenerbahçe",
             age: 34,
@@ -334,6 +370,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Victor Moses",
             club: "Fenerbahçe",
             age: 28,
@@ -346,6 +383,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Islam Slimani",
             club: "Fenerbahçe",
             age: 30,
@@ -358,6 +396,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Michael Frey",
             club: "Fenerbahçe",
             age: 24,
@@ -370,6 +409,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src="https://seeklogo.com/images/F/fenerbahce-sk-logo-8321034CE1-seeklogo.com.png" width={23} alt="..."></img>,
             name: "Roberto Soldado",
             club: "Fenerbahçe",
             age: 33,
@@ -382,6 +422,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Fernando Muslera",
             club: "Galatasaray",
             age: 32,
@@ -394,6 +435,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Ismail Cipe",
             club: "Galatasaray",
             age: 24,
@@ -406,6 +448,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Batuhan Sen",
             club: "Galatasaray",
             age: 20,
@@ -418,6 +461,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Christian Luyindama",
             club: "Galatasaray",
             age: 25,
@@ -430,6 +474,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Marcão",
             club: "Galatasaray",
             age: 22,
@@ -442,6 +487,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Mariano",
             club: "Galatasaray",
             age: 32,
@@ -454,6 +500,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Yuto Nagatomo",
             club: "Galatasaray",
             age: 32,
@@ -466,6 +513,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Martin Linnes",
             club: "Galatasaray",
             age: 27,
@@ -478,6 +526,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Semih Kaya",
             club: "Galatasaray",
             age: 28,
@@ -490,6 +539,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Ömer Bayram",
             club: "Galatasaray",
             age: 27,
@@ -502,6 +552,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Ahmet Calik",
             club: "Galatasaray",
             age: 25,
@@ -514,6 +565,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Emre Tasdemir",
             club: "Galatasaray",
             age: 23,
@@ -526,6 +578,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Badou Ndiaye",
             club: "Galatasaray",
             age: 28,
@@ -536,8 +589,10 @@ const Cards = () => {
             "new_foreign": 1,
             club_id: 2,
             new_signing: 1
+            
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Emre Akbaba",
             club: "Galatasaray",
             age: 26,
@@ -550,6 +605,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Fernando",
             club: "Galatasaray",
             age: 31,
@@ -562,6 +618,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Younès Belhanda",
             club: "Galatasaray",
             age: 29,
@@ -574,6 +631,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Ryan Donk",
             club: "Galatasaray",
             age: 33,
@@ -586,6 +644,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Selcuk Inan",
             club: "Galatasaray",
             age: 34,
@@ -598,6 +657,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Celil Yüksel",
             club: "Galatasaray",
             age: 21,
@@ -610,6 +670,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Atalay Babacan",
             club: "Galatasaray",
             age: 18,
@@ -622,6 +683,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Konstantinos Mitroglou",
             club: "Galatasaray",
             age: 31,
@@ -634,6 +696,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Henry Onyekuru",
             club: "Galatasaray",
             age: 21,
@@ -646,6 +709,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Mbaye Diagne",
             club: "Galatasaray",
             age: 27,
@@ -658,6 +722,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Sofiane Feghouli",
             club: "Galatasaray",
             age: 29,
@@ -670,6 +735,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Sinan Gümüs",
             club: "Galatasaray",
             age: 25,
@@ -682,6 +748,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Yunus Akgün",
             club: "Galatasaray",
             age: 18,
@@ -694,6 +761,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Eren Derdiyok",
             club: "Galatasaray",
             age: 30,
@@ -706,6 +774,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+             icon: <img src="https://cdn.gsstore.org/UPLOAD/PRODUCT/thumb/Y023-U60348_209_1_medium.jpg"  width={23} alt="..."></img>,
             name: "Mugdat Celik",
             club: "Galatasaray",
             age: 29,
@@ -718,6 +787,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Loris Karius",
             club: "Beşiktaş",
             age: 25,
@@ -730,6 +800,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Utku Yuvakuran",
             club: "Beşiktaş",
             age: 21,
@@ -742,6 +813,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Tolga Zengin",
             club: "Beşiktaş",
             age: 35,
@@ -754,6 +826,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Ersin Destanoglu",
             club: "Beşiktaş",
             age: 18,
@@ -766,6 +839,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Domagoj Vida",
             club: "Beşiktaş",
             age: 29,
@@ -778,6 +852,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Nicolas Isimat-Mirin",
             club: "Beşiktaş",
             age: 27,
@@ -790,6 +865,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Enzo Roco",
             club: "Beşiktaş",
             age: 26,
@@ -802,6 +878,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Necip Uysal",
             club: "Beşiktaş",
             age: 28,
@@ -814,6 +891,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Caner Erkin",
             club: "Beşiktaş",
             age: 30,
@@ -826,6 +904,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Adriano",
             club: "Beşiktaş",
             age: 34,
@@ -838,6 +917,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Gökhan Gönül",
             club: "Beşiktaş",
             age: 34,
@@ -850,6 +930,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Gary Medel",
             club: "Beşiktaş",
             age: 31,
@@ -862,6 +943,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Dorukhan Toköz",
             club: "Beşiktaş",
             age: 22,
@@ -874,6 +956,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Atiba Hutchinson",
             club: "Beşiktaş",
             age: 36,
@@ -886,6 +969,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Oguzhan Özyakup",
             club: "Beşiktaş",
             age: 26,
@@ -898,6 +982,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Adem Ljajic",
             club: "Beşiktaş",
             age: 27,
@@ -910,6 +995,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Shinji Kagawa",
             club: "Beşiktaş",
             age: 30,
@@ -922,6 +1008,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Güven Yalcin",
             club: "Beşiktaş",
             age: 20,
@@ -934,6 +1021,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Jeremain Lens",
             club: "Beşiktaş",
             age: 31,
@@ -946,6 +1034,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Ricardo Quaresma",
             club: "Beşiktaş",
             age: 35,
@@ -958,6 +1047,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Burak Yilmaz",
             club: "Beşiktaş",
             age: 33,
@@ -970,6 +1060,7 @@ const Cards = () => {
             new_signing: 1
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Cyle Larin",
             club: "Beşiktaş",
             age: 23,
@@ -982,6 +1073,7 @@ const Cards = () => {
             new_signing: 0
           },
           {
+            icon: <img src = "https://guneybayrak.net/wp-content/uploads/2021/05/besiktas-takim-bayragi-duz-2-scaled.jpg"  width={23} alt="..."></img>,
             name: "Mustafa Pektemek",
             club: "Beşiktaş",
             age: 30,
@@ -999,20 +1091,21 @@ const Cards = () => {
       const renderCard = (card, index) => {
         return(
               
-                <div className="col" >
+                <div className="col" key={index} >
                   
-                    <div className="card h-100 w-100 text-center" key={index}>
+                    <div className="card h-100 w-100 text-center" >
                     <div className="overflow">
-                      <img src={card.image} class="card-img-top" alt="..."/>
+                      <img src={card.image} className="card-img-top" alt="..." object-fit = "fill"/>
                     </div>
-                    <div class="card-body text-dark">
-                        <h5 class="card-title">{card.name}</h5>
-                        <p class="card-text">
-                          <ul>
-                            <li>{card.club}</li>
-                            <li>{card.age}</li>
-                          </ul>
-                          
+                    <div className="card-body text-dark">
+                        <h5 className="card-title">{card.name}</h5>
+                        <p className="card-text">
+                          Team: {card.club} {card.icon} <br/>
+                          Age: {card.age}<br/>
+                          Position: {card.position}<br/>
+                          Position Category: {card.position_cat}<br/>
+                          Merket Vaue: {card.market_value}M <br/>
+                          Nationality: {card.nationality}
                           </p>
                         <Link to={card.link}>
                             <button type="button" className="_btn">
