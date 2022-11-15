@@ -8,6 +8,8 @@ import UserPage from '../UserPage/UserPage'
 import image from "../img/weekly_soccer.png"
 import Header from "../Header/Header";
 import ImageSlider from "./ImageSlider"
+import MainCards from "./MainCards/MainCards";
+import Signup from "../SignUp";
 const Main = () => {
 	const handleLogout = () => {
 		sessionStorage.removeItem("token");
@@ -21,9 +23,8 @@ const Main = () => {
 		<div className={styles.main_container}>
 			<Header/>
 			<ImageSlider/>
-			<button className={styles.white_btn} onClick={handleLogout}>
-				Logout
-			</button>
+			<MainCards/>
+			
 				
 		</div>
 	);
