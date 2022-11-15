@@ -6,13 +6,14 @@ import Login from "./components/Login";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import EditableUserProfile from "./components/UserPage/EditableUserProfile";
-
 import DeleteProfile from "./components/UserPage/DeleteProfile";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import UserPage from "./components/UserPage/UserPage";
 import PlayersPage from "./components/PlayersPage/PlayersPage";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
+
+
 function randomName() {
   return "Anonymous ";
 }
@@ -44,6 +45,7 @@ function App() {
       
       <Route path="/profile/update" exact element={<EditableUserProfile />} />
       <Route path="/profile/delete" exact element={<DeleteProfile />} />
+
     </Routes>
   );
 }
