@@ -31,17 +31,12 @@
 	width: 1792px;
 }
 
-.photo {
-	height: 64px;
-      width: 182px; 
+.title{
+	text-align: center;
+	padding: 3rem;
+	color:#3b3db1;
+	font-weight: bold;
+	font-family: "Playfair Display";
+	font-size: 6em;
+
 }
-
-
-
-
-.centered-tabs > nav {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-  }
- 
