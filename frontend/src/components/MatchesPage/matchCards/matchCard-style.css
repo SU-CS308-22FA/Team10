@@ -2,7 +2,7 @@ body {
   background: radial-gradient(#e5e5e5, #fff, #e5e5e5);
 }
 .card {
-  width: 20rem;
+  width: 8rem;
 }
 
 .card:hover {
@@ -11,6 +11,7 @@ body {
 
 .card-body {
   padding: 2rem 0 !important;
+  
 }
 
 .card-text {
