@@ -14,6 +14,7 @@ import PlayersPage from "./components/PlayersPage/PlayersPage";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import MatchesPage from "./components/MatchesPage/MatchPage";
 import PlayerProfile from "./components/PlayerProfilePage/PlayerProfileComponent";
+import RefereesPage from "./components/RefereesPage/RefereesPage";
 import axios from "axios";
 
 function randomName() {
@@ -46,6 +47,7 @@ function App() {
       <Route path="/" element={<Navigate replace to="/login" />} />
       <Route path="/aboutUs" exact element={<AboutUs />} />
       <Route path="/players" exact element={<PlayersPage />} />
+      <Route path="/referees" exact element={<RefereesPage />} />
       <Route path="/playerprofile" exact element={<PlayerProfile />} />
       <Route path="/profile" exact element={<UserPage />} />
       <Route path="/profile/update" exact element={<EditableUserProfile />} />
