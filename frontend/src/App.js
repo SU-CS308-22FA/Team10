@@ -1,5 +1,5 @@
 import { Route, Routes, Navigate } from "react-router-dom";
-import React from "react";
+import React, { useEffect } from "react";
 import Main from "./components/Main";
 import Signup from "./components/SignUp";
 import Login from "./components/Login";
@@ -14,6 +14,7 @@ import PlayersPage from "./components/PlayersPage/PlayersPage";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import MatchesPage from "./components/MatchesPage/MatchPage";
 import PlayerProfile from "./components/PlayerProfilePage/PlayerProfileComponent";
+import axios from "axios";
 
 function randomName() {
   return "Anonymous ";
@@ -33,6 +34,9 @@ function App() {
     }
     setEditMode(false);
   }
+
+
+  
 
   return (
     <Routes>

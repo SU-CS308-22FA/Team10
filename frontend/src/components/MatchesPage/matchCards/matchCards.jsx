@@ -22,7 +22,7 @@ const matchCards = () => {
   ];
   const renderCard = (card, index) => {
     return (
-      <div className="col">
+      <div className="col" >
         <div className="card h-100 w-100 text-center" key={index}>
           <div className="overflow">
             <img src={card.image} class="card-img-top" alt="..." />
@@ -41,7 +41,7 @@ const matchCards = () => {
     );
   };
   return (
-    <div className="row row-cols-4 row-cols-md-6 g-4">
+    <div className="row row-cols-4 row-cols-md-4 g-4">
       {cardInfo.map(renderCard)}
     </div>
   );
