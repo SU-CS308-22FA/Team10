@@ -1,18 +1,22 @@
 import { Route, Routes, Navigate } from "react-router-dom";
-import React from "react";
+import React, { useEffect } from "react";
 import Main from "./components/Main";
 import Signup from "./components/SignUp";
 import Login from "./components/Login";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import EditableUserProfile from "./components/UserPage/EditableUserProfile";
-
 import DeleteProfile from "./components/UserPage/DeleteProfile";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import UserPage from "./components/UserPage/UserPage";
 import PlayersPage from "./components/PlayersPage/PlayersPage";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
+import MatchesPage from "./components/MatchesPage/MatchPage";
+import PlayerProfile from "./components/PlayerProfilePage/PlayerProfileComponent";
+import RefereesPage from "./components/RefereesPage/RefereesPage";
+import axios from "axios";
+
 function randomName() {
   return "Anonymous ";
 }
@@ -32,6 +36,9 @@ function App() {
     setEditMode(false);
   }
 
+
+  
+
   return (
     <Routes>
       {user && <Route path="/" exact element={<Main />} />}
@@ -40,9 +47,12 @@ function App() {
       <Route path="/" element={<Navigate replace to="/login" />} />
       <Route path="/aboutUs" exact element={<AboutUs />} />
       <Route path="/players" exact element={<PlayersPage />} />
+      <Route path="/referees" exact element={<RefereesPage />} />
+      <Route path="/playerprofile" exact element={<PlayerProfile />} />
       <Route path="/profile" exact element={<UserPage />} />
       <Route path="/profile/update" exact element={<EditableUserProfile />} />
       <Route path="/profile/delete" exact element={<DeleteProfile />} />
+      <Route path="/matches" exact element={<MatchesPage />} />
     </Routes>
   );
 }
