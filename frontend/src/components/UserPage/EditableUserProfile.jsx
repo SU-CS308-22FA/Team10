@@ -5,6 +5,7 @@ import { purple, red } from "@mui/material/colors";
 import { withTheme } from "@emotion/react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
+import SelectTeam from "./SelectTeam";
 
 export default function EditableUserProfile({}) {
   const navigate = useNavigate();
@@ -13,6 +14,8 @@ export default function EditableUserProfile({}) {
 
   const [firstName, setName] = useState(user.firstName);
   const [lastName, setLastName] = useState(user.lastName);
+
+
 
   const handleSaveClicked = async (e) => {
     e.preventDefault();
@@ -48,6 +51,7 @@ export default function EditableUserProfile({}) {
     color: purple,
   };
 
+  
   return (
     <div className={styles.login_container}>
       <div className={styles.login_form_container}>
@@ -66,7 +70,9 @@ export default function EditableUserProfile({}) {
               onChange={(e) => setLastName(e.target.value)}
               className={styles.input}
             />
-
+            
+            <SelectTeam/>
+            
             <button
               stype="button"
               className={styles.purple_btn}

@@ -1,17 +1,20 @@
 import { useState } from 'react';
 import Group from './Group';
 import { Link, useNavigate } from "react-router-dom";
-
+import EditableUserProfile from './EditableUserProfile';
 import { withTheme } from '@emotion/react';
 import { purple, red } from '@mui/material/colors';
 import styles from "./styles.module.css";
+import Header from "../Header/Header";
+import image from "./user_pp3.jpeg";
+import team from "./fenerbahce_logo.png";
+import SelectTeam from './SelectTeam';
 const UserPage = () =>{
 
   const [data, setData] = useState({
 		firstName: "",
-		
-
 	});
+
   console.log("USERPAGE")
   const user = JSON.parse(sessionStorage.getItem("user"));
   const navigate = useNavigate();
@@ -33,27 +36,35 @@ const UserPage = () =>{
 
     
     return (
+      <div>
+      <Header/>
+     
       <div className={styles.login_container}>
+      
 			 <div className={styles.login_form_container}>
 				<div className={styles.left}>
 					<form className={styles.form_container} onSubmit={handleUpdate}>
-						<h1>My Profile</h1>
-        
-            <h2 >Name:</h2> 
-            {user.firstName}
+					
+          <img src={image} width={182} height={182} />
+          <div>
+            <h4>Name:   {user.firstName}  </h4> 
 						
       
-            <h3>Last Name:</h3> {user.lastName}
+            <h4>Last Name:   {user.lastName}</h4> 
         
-            <h4>Email:</h4> {user.email}
-
+            <h4>Email:     {user.email} </h4> 
             
-            <button stype="button" className={styles.purple_btn} onClick={handleUpdate}>Update</button>
-            <button stype="button" className={styles.purple_btn} onClick={handleDelete}>Delete</button>
+            <h4>Favorite Team:<img src={team} width={45} height={45} />  </h4>
+            </div>
+            <button stype="button" className={styles.green_btn} onClick={handleUpdate}>Update</button>
             </form>
        </div>
-        
+       <div className={styles.bottom}>
+          <h1>My Profile</h1>
+          <button stype="button" className={styles.white_btn} onClick={handleDelete}>Delete</button>
+        </div>
 		  </div>
+      </div>
       </div>
     );
 };

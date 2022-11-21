@@ -9,10 +9,26 @@ import cardInfo from "../../cardInfo"
 import axios from "axios";
 import { useState, useEffect } from "react";
 
+
 const Cards = () => {
+
+    const [players, setPlayers] = React.useState(cardInfo);
   
+    React.useEffect(() => {
+      async function fetchData() {
+          console.log("Ebrar");
+          const playerListUrl =
+            "http://localhost:8080/api/player/allplayers";
+            
+          const fetchedPlayerList = await axios.get(playerListUrl);
+          console.log(fetchedPlayerList);
+          setPlayers(fetchedPlayerList.data);
+      } 
+      fetchData();
+
+    },[]);
     
-    
+    console.log("Gizem");
       const renderCard = (card, index) => {
         return(
               
@@ -45,7 +61,7 @@ const Cards = () => {
         );
         
     };
-    return <div className="row row-cols-4 row-cols-md-6 g-4">{cardInfo.map(renderCard)}</div>;
+    return <div className="row row-cols-4 row-cols-md-6 g-4">{players.map(renderCard)}</div>; //players.map yazıcaz
 }
 
 export default Cards;

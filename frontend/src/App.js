@@ -15,6 +15,7 @@ import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import MatchesPage from "./components/MatchesPage/MatchPage";
 import PlayerProfile from "./components/PlayerProfilePage/PlayerProfileComponent";
 import RefereesPage from "./components/RefereesPage/RefereesPage";
+import PersonalProfile from "./components/UserPage/deneme_user_page.jsx"
 import axios from "axios";
 
 function randomName() {
@@ -53,6 +54,7 @@ function App() {
       <Route path="/profile/update" exact element={<EditableUserProfile />} />
       <Route path="/profile/delete" exact element={<DeleteProfile />} />
       <Route path="/matches" exact element={<MatchesPage />} />
+      <Route path="/deneme" exact element={<PersonalProfile />} />
     </Routes>
   );
 }
