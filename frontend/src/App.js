@@ -15,7 +15,6 @@ import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import MatchesPage from "./components/MatchesPage/MatchPage";
 import PlayerProfile from "./components/PlayerProfilePage/PlayerProfileComponent";
 import RefereesPage from "./components/RefereesPage/RefereesPage";
-import PersonalProfile from "./components/UserPage/deneme_user_page.jsx"
 import axios from "axios";
 
 function randomName() {
@@ -27,7 +26,8 @@ function App() {
 
   const [firstName, setName] = useState(randomName());
   const [email, setEmail] = useState(randomName());
-  const stored = { firstName, email };
+  const [team, setTeam] = useState(randomName());
+  const stored = { firstName, email, team };
 
   function handleEditComplete(result) {
     console.log("handleEditComplete", result);
@@ -37,8 +37,6 @@ function App() {
     setEditMode(false);
   }
 
-
-  
 
   return (
     <Routes>
@@ -54,7 +52,6 @@ function App() {
       <Route path="/profile/update" exact element={<EditableUserProfile />} />
       <Route path="/profile/delete" exact element={<DeleteProfile />} />
       <Route path="/matches" exact element={<MatchesPage />} />
-      <Route path="/deneme" exact element={<PersonalProfile />} />
     </Routes>
   );
 }

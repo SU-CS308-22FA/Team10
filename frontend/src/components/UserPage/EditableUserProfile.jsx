@@ -14,20 +14,22 @@ export default function EditableUserProfile({}) {
 
   const [firstName, setName] = useState(user.firstName);
   const [lastName, setLastName] = useState(user.lastName);
+  const [team, setTeam] = useState(user.team);
+  const [image, setImage] = useState(user.image);
 
-
-
+  const defaultSelectValue = "Choose your favorite team";
+  const [selected, setSelected] = useState(defaultSelectValue);
   const handleSaveClicked = async (e) => {
     e.preventDefault();
     try {
       const url =
-        "https://weeklysoccer.vercel.app/api/users/" +
+        "http://localhost:8080/api/users/" +
         user._id +
         "?_id=" +
         user._id;
       const {
         data: { user: updatedUser, message: message },
-      } = await axios.put(url, { firstName, lastName, email: user.email });
+      } = await axios.put(url, { firstName, lastName, team, image, email: user.email });
       sessionStorage.setItem("user", JSON.stringify(updatedUser));
 
       navigate("/profile");
@@ -58,7 +60,15 @@ export default function EditableUserProfile({}) {
         <div className={styles.left}>
           <form className={styles.form_container} onSubmit={handleSaveClicked}>
             <h1>Edit your information:</h1>
-            <input
+            
+            <h5> Upload an image: </h5><input 
+                type="file" 
+                value= {image}
+                
+                onChange={(e) => setImage(e.target.value)}
+                />
+           
+           <input
               type="text"
               value={firstName}
               onChange={(e) => setName(e.target.value)}
@@ -71,7 +81,19 @@ export default function EditableUserProfile({}) {
               className={styles.input}
             />
             
-            <SelectTeam/>
+            <label htmlFor="team">Teams</label>{' '}
+            <select id="team"
+                  name="team"
+                  defaultValue={selected}
+                  style={{ color: selected === defaultSelectValue ? "gray" : "black" }}
+                  onChange={e => {setTeam(e.target.value); setSelected(e.target.value)}}>
+
+                  <option value="Fenerbahçe"> Fenerbahçe</option>
+                  <option value="Galatasaray">Galatasaray</option>
+                  <option value="Beşiktaş"> Beşiktaş</option>
+                  <option value="Fenerbahçe"> Fenerbahçe</option>
+                </select>
+            <h6>Selected: {selected}</h6>
             
             <button
               stype="button"

@@ -45,7 +45,7 @@ const UserPage = () =>{
 				<div className={styles.left}>
 					<form className={styles.form_container} onSubmit={handleUpdate}>
 					
-          <img src={image} width={182} height={182} />
+          <img src={user.image} width={182} height={182} />
           <div>
             <h4>Name:   {user.firstName}  </h4> 
 						
@@ -54,7 +54,7 @@ const UserPage = () =>{
         
             <h4>Email:     {user.email} </h4> 
             
-            <h4>Favorite Team:<img src={team} width={45} height={45} />  </h4>
+            <h4>Favorite Team: {user.team} </h4>
             </div>
             <button stype="button" className={styles.green_btn} onClick={handleUpdate}>Update</button>
             </form>
