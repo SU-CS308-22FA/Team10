@@ -8,6 +8,7 @@ const Signup = () => {
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
+    team: "",
     email: "",
     password: "",
   });
@@ -22,7 +23,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "https://weeklysoccer.vercel.app/api/users";
+      const url = "http://localhost:8080/api/users";
       const { data: res } = await axios.post(url, data);
       navigate("/login");
       console.log(res.message);
@@ -61,6 +62,7 @@ const Signup = () => {
               required
               className={styles.input}
             />
+            
             <input
               type="email"
               placeholder="Email"
