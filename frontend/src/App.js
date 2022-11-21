@@ -14,7 +14,7 @@ import PlayersPage from "./components/PlayersPage/PlayersPage";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import MatchesPage from "./components/MatchesPage/MatchPage";
 import PlayerProfile from "./components/PlayerProfilePage/PlayerProfileComponent";
-
+import LandingWithoutLogin from "./components/LandingWithoutLogin/LandingWithoutLogin";
 function randomName() {
   return "Anonymous ";
 }
@@ -36,17 +36,17 @@ function App() {
 
   return (
     <Routes>
-      {user && <Route path="/" exact element={<Main />} />}
+      {user && <Route path="/main" exact element={<Main />} />}
       <Route path="/signup" exact element={<Signup />} />
       <Route path="/login" exact element={<Login />} />
-      <Route path="/" element={<Navigate replace to="/login" />} />
+      <Route path="/" exact element = {<LandingWithoutLogin/>}/>
       <Route path="/aboutUs" exact element={<AboutUs />} />
       <Route path="/players" exact element={<PlayersPage />} />
-      <Route path="/playerprofile" exact element={<PlayerProfile />} />
+      <Route path="/playerprofile" exact element={<PlayerProfile />}/>
       <Route path="/profile" exact element={<UserPage />} />
       <Route path="/profile/update" exact element={<EditableUserProfile />} />
-      <Route path="/profile/delete" exact element={<DeleteProfile />} />
-      <Route path="/matches" exact element={<MatchesPage />} />
+      <Route path="/profile/delete" exact element={<DeleteProfile />}/>
+      <Route path="/matches" exact element={<MatchesPage/>}/>
     </Routes>
   );
 }
