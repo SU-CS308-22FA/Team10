@@ -8,7 +8,8 @@ import Header from "../Header/Header";
 import ImageSlider from "./ImageSlider"
 import MainCards from "./MainCards/MainCards";
 import Signup from "../SignUp";
-
+import axios from "axios";
+import OvershadowedPlayer from "./OvershadowedPlayer";
 const Main = () => {
 	const navigate = useNavigate();
 	const handleLogout = () => {
@@ -25,6 +26,8 @@ const Main = () => {
 			<Header/>
 			<ImageSlider/>
 			<MainCards/>
+			
+			<OvershadowedPlayer/>
 			<button
               stype="button"
               className={styles.gray_btn}
