@@ -30,7 +30,8 @@ function App() {
 
   const [firstName, setName] = useState(randomName());
   const [email, setEmail] = useState(randomName());
-  const stored = { firstName, email };
+  const [team, setTeam] = useState(randomName());
+  const stored = { firstName, email, team };
 
   function handleEditComplete(result) {
     console.log("handleEditComplete", result);
@@ -40,8 +41,6 @@ function App() {
     setEditMode(false);
   }
 
-
-  
 
   return (
     <Routes>
