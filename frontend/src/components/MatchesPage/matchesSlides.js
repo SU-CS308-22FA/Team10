@@ -1,6 +1,6 @@
 import { useState } from "react";
-import img1 from "./matchAssets/Adsiz.png";
-import img2 from "./matchAssets/Adsiz2.png";
+import img1 from "./matchAssets/match_of_week.png";
+import img2 from "./matchAssets/detailed_match.png";
 import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
 
 const matchesSlides = () => {
