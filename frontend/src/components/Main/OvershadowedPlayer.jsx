@@ -2,37 +2,35 @@ import React from "react";
 import styles from "./card-style.css"
 import { Component } from 'react';
 import { Link, useNavigate } from "react-router-dom";
-import img1 from "../assets/58088-1572949088.webp"
-import img2 from "../assets/318077-1660050345.webp"
-import img3 from "../assets/68863-1591599151.webp"
-import cardInfo from "../../cardInfo"
+
+
 import axios from "axios";
 import { useState, useEffect } from "react";
 
 
-const Cards = () => {
+const OverShadowedPlayer = () => {
 
-    const [players, setPlayers] = React.useState(cardInfo);
+    const [card, setCard] = React.useState({});
   
     React.useEffect(() => {
       async function fetchData() {
           console.log("Ebrar");
-          const playerListUrl =
-            "http://localhost:8080/api/player/allplayers";
+          const playerUrl =
+            "http://localhost:8080/api/player/637a8ed97757477ec0e7085b";
             
-          const fetchedPlayerList = await axios.get(playerListUrl);
-          console.log(fetchedPlayerList);
-          setPlayers(fetchedPlayerList.data);
+          const fetchedPlayer = await axios.get(playerUrl);
+          console.log(fetchedPlayer.data);
+          setCard(fetchedPlayer.data);
       } 
       fetchData();
 
     },[]);
     
     
-      const renderCard = (card, index) => {
+      
         return(
-              
-                <div className="col" key={index} >
+          <div className="row row-cols-15 row-cols-md-5 g-6">
+                <div className="center "  >
                   
                     <div className="card h-100 w-100 text-center" >
                     <div className="overflow">
@@ -41,7 +39,7 @@ const Cards = () => {
                     <div className="card-body text-dark">
                         <h5 className="card-title">{card.name}</h5>
                         <p className="card-text">
-                          Team: {card.club} {<img src= {card.icon} width={23} alt="..."></img>} <br/> 
+                          Team: {card.club} {<img src= {card.icon} width={23} height={23} alt="..."></img>} <br/> 
                           Age: {card.age}<br/>
                           Position: {card.position}<br/>
                           Position Category: {card.position_category}<br/>
@@ -57,14 +55,13 @@ const Cards = () => {
                     </div>
                 </div>
            
-
+                </div>
         );
         
-    };
-    return <div className="row row-cols-4 row-cols-md-6 g-4">{players.map(renderCard)}</div>; //players.map yazıcaz
+   
 }
 
-export default Cards;
+export default OverShadowedPlayer;
 
 
 /*

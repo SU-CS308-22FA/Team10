@@ -33,4 +33,4 @@ const HeaderForMain = () => {
   );
 };
 
-export default Header;
+export default HeaderForMain;

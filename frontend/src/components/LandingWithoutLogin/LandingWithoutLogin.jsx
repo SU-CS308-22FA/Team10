@@ -6,10 +6,11 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import UserPage from '../UserPage/UserPage'
 import image from "../img/weekly_soccer.png"
-import Header from "./HeaderForMain";
+
 import ImageSlider from "../Main/ImageSlider"
 import MainCards from "../Main/MainCards/MainCards";
 import Signup from "../SignUp";
+import HeaderForMain from "./HeaderForMain";
 const LandingWithoutLogin = () => {
 	const handleLogout = () => {
 		sessionStorage.removeItem("token");
@@ -21,7 +22,7 @@ const LandingWithoutLogin = () => {
 	
 	return (
 		<div className={styles.main_container}>
-			<Header/>
+			<HeaderForMain/>
 			<ImageSlider/>
 			<MainCards/>
 			
