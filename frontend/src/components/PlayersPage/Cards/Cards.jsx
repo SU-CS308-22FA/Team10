@@ -70,7 +70,7 @@ const Cards = () => {
                           Age: {card.age}<br/>
                           Position: {card.position}<br/>
                           Position Category: {card.position_category}<br/>
-                          Merket Vaue: {card.market_value}M <br/>
+                          Market Vaue: {card.market_value} <br/>
                           Nationality: {card.nationality}
                           </p>
                         <Link to={card._id}>
