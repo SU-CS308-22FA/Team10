@@ -22,7 +22,7 @@ const HeaderForMain = () => {
             </a>
           </Typography>
 
-          <Tab LinkComponent={NavLink} to="/players" label="Players" />
+          <Tab LinkComponent={NavLink} to="/player" label="Players" />
           <Tab LinkComponent={NavLink} to="/matches" label="Matches" />
           <Tab LinkComponent={NavLink} to="/" label="Referees" />
           <Tab LinkComponent={NavLink} to="/aboutUs" label="About Us" />

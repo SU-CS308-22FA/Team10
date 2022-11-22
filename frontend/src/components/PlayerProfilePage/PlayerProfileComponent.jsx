@@ -1,21 +1,39 @@
-import React, { Component } from "react";
+
 import ReactRoundedImage from "react-rounded-image";
 import PlayerInfos from "./PlayerInfos/PlayerInfos";
 import "./PlayerProfileComponent.css";
 import { Fade } from "react-reveal";
 import img1 from "./messi.jpg";
 import Header from "../Header/Header";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import { inputAdornmentClasses } from "@mui/material";
+
 function PlayerProfile(props) {
-  const theme = props.theme;
+  const[inputs,setInputs] = useState({});
+  const id = useParams().id;
+  console.log();
+  useEffect(()=>{
+    const fetchHandler=async()=>{
+      await axios
+      .get(`http://localhost:8080/api/player/${id}`)
+      .then((res) => (res.data)).then(data=>setInputs(data.player))
+      
+    };
+    fetchHandler();
+  },[id]);
+
   return (
-    <div className="playerprofile-main">
+    
+<div className="playerprofile-main">
       <Header />
       <div className="basic-playerprofile">
         <Fade bottom duration={2000} distance="40px">
           <div className="heading-div">
             <div className="heading-img-div">
               <ReactRoundedImage
-                image={img1}
+                image={src= inputs.image}
                 roundedColor="#3b3db1"
                 imageWidth="250"
                 imageHeight="250"
@@ -27,8 +45,8 @@ function PlayerProfile(props) {
           </div>
           <div className="heading-div">
             <div className="heading-text-div">
-              <h1 className="heading-text" style={{ color: "#3B3DB1" }}>
-                Lionel Messi
+              <h1 className="heading-text"  style={{ color: "#3B3DB1" }}>
+               {inputs.name}
               </h1>
               <p className="heading-text-div" style={{ color: "#7F8DAA" }}>
                 Lionel Andrés Messi, is an Argentine professional footballer who
