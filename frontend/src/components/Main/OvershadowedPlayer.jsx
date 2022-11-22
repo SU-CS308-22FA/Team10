@@ -30,11 +30,11 @@ const OverShadowedPlayer = () => {
       
         return(
           <div className="row row-cols-15 row-cols-md-5 g-6">
-                <div className="center "  >
-                  
+                <div className="card-center cardalign w-50 h-50"  >
+                <h3 className="title">Highlighted Player of This Week</h3>
                     <div className="card h-100 w-100 text-center" >
                     <div className="overflow">
-                      <img src={card.image} className="card-img-top" alt="..." object-fit = "fill"/>
+                      <img src={card.image} className="card-img-center" alt="..." object-fit = "fill"/>
                     </div>
                     <div className="card-body text-dark">
                         <h5 className="card-title">{card.name}</h5>
@@ -53,6 +53,32 @@ const OverShadowedPlayer = () => {
                          </Link>
                     </div>
                     </div>
+                  
+                </div>
+                <div className="card-center cardalign w-50 h-50"  >
+                <h3 className="title">Upcoming Match: Very Soon!</h3>
+                    <div className="card h-100 w-100 text-center" >
+                    <div className="overflow">
+                      <img src={card.image} className="card-img-center" alt="..." object-fit = "fill"/>
+                    </div>
+                    <div className="card-body text-dark">
+                        <h5 className="card-title">{card.name}</h5>
+                        <p className="card-text">
+                          Team: {card.club} {<img src= {card.icon} width={23} height={23} alt="..."></img>} <br/> 
+                          Age: {card.age}<br/>
+                          Position: {card.position}<br/>
+                          Position Category: {card.position_category}<br/>
+                          Merket Vaue: {card.market_value}M <br/>
+                          Nationality: {card.nationality}
+                          </p>
+                        <Link to={card.link}>
+                            <button type="button" className="_btn">
+                               Go to profile
+                            </button>
+                         </Link>
+                    </div>
+                    </div>
+                  
                 </div>
            
                 </div>
