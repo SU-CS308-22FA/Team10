@@ -16,12 +16,14 @@
 }
 
 .heading-img-div {
-  margin-left: 40%;
+  margin-left: 37.5%;
   align-items: center;
   justify-content: center;
   max-height: 400px;
-  max-width: 250px;
+  max-width: 400px;
   margin-top: 60px;
+
+	object-fit: cover;
 }
 
 .heading-text-div {

@@ -11,7 +11,7 @@ const MainCards = () => {
     const navigate = useNavigate();
     function handlePlayersClicked() {
         console.log("Welcome to players page");
-        navigate("/players");
+        navigate("/player");
     }
     
     function handleRefereesClicked() {

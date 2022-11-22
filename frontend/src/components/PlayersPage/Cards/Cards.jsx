@@ -10,13 +10,38 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 
+
 const Cards = () => {
+
+  const [data, setData] = useState({});
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const url = "http://localhost:8080/api/player/allplayers" ;
+      const { data: res } = await axios.get(url, data);
+      console.log(data);
+      navigate("/playerprofile");
+      console.log(res.message);
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ) {
+        setError(error.response.data.message);
+      }
+    }
+  };
 
     const [players, setPlayers] = React.useState(cardInfo);
   
     React.useEffect(() => {
       async function fetchData() {
-          console.log("Ebrar");
+        
           const playerListUrl =
             "http://localhost:8080/api/player/allplayers";
             
@@ -28,7 +53,7 @@ const Cards = () => {
 
     },[]);
     
-    console.log("Gizem");
+    
       const renderCard = (card, index) => {
         return(
               
@@ -41,15 +66,15 @@ const Cards = () => {
                     <div className="card-body text-dark">
                         <h5 className="card-title">{card.name}</h5>
                         <p className="card-text">
-                          Team: {card.club} {card.icon} <br/>
+                          Team: {card.club} {<img src= {card.icon} width={23} alt="..."></img>} <br/> 
                           Age: {card.age}<br/>
                           Position: {card.position}<br/>
-                          Position Category: {card.position_cat}<br/>
-                          Merket Vaue: {card.market_value}M <br/>
+                          Position Category: {card.position_category}<br/>
+                          Market Vaue: {card.market_value} <br/>
                           Nationality: {card.nationality}
                           </p>
-                        <Link to={card.link}>
-                            <button type="button" className="_btn">
+                        <Link to={card._id}>
+                            <button type="button" className="_btn" >
                                Go to profile
                             </button>
                          </Link>
@@ -66,63 +91,3 @@ const Cards = () => {
 
 export default Cards;
 
-
-/*
-{
-          image: img1,
-          title: "Project 1",
-          text: "Static Website",
-          link:"/"
-        },
-        {
-          image:img2,
-          title: "Project 2",
-          text: "Newsletter Sign Up",
-          link:"#"
-        },
-        {
-          image:img3,
-          title: "Project 3",
-          text: "Reactdskglkjklgjlkdfjgldkfgkldjfklgjdfklgjfklsdfnklsjgkjsdflkgjskdljfgklsjflkdsjkfjslkfjslkjflkdjsklfjdslk App",
-          link:"#"
-        },
-        {
-          image: img1,
-          title: "Project 1",
-          text: "Static Website",
-          link:"#"
-        },
-        {
-          image:img2,
-          title: "Project 2",
-          text: "Newsletter Sign Up",
-          link:"#"
-        },
-        {
-          image:
-            img3,
-          title: "Project 3",
-          text: "Reactdskglkjklgjlkdfjgldkfgkldjfklgjdfklgjfklsdfnklsjgkjsdflkgjskdljfgklsjflkdsjkfjslkfjslkjflkdjsklfjdslk App",
-          link:"#"
-        },
-        {
-          image: img1,
-          title: "Project 1",
-          text: "Static Website",
-          link:"/"
-        },
-        {
-          image:
-            img2,
-          title: "Project 2",
-          text: "Newsletter Sign Up",
-          link:"/"
-        },
-        {
-          image:
-            img3,
-          title: "Project 3",
-          text: "Reactdskglkjklgjlkdfjgldkfgkldjfklgjdfklgjfklsdfnklsjgkjsdflkgjskdljfgklsjflkdsjkfjslkfjslkjflkdjsklfjdslk App",
-          link:"#"
-        },
-*/

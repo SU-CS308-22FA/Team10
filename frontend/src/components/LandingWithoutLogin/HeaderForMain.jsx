@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 import image from "../img/weekly_soccer.png";
 
 import styles from "./styles.modules.css";
-const Header = () => {
+const HeaderForMain = () => {
   return (
     <AppBar sx={{ backgroundColor: "#3b3db1" }} position="sticky">
       <Toolbar className={"justify-content-center"}>
@@ -22,7 +22,7 @@ const Header = () => {
             </a>
           </Typography>
 
-          <Tab LinkComponent={NavLink} to="/players" label="Players" />
+          <Tab LinkComponent={NavLink} to="/player" label="Players" />
           <Tab LinkComponent={NavLink} to="/matches" label="Matches" />
           <Tab LinkComponent={NavLink} to="/" label="Referees" />
           <Tab LinkComponent={NavLink} to="/aboutUs" label="About Us" />
@@ -33,4 +33,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderForMain;
