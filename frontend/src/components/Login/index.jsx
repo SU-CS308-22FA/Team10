@@ -15,12 +15,12 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "https://weeklysoccer.vercel.app/api/auth";
+      const url = "http://localhost:8080/api/auth";
       const { data: res } = await axios.post(url, data);
       console.log(res);
       sessionStorage.setItem("token", res.data);
       sessionStorage.setItem("user", JSON.stringify(res.user));
-      window.location = "/";
+      window.location = "/main";
     } catch (error) {
       if (
         error.response &&
