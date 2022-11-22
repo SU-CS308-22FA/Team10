@@ -10,7 +10,7 @@ router.get(
 	asyncHandler(async(req,res)=>{
 		console.log("Guler2");
 		const player = await Player.findById("637a8ed97757477ec0e7085b");
-		res.status(201).send({ message: "Player got successfully" });
+		res.status(201).send(player);
 	})
 )
 router.get(
@@ -21,6 +21,7 @@ router.get(
 		res.send(playerList);
 	})
 )
+/*
 router.get(
 	"/:id",
 	asyncHandler(async(req,res)=>{
@@ -29,7 +30,22 @@ router.get(
 		res.send(playerList);
 	})
 )
-
+*/
+const getById = async (req, res, next) => {
+	const id = req.params.id;
+	let player;
+	try {
+		console.log("gizem");
+	  player = await Player.findById(id);
+	} catch (err) {
+	  console.log(err);
+	}
+	if (!player) {
+	  return res.status(404).json({ message: "No Player found" });
+	}
+	return res.status(200).json({ player });
+  };
+router.get("/:id", getById);
 
 
 

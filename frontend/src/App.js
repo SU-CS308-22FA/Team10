@@ -49,12 +49,13 @@ function App() {
       <Route path="/login" exact element={<Login />} />
       <Route path="/" exact element = {<LandingWithoutLogin/>}/>
       <Route path="/aboutUs" exact element={<AboutUs />} />
-      <Route path="/players" exact element={<PlayersPage />} />
+      <Route path="/player" exact element={<PlayersPage />} />
+      <Route path="/player/:id" exact element={<PlayerProfile  />} />
 
-      <Route path="/playerprofile" exact element={<PlayerProfile />}/>
+      
 
       <Route path="/referees" exact element={<RefereesPage />} />
-      <Route path="/playerprofile" exact element={<PlayerProfile />} />
+      
 
       <Route path="/profile" exact element={<UserPage />} />
       <Route path="/profile/update" exact element={<EditableUserProfile />} />
