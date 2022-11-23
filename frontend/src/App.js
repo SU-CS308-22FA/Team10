@@ -18,6 +18,7 @@ import PlayerProfile from "./components/PlayerProfilePage/PlayerProfileComponent
 import LandingWithoutLogin from "./components/LandingWithoutLogin/LandingWithoutLogin";
 
 import RefereesPage from "./components/RefereesPage/RefereesPage";
+import RefereeProfile from "./components/RefereeProfilePage/RefereeProfileComponent";
 import axios from "axios";
 
 
@@ -51,10 +52,11 @@ function App() {
       <Route path="/aboutUs" exact element={<AboutUs />} />
       <Route path="/player" exact element={<PlayersPage />} />
       <Route path="/player/:id" exact element={<PlayerProfile  />} />
+      <Route path="/referee/:id" exact element={<RefereeProfile  />} />
 
       
 
-      <Route path="/referees" exact element={<RefereesPage />} />
+      <Route path="/referee" exact element={<RefereesPage />} />
       
 
       <Route path="/profile" exact element={<UserPage />} />
