@@ -8,7 +8,7 @@
 }
 
 .heading-div {
-  display: flex;
+  display:inline-flex;
 }
 
 .heading-div > * {

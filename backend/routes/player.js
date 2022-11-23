@@ -8,7 +8,7 @@ const asyncHandler = require('../middleware/asyncHandler');
 router.get(
 	"/637a8ed97757477ec0e7085bf",
 	asyncHandler(async(req,res)=>{
-		console.log("Guler2");
+		
 		const player = await Player.findById("637a8ed97757477ec0e7085b");
 		res.status(201).send(player);
 	})
@@ -16,7 +16,7 @@ router.get(
 router.get(
 	"/allplayers",
 	asyncHandler(async(req,res)=>{
-		console.log("Guler3");
+
 		const playerList = await Player.find();
 		res.send(playerList);
 	})
@@ -35,7 +35,7 @@ const getById = async (req, res, next) => {
 	const id = req.params.id;
 	let player;
 	try {
-		console.log("gizem");
+		
 	  player = await Player.findById(id);
 	} catch (err) {
 	  console.log(err);

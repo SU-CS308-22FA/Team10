@@ -40,6 +40,7 @@ function PlayerProfile(props) {
                 roundedSize="9"
                 borderRadius="150"
                 hoverColor="#FFFFFF"
+                allowFullScreen
               />
             </div>
           </div>
