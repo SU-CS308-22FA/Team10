@@ -16,10 +16,7 @@ export default function DeleteProfile({}) {
     e.preventDefault();
     try {
       const url =
-        "http://localhost:8080/api/users/" +
-        user._id +
-        "?_id=" +
-        user._id;
+        "https://weeklysoccer.com/api/users/" + user._id + "?_id=" + user._id;
       const {
         data: { user: updatedUser, message: message },
       } = await axios.delete(url, { email });

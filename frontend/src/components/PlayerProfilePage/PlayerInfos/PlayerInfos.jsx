@@ -7,56 +7,51 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { height } from "@mui/system";
 
-
 function PlayerInfos(props) {
   const theme = props.theme;
-  const[inputs,setInputs] = useState({});
+  const [inputs, setInputs] = useState({});
   const id = useParams().id;
   console.log();
-  useEffect(()=>{
-    const fetchHandler=async()=>{
+  useEffect(() => {
+    const fetchHandler = async () => {
       await axios
-      .get(`http://localhost:8080/api/player/${id}`)
-      .then((res) => (res.data)).then(data=>setInputs(data.player))
-      
+        .get(`https://weeklysoccer.com/api/player/${id}`)
+        .then((res) => res.data)
+        .then((data) => setInputs(data.player));
     };
     fetchHandler();
-  },[id]);
-const playerinfos = {
-  playerinfos: [
-    {
-      title: "Personal Information",
-      descriptions: [
-        "Full name: "+ inputs.name,
-        "Date of birth:	"+ inputs.dateOB,
-        "Place of birth:	"+ inputs.placeOB,
-        "Height:	"+inputs.height,
-        "Position(s):	"+inputs.position,
-      ],
-    },
-    {
-      title: "Club Information",
-      descriptions: ["Current team:	"+inputs.team, "Joined:	"+ inputs.joined, "Number: "+inputs.number],
-    },
-    
-    {
-      title: "Youth Career",
-      descriptions: [
-        
-        (inputs.youthCareer)+" ",
-      ],
-    },
-    {
-      title: "Transfer History",
-      descriptions: [
-        inputs.transferHist+" ",
-      ],
-    },
-    
-  ],
-};
+  }, [id]);
+  const playerinfos = {
+    playerinfos: [
+      {
+        title: "Personal Information",
+        descriptions: [
+          "Full name: " + inputs.name,
+          "Date of birth:	" + inputs.dateOB,
+          "Place of birth:	" + inputs.placeOB,
+          "Height:	" + inputs.height,
+          "Position(s):	" + inputs.position,
+        ],
+      },
+      {
+        title: "Club Information",
+        descriptions: [
+          "Current team:	" + inputs.team,
+          "Joined:	" + inputs.joined,
+          "Number: " + inputs.number,
+        ],
+      },
 
-
+      {
+        title: "Youth Career",
+        descriptions: [inputs.youthCareer + " "],
+      },
+      {
+        title: "Transfer History",
+        descriptions: [inputs.transferHist + " "],
+      },
+    ],
+  };
 
   return (
     <div className="main" id="playerinfos">
