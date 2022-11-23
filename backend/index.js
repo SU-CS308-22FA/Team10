@@ -5,6 +5,8 @@ const cors = require("cors");
 const connection = require("./db");
 const userRoutes = require("./routes/user");
 const authRoutes = require("./routes/auth");
+const playerRoutes = require("./routes/player");
+const matchRoutes = require("./routes/match");
 const path = require('path');
 // database connection
 connection();
@@ -16,6 +18,8 @@ app.use(cors());
 // routes
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/player", playerRoutes);
+app.use("/api/match", matchRoutes);
 
 const port = process.env.PORT || 8080;
 app.listen(port, console.log(`Listening on port ${port}...`));

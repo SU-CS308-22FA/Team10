@@ -10,6 +10,7 @@ const asyncHandler = require('../middleware/asyncHandler');
 
 router.post("/", asyncHandler(async (req, res) => {
 	try {
+		console.log("PostUser");
 		const { error } = validator(req.body);
 		if (error)
 			return res.status(400).send({ message: error.details[0].message });
@@ -44,6 +45,7 @@ router.get(
 	"/:id",
 	isValidObjectId,
 	asyncHandler(async(req,res)=>{
+		console.log("GetUser");
 		const user = await User.findById(req.params.id);
 		res.send(user);
 	})
@@ -53,10 +55,10 @@ router.put(
 	"/:id",
 	isValidObjectId,
 	asyncHandler(async(req,res)=>{
-		
+		console.log('UpdateUser');
 		await User.findByIdAndUpdate({_id: req.params.id},req.body);
 		const user = await User.findById(req.params.id);
-		res.status(200).send({message: "Updated successfully",  user: user})
+		res.status(200).send({message: "Updated successfully3",  user: user})
 	})
 )
 
@@ -64,6 +66,7 @@ router.delete(
 	"/:id",
 	isValidObjectId,
 	asyncHandler(async(req,res)=>{
+		console.log('DeleteUser');
 		await User.findByIdAndDelete(req.params.id);
 		res.status(200).send("User deleted successfully")
 	})

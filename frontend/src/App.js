@@ -1,5 +1,5 @@
 import { Route, Routes, Navigate } from "react-router-dom";
-import React from "react";
+import React, { useEffect } from "react";
 import Main from "./components/Main";
 import Signup from "./components/SignUp";
 import Login from "./components/Login";
@@ -12,6 +12,13 @@ import "./App.css";
 import UserPage from "./components/UserPage/UserPage";
 import PlayersPage from "./components/PlayersPage/PlayersPage";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
+import MatchesPage from "./components/MatchesPage/MatchPage";
+import PlayerProfile from "./components/PlayerProfilePage/PlayerProfileComponent";
+
+import LandingWithoutLogin from "./components/LandingWithoutLogin/LandingWithoutLogin";
+
+import RefereesPage from "./components/RefereesPage/RefereesPage";
+import axios from "axios";
 
 
 function randomName() {
@@ -23,7 +30,8 @@ function App() {
 
   const [firstName, setName] = useState(randomName());
   const [email, setEmail] = useState(randomName());
-  const stored = { firstName, email };
+  const [team, setTeam] = useState(randomName());
+  const stored = { firstName, email, team };
 
   function handleEditComplete(result) {
     console.log("handleEditComplete", result);
@@ -33,19 +41,25 @@ function App() {
     setEditMode(false);
   }
 
+
   return (
     <Routes>
-      {user && <Route path="/" exact element={<Main />} />}
+      {user && <Route path="/main" exact element={<Main />} />}
       <Route path="/signup" exact element={<Signup />} />
       <Route path="/login" exact element={<Login />} />
-      <Route path="/" element={<Navigate replace to="/login" />} />
+      <Route path="/" exact element = {<LandingWithoutLogin/>}/>
       <Route path="/aboutUs" exact element={<AboutUs />} />
       <Route path="/players" exact element={<PlayersPage />} />
-      <Route path="/profile" exact element={<UserPage />} />
-      
-      <Route path="/profile/update" exact element={<EditableUserProfile />} />
-      <Route path="/profile/delete" exact element={<DeleteProfile />} />
 
+      <Route path="/playerprofile" exact element={<PlayerProfile />}/>
+
+      <Route path="/referees" exact element={<RefereesPage />} />
+      <Route path="/playerprofile" exact element={<PlayerProfile />} />
+
+      <Route path="/profile" exact element={<UserPage />} />
+      <Route path="/profile/update" exact element={<EditableUserProfile />} />
+      <Route path="/profile/delete" exact element={<DeleteProfile />}/>
+      <Route path="/matches" exact element={<MatchesPage/>}/>
     </Routes>
   );
 }

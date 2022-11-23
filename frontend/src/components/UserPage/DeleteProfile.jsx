@@ -16,7 +16,7 @@ export default function DeleteProfile({}) {
     e.preventDefault();
     try {
       const url =
-        "https://weeklysoccer.vercel.app/api/users/" +
+        "http://localhost:8080/api/users/" +
         user._id +
         "?_id=" +
         user._id;
