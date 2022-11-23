@@ -2,8 +2,8 @@ import React from "react";
 import styles from "./matchCard-style.css";
 import { Component } from "react";
 import { Link } from "react-router-dom";
-import img1 from "../matchAssets/mac1.jpg";
-import img2 from "../matchAssets/mac2.jpg";
+import img1 from "../matchAssets/match.png";
+import img2 from "../matchAssets/match.png";
 
 const matchCards = () => {
   const cardInfo = [
@@ -22,7 +22,7 @@ const matchCards = () => {
   ];
   const renderCard = (card, index) => {
     return (
-      <div className="col" >
+      <div className="col">
         <div className="card h-100 w-100 text-center" key={index}>
           <div className="overflow">
             <img src={card.image} class="card-img-top" alt="..." />

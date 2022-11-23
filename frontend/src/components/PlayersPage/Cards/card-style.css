@@ -20,14 +20,7 @@ body{
     font-size: 0.9rem;
     padding: 0.4rem 1.9rem;
 }
-.card-img-top{
-	
-	float: left;
-	width:  300px;
-	height: 300px;
-	object-fit: cover;
-	
-}
+
 ._btn{
 	border: none;
 	outline: none;

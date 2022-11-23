@@ -1,0 +1,73 @@
+.refereeprofile-main {
+  width: 100%;
+}
+
+.basic-refereeprofile {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.heading-div {
+  display: flex;
+}
+
+.heading-div > * {
+  flex: 1;
+}
+
+.heading-img-div {
+  margin-left: 37.5%;
+  align-items: center;
+  justify-content: center;
+  max-height: 400px;
+  max-width: 400px;
+  margin-top: 60px;
+
+  object-fit: cover;
+}
+
+.heading-text-div {
+  text-align: center;
+  justify-content: center;
+  margin-right: 3%;
+  margin-left: 3%;
+}
+
+.heading-text {
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 1.1;
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+
+.heading-sub-text {
+  font-size: 30px;
+  text-align: center;
+}
+
+@media (max-width: 1380px) {
+  .heading-text {
+    font-size: 50px;
+    margin-top: 80px;
+  }
+  .heading-sub-text {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading-text {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .heading-sub-text {
+    font-size: 20px;
+  }
+
+  .heading-div {
+    flex-direction: column;
+  }
+}
