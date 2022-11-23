@@ -6,10 +6,10 @@ const {User} = require("../models/user");
 const asyncHandler = require('../middleware/asyncHandler');
 
 router.get(
-	"/637a8ed97757477ec0e7085bf",
+	"/637d4c95f1ebee2cd4e7fcad",
 	asyncHandler(async(req,res)=>{
 		
-		const player = await Player.findById("637a8ed97757477ec0e7085b");
+		const player = await Player.findById("637d4c95f1ebee2cd4e7fcad");
 		res.status(201).send(player);
 	})
 )
@@ -45,6 +45,7 @@ const getById = async (req, res, next) => {
 	}
 	return res.status(200).json({ player });
   };
+
 router.get("/:id", getById);
 
 

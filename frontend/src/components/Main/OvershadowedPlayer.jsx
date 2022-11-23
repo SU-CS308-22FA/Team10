@@ -16,7 +16,7 @@ const OverShadowedPlayer = () => {
       async function fetchData() {
           console.log("Ebrar");
           const playerUrl =
-            "http://localhost:8080/api/player/637a8d667757477ec0e70859";
+            "http://localhost:8080/api/player/637d4c95f1ebee2cd4e7fcad";
             
           const fetchedPlayer = await axios.get(playerUrl);
           console.log(fetchedPlayer.data);
