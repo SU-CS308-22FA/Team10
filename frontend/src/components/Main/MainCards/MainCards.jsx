@@ -16,7 +16,7 @@ const MainCards = () => {
     
     function handleRefereesClicked() {
         console.log("Welcome to referees page");
-        navigate("/");
+        navigate("/referee");
     }
     function handleMatchesClicked() {
         console.log("Welcome to matches page");

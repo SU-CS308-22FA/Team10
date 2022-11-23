@@ -2,7 +2,7 @@ import ReactRoundedImage from "react-rounded-image";
 import RefereeInfos from "./RefereeInfos/RefereeInfos";
 import "./RefereeProfileComponent.css";
 import { Fade } from "react-reveal";
-import img1 from "./messi.jpg";
+
 import Header from "../Header/Header";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
