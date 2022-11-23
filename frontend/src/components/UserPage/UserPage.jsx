@@ -8,7 +8,7 @@ import styles from "./styles.module.css";
 import Header from "../Header/Header";
 import image from "./user_pp3.jpeg";
 import team from "./fenerbahce_logo.png";
-import SelectTeam from './SelectTeam';
+
 const UserPage = () =>{
 
   const [data, setData] = useState({

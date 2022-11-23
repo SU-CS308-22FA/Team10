@@ -18,16 +18,23 @@ const Main = () => {
 		window.location.reload();
 		navigate("/");
 	};
-
+	const [error, setError] = useState("");
 	const [value, setValue] = useState();
-	
+	function handlePlayersClicked() {
+        console.log("Welcome to players page");
+        navigate("/players");
+    }
 	return (
 		<div className={styles.main_container}>
 			<Header/>
+			
 			<ImageSlider/>
+			
+			<OvershadowedPlayer/> 
+			
 			<MainCards/>
 			
-			<OvershadowedPlayer/>
+			
 			<button
               stype="button"
               className={styles.gray_btn}

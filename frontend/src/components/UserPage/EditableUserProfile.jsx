@@ -5,7 +5,7 @@ import { purple, red } from "@mui/material/colors";
 import { withTheme } from "@emotion/react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
-import SelectTeam from "./SelectTeam";
+
 
 export default function EditableUserProfile({}) {
   const navigate = useNavigate();
