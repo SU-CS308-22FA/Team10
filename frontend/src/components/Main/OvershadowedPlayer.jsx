@@ -31,12 +31,12 @@ const OverShadowedPlayer = () => {
     React.useEffect(() => {
       async function fetchData() {
           console.log("Ebrar");
-          const playerUrl =
-            "http://localhost:8080/api/match/637dfd469953a84747abc2ba";
+          const matchUrl =
+            "http://localhost:8080/api/match/637e05299953a84747abc2bb";
             
-          const fetchedPlayer = await axios.get(playerUrl);
-          console.log(fetchedPlayer.data);
-          setCard2(fetchedPlayer.data);
+          const fetchedmatch= await axios.get(matchUrl);
+          console.log(fetchedmatch.data);
+          setCard2(fetchedmatch.data);
       } 
       fetchData();
 
@@ -72,11 +72,9 @@ const OverShadowedPlayer = () => {
                   
                 </div>
                 
-                    
-                  
                
            
-                </div>
+          </div>
         );
         
    
