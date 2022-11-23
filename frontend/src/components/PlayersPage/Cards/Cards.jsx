@@ -17,7 +17,7 @@ const Cards = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "https://weeklysoccer.com/api/player/allplayers";
+      const url = "https://weeklysoccer.vercel.app/api/player/allplayers";
       const { data: res } = await axios.get(url, data);
       console.log(data);
       navigate("/playerprofile");
@@ -37,7 +37,8 @@ const Cards = () => {
 
   React.useEffect(() => {
     async function fetchData() {
-      const playerListUrl = "https://weeklysoccer.com/api/player/allplayers";
+      const playerListUrl =
+        "https://weeklysoccer.vercel.app/api/player/allplayers";
 
       const fetchedPlayerList = await axios.get(playerListUrl);
       console.log(fetchedPlayerList);

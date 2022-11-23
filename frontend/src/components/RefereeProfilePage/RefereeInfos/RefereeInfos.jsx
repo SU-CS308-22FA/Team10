@@ -15,7 +15,7 @@ function RefereeInfos(props) {
   useEffect(() => {
     const fetchHandler = async () => {
       await axios
-        .get(`https://weeklysoccer.com/api/referee/${id}`)
+        .get(`https://weeklysoccer.vercel.app/api/referee/${id}`)
         .then((res) => res.data)
         .then((data) => setInputs(data.referee));
     };

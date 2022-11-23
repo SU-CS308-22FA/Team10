@@ -16,7 +16,7 @@ function PlayerProfile(props) {
   useEffect(() => {
     const fetchHandler = async () => {
       await axios
-        .get(`https://weeklysoccer.com/api/player/${id}`)
+        .get(`https://weeklysoccer.vercel.app/api/player/${id}`)
         .then((res) => res.data)
         .then((data) => setInputs(data.player));
     };

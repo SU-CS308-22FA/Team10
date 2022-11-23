@@ -18274,7 +18274,7 @@
                             t.preventDefault(),
                             (e.prev = 1),
                             (o =
-                              "https://weeklysoccer.com/api/users/" +
+                              "https://weeklysoccer.vercel.app/api/users/" +
                               r._id +
                               "?_id=" +
                               r._id),
@@ -25655,9 +25655,12 @@
                             return (
                               t.preventDefault(),
                               (e.prev = 1),
-                              "https://weeklysoccer.com/api/users",
+                              "https://weeklysoccer.vercel.app/api/users",
                               (e.next = 5),
-                              Pn.post("https://weeklysoccer.com/api/users", n)
+                              Pn.post(
+                                "https://weeklysoccer.vercel.app/api/users",
+                                n
+                              )
                             );
                           case 5:
                             (r = e.sent),
@@ -25763,10 +25766,10 @@
                           case 0:
                             return (
                               console.log("Ebrar"),
-                              "https://weeklysoccer.com/api/player/637a8ed97757477ec0e7085b",
+                              "https://weeklysoccer.vercel.app/api/player/637a8ed97757477ec0e7085b",
                               (e.next = 4),
                               Pn.get(
-                                "https://weeklysoccer.com/api/player/637a8ed97757477ec0e7085b"
+                                "https://weeklysoccer.vercel.app/api/player/637a8ed97757477ec0e7085b"
                               )
                             );
                           case 4:
@@ -25910,9 +25913,12 @@
                             return (
                               t.preventDefault(),
                               (e.prev = 1),
-                              "https://weeklysoccer.com/api/auth",
+                              "https://weeklysoccer.vercel.app/api/auth",
                               (e.next = 5),
-                              Pn.post("https://weeklysoccer.com/api/auth", n)
+                              Pn.post(
+                                "https://weeklysoccer.vercel.app/api/auth",
+                                n
+                              )
                             );
                           case 5:
                             (r = e.sent),
@@ -26966,7 +26972,7 @@
                               t.preventDefault(),
                               (e.prev = 1),
                               (o =
-                                "https://weeklysoccer.com/api/users/" +
+                                "https://weeklysoccer.vercel.app/api/users/" +
                                 r._id +
                                 "?_id=" +
                                 r._id),
@@ -27200,10 +27206,10 @@
                       switch ((e.prev = e.next)) {
                         case 0:
                           return (
-                            "https://weeklysoccer.com/api/player/allplayers",
+                            "https://weeklysoccer.vercel.app/api/player/allplayers",
                             (e.next = 3),
                             Pn.get(
-                              "https://weeklysoccer.com/api/player/allplayers"
+                              "https://weeklysoccer.vercel.app/api/player/allplayers"
                             )
                           );
                         case 3:
@@ -27497,7 +27503,9 @@
                             return (
                               (e.next = 2),
                               Pn.get(
-                                "https://weeklysoccer.com/api/player/".concat(i)
+                                "https://weeklysoccer.vercel.app/api/player/".concat(
+                                  i
+                                )
                               )
                                 .then(function (e) {
                                   return e.data;
@@ -27576,7 +27584,7 @@
                               return (
                                 (e.next = 2),
                                 Pn.get(
-                                  "https://weeklysoccer.com/api/player/".concat(
+                                  "https://weeklysoccer.vercel.app/api/player/".concat(
                                     a
                                   )
                                 )
@@ -27738,10 +27746,10 @@
                         switch ((e.prev = e.next)) {
                           case 0:
                             return (
-                              "https://weeklysoccer.com/api/referee/allreferees",
+                              "https://weeklysoccer.vercel.app/api/referee/allreferees",
                               (e.next = 3),
                               Pn.get(
-                                "https://weeklysoccer.com/api/referee/allreferees"
+                                "https://weeklysoccer.vercel.app/api/referee/allreferees"
                               )
                             );
                           case 3:

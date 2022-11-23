@@ -23,7 +23,10 @@ export default function EditableUserProfile({}) {
     e.preventDefault();
     try {
       const url =
-        "https://weeklysoccer.com/api/users/" + user._id + "?_id=" + user._id;
+        "https://weeklysoccer.vercel.app/api/users/" +
+        user._id +
+        "?_id=" +
+        user._id;
       const {
         data: { user: updatedUser, message: message },
       } = await axios.put(url, {

@@ -12,7 +12,7 @@ const Overshadowed_Player = () => {
     async function fetchData() {
       console.log("Ebrar");
       const playerURL =
-        "https://weeklysoccer.com/api/player/63624526fe649491f2e3057f";
+        "https://weeklysoccer.vercel.app/api/player/63624526fe649491f2e3057f";
 
       const fetchedPlayer = await axios.get(playerURL);
       console.log(fetchedPlayer);
