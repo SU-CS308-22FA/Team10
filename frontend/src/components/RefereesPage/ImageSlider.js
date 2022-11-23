@@ -1,6 +1,6 @@
 import { useState } from "react";
-import img1 from "./assets/player_messi.png";
-import img2 from "./assets/player_ronaldo.png";
+import img1 from "./assets/cuneyt.png";
+import img2 from "./assets/firat.png";
 import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
 
 const ImageSlider = () => {

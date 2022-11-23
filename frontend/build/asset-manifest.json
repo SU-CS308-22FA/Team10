@@ -1,13 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.78e1b93c.css",
-    "main.js": "/static/js/main.de2a8c7d.js",
+    "main.js": "/static/js/main.b714cd3f.js",
     "static/media/football.png": "/static/media/football.83d7b4fd74fc866b739d.png",
     "static/media/detailed_match.png": "/static/media/detailed_match.57a2dc2dcabc74154e27.png",
     "static/media/referee.png": "/static/media/referee.f9886b0effef3325381d.png",
-    "static/media/player_ronaldo.png": "/static/media/player_ronaldo.2135ce1c6f970d53fbde.png",
-    "static/media/player_messi.png": "/static/media/player_messi.397dc041e8b1bff026b2.png",
+    "static/media/player_ronaldo.png": "/static/media/player_ronaldo.e2bf925bd4139415fd2c.png",
+    "static/media/player_messi.png": "/static/media/player_messi.cad9d06e03c5c55673e7.png",
+    "static/media/cuneyt.png": "/static/media/cuneyt.3c153424f964a13934a0.png",
     "static/media/match.png": "/static/media/match.fa9f3d7dd1864438c8cb.png",
+    "static/media/firat.png": "/static/media/firat.0f8295a15f5d29671faa.png",
     "static/media/player.png": "/static/media/player.ee88eb2b0182473428a0.png",
     "static/media/landing2.png": "/static/media/landing2.42f4be695cd427591b15.png",
     "static/media/match_of_week.png": "/static/media/match_of_week.0b03789780ced5901c5c.png",
@@ -20,10 +22,10 @@
     "static/media/58088-1572949088.webp": "/static/media/58088-1572949088.66ede6bfe15cc48a3f09.webp",
     "index.html": "/index.html",
     "main.78e1b93c.css.map": "/static/css/main.78e1b93c.css.map",
-    "main.de2a8c7d.js.map": "/static/js/main.de2a8c7d.js.map"
+    "main.b714cd3f.js.map": "/static/js/main.b714cd3f.js.map"
   },
   "entrypoints": [
     "static/css/main.78e1b93c.css",
-    "static/js/main.de2a8c7d.js"
+    "static/js/main.b714cd3f.js"
   ]
 }

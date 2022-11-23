@@ -67,19 +67,10 @@ const Cards = () => {
               <br />
               Domestic Leagues:
               <br />
-              <p className="card-subtext">
-                {card.domestic_league[0]}
-                <br />
-                {card.domestic_league[1]}
-                <br />
-              </p>
+              <p className="card-subtext">{card.domestic_league}</p>
               International Leagues:
               <br />
-              <p className="card-subtext">
-                {card.international_league[0]}
-                <br />
-                {card.international_league[1]}{" "}
-              </p>
+              <p className="card-subtext">{card.international_league}</p>
             </p>
             <Link to={card._id}>
               <button type="button" className="_btn">
@@ -92,7 +83,7 @@ const Cards = () => {
     );
   };
   return (
-    <div className="row row-cols-4 row-cols-md-6 g-4">
+    <div className="row row-cols-4 row-cols-md-4 g-4">
       {referees.map(renderCard)}
     </div>
   );

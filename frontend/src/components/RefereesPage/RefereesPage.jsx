@@ -10,7 +10,7 @@ const RefereesPage = () => {
       <Header />
 
       <p className="title">This Week's Referees</p>
-
+      <ImageSlider />
       <Cards />
     </div>
   );

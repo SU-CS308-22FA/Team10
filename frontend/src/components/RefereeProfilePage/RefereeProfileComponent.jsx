@@ -46,6 +46,14 @@ function RefereeProfile(props) {
               <h1 className="heading-text" style={{ color: "#3B3DB1" }}>
                 {inputs.name}
               </h1>
+              <p className="heading-sub-text" style={{ color: "#3B3DB1" }}>
+                Biography
+              </p>
+              <text> {inputs.bio} </text>
+              <p className="heading-sub-text" style={{ color: "#3B3DB1" }}>
+                Career
+              </p>
+              <text> {inputs.career} </text>
             </div>
           </div>
         </Fade>
