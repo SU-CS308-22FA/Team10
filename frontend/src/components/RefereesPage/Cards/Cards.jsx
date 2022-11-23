@@ -62,23 +62,23 @@ const Cards = () => {
             <h5 className="card-title">{card.name}</h5>
             <p className="card-text">
               Age:
-              <text className="card-subtext">{card.age}</text>
+              <p className="card-subtext">{card.age}</p>
               <br />
               Domestic Leagues:
               <br />
-              <text className="card-subtext">
+              <p className="card-subtext">
                 {card.domestic_league[0]}
                 <br />
                 {card.domestic_league[1]}
                 <br />
-              </text>
+              </p>
               International Leagues:
               <br />
-              <text className="card-subtext">
+              <p className="card-subtext">
                 {card.international_league[0]}
                 <br />
                 {card.international_league[1]}{" "}
-              </text>
+              </p>
             </p>
             <Link to={card._id}>
               <button type="button" className="_btn">
