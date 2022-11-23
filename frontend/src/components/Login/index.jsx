@@ -20,7 +20,7 @@ const Login = () => {
       console.log(res);
       sessionStorage.setItem("token", res.data);
       sessionStorage.setItem("user", JSON.stringify(res.user));
-      window.location = "/main";
+      window.location = "/";
     } catch (error) {
       if (
         error.response &&
