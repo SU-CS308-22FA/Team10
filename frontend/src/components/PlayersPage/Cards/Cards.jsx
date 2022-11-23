@@ -61,7 +61,7 @@ const Cards = () => {
                   
                     <div className="card h-100 w-100 text-center" >
                     <div className="overflow">
-                      <img src={card.image} className="card-img-top" alt="..." object-fit = "fill"/>
+                      <img src={card.image} className="card-img-top1" alt="..." object-fit = "fill"/>
                     </div>
                     <div className="card-body text-dark">
                         <h5 className="card-title">{card.name}</h5>
