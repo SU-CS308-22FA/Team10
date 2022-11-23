@@ -3,24 +3,17 @@ import React from "react";
 
 import Cards from "./Cards/Cards";
 import ImageSlider from "./ImageSlider";
-import Header from "../Header/Header"
-const PlayersPage = () => {
-	
-	
-	
-    return (
-		<div className={styles.main_container}>
-			<Header/>
-			
-			
-			<ImageSlider/>
-			
-			<p className="title">This Week's Referees</p>
-			
-			<Cards/>
-		</div>
-    );
-}
+import Header from "../Header/Header";
+const RefereesPage = () => {
+  return (
+    <div className={styles.main_container}>
+      <Header />
 
+      <p className="title">This Week's Referees</p>
 
-export default PlayersPage;
+      <Cards />
+    </div>
+  );
+};
+
+export default RefereesPage;
