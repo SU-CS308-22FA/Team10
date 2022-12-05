@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import UserPage from "./components/UserPage/UserPage";
 import PlayersPage from "./components/PlayersPage/PlayersPage";
+import PlayerRate from "./components/PlayerRate/PlayerRate";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import MatchesPage from "./components/MatchesPage/MatchPage";
 import PlayerProfile from "./components/PlayerProfilePage/PlayerProfileComponent";
@@ -52,6 +53,7 @@ function App() {
       <Route path="/aboutUs" exact element={<AboutUs />} />
       <Route path="/player" exact element={<PlayersPage />} />
       <Route path="/player/:id" exact element={<PlayerProfile  />} />
+      <Route path="/player/rate/:id" exact element={<PlayerRate  />} />
       <Route path="/referee/:id" exact element={<RefereeProfile  />} />
 
       
