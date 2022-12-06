@@ -11,7 +11,7 @@ const matchRoutes = require("./routes/match");
 const path = require('path');
 
 const refereeRoutes = require("./routes/referee");
-const path = require("path");
+
 
 // database connection
 connection();

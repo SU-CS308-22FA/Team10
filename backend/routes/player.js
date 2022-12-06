@@ -46,6 +46,21 @@ const getById = async (req, res, next) => {
 	return res.status(200).json({ player });
   };
 router.get("/:id", getById);
+const rateById = async (req, res, next) => {
+	const id = req.params.id;
+	let player;
+	try {
+		
+	  player = await Player.findById(id);
+	} catch (err) {
+	  console.log(err);
+	}
+	if (!player) {
+	  return res.status(404).json({ message: "No Player found" });
+	}
+	return res.status(200).json({ player });
+  };
+router.get("rate/:id", rateById);
 
 
 

@@ -24,7 +24,7 @@ const Cards = () => {
       const url = "http://localhost:8080/api/player/allplayers" ;
       const { data: res } = await axios.get(url, data);
       console.log(data);
-      navigate("/playerprofile");
+      
       console.log(res.message);
     } catch (error) {
       if (
@@ -76,6 +76,11 @@ const Cards = () => {
                         <Link to={card._id}>
                             <button type="button" className="_btn" >
                                Go to profile
+                            </button>
+                         </Link>
+                        <Link to={"rate/"+card._id}>
+                            <button type="button" className="_btn" >
+                               Rate
                             </button>
                          </Link>
                     </div>
