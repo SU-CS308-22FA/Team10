@@ -9,7 +9,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { inputAdornmentClasses } from "@mui/material";
 import styles from "./PlayerRate.css";
-
+import CommentSection from "./CommentSection";
 function PlayerRate(props) {
   const[inputs,setInputs] = useState({});
   const id = useParams().id;
@@ -49,7 +49,7 @@ function PlayerRate(props) {
               <h1 className="heading-text"  style={{ color: "#3B3DB1" }}>
                {inputs.name}
               </h1>
-             
+             <CommentSection/>
             </div>
           </div>
         </Fade>
