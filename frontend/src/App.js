@@ -16,7 +16,7 @@ import MatchesPage from "./components/MatchesPage/MatchPage";
 import PlayerProfile from "./components/PlayerProfilePage/PlayerProfileComponent";
 
 import LandingWithoutLogin from "./components/LandingWithoutLogin/LandingWithoutLogin";
-
+import Verification from "./components/UserPage/Verification";
 import RefereesPage from "./components/RefereesPage/RefereesPage";
 import RefereeProfile from "./components/RefereeProfilePage/RefereeProfileComponent";
 import axios from "axios";
@@ -62,6 +62,7 @@ function App() {
       <Route path="/profile" exact element={<UserPage />} />
       <Route path="/profile/update" exact element={<EditableUserProfile />} />
       <Route path="/profile/delete" exact element={<DeleteProfile />}/>
+      <Route path="/profile/verify" exact element={<Verification />}/>
       <Route path="/matches" exact element={<MatchesPage/>}/>
     </Routes>
   );
