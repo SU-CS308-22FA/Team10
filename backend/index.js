@@ -8,7 +8,7 @@ const connection = require("./db");
 const userRoutes = require("./routes/user");
 const authRoutes = require("./routes/auth");
 const playerRoutes = require("./routes/player");
-const RatingRoutes = require("./routes/Ratings");
+
 
 
 const matchRoutes = require("./routes/match");
@@ -30,7 +30,7 @@ app.use(cors());
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/player", playerRoutes);
-app.use('/api/ratings',RatingRoutes);
+
 
 
 app.use("/api/match", matchRoutes);

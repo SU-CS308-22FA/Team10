@@ -23,13 +23,17 @@ const playerSchema = new mongoose.Schema({
       postedby: {type:mongoose.Schema.Types.ObjectId, ref:"user"},
     },
   ],
+  
   totalrating: {
-    type: String,
+    type:Number,
     default: 0,
   }
   
+  
 
-});
+},
+{timestamps : true}
+);
 
 
 
