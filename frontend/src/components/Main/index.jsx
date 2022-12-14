@@ -22,7 +22,7 @@ const Main = () => {
 	const [value, setValue] = useState();
 	function handlePlayersClicked() {
         console.log("Welcome to players page");
-        navigate("/players");
+        navigate("/player");
     }
 	return (
 		<div className={styles.main_container}>

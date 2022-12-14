@@ -24,7 +24,7 @@ const Cards = () => {
       const url = "http://localhost:8080/api/player/allplayers" ;
       const { data: res } = await axios.get(url, data);
       console.log(data);
-      navigate("/playerprofile");
+      
       console.log(res.message);
     } catch (error) {
       if (
@@ -69,13 +69,17 @@ const Cards = () => {
                           Team: {card.club} {<img src= {card.icon} width={23} alt="..."></img>} <br/> 
                           Age: {card.age}<br/>
                           Position: {card.position}<br/>
-                          Position Category: {card.position_category}<br/>
                           Market Vaue: {card.market_value} <br/>
                           Nationality: {card.nationality}
                           </p>
                         <Link to={card._id}>
                             <button type="button" className="_btn" >
                                Go to profile
+                            </button>
+                         </Link>
+                        <Link to={"rate/"+card._id}>
+                            <button type="button" className="_btn" >
+                               Rate
                             </button>
                          </Link>
                     </div>

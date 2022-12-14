@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
 
 userSchema.methods.generateAuthToken = function () {
   const token = jwt.sign({ _id: this._id }, process.env.JWTPRIVATEKEY, {
-    expiresIn: "7d",
+    expiresIn: "30d",
   });
   return token;
 };
@@ -29,8 +29,6 @@ const validator = (data) => {
   const schema = Joi.object({
     firstName: Joi.string().required().label("First Name"),
     lastName: Joi.string().required().label("Last Name"),
-    image: Joi.image().label("image"),
-    team: Joi.string().required().label("Team"),
     email: Joi.string().email().required().label("Email"),
     password: passwordComplexity().required().label("Password"),
   })
