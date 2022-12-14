@@ -31,7 +31,18 @@ function MatchProfile(props) {
           <div className="heading-div">
             <div className="heading-img-div" style={{ display: "flex" }}>
               <ReactRoundedImage
-                image={inputs.image}
+                image={inputs.image1}
+                roundedColor="#3b3db1"
+                imageWidth="250"
+                imageHeight="250"
+                roundedSize="9"
+                borderRadius="150"
+                hoverColor="#FFFFFF"
+              />
+            </div>
+            <div className="heading-img-div" style={{ display: "flex" }}>
+              <ReactRoundedImage
+                image={inputs.image2}
                 roundedColor="#3b3db1"
                 imageWidth="250"
                 imageHeight="250"
@@ -44,7 +55,7 @@ function MatchProfile(props) {
           <div className="heading-div">
             <div className="heading-text-div">
               <h1 className="heading-text" style={{ color: "#3B3DB1" }}>
-                {inputs.name}
+                {inputs.team1} vs. {inputs.team2}
               </h1>
             </div>
           </div>

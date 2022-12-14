@@ -24,14 +24,14 @@ function RefereeInfos(props) {
   const matchinfos = {
     matchinfos: [
       {
-        title: "Personal Information",
-        descriptions: ["Full name: " + inputs.name, "Age:	" + inputs.age],
+        title: "Information",
+        descriptions: ["Date: " + inputs.date, "Time:	" + inputs.time],
       },
       {
-        title: "Career Information",
+        title: "Place",
         descriptions: [
-          "Domestic Leagues: " + inputs.domestic_league,
-          "International Leagues:	" + inputs.international_league,
+          "Stadium: " + inputs.place,
+          
         ],
       },
     ],
