@@ -24,21 +24,16 @@ export default function Verification({}) {
         console.log(uploadedFile);
         if(uploadedFile)
         {
-            console.log(uploadedFile.name);
+            console.log(uploadedFile.data);
             console.log(uploadedFile.type);
             let formData = new FormData();
-            formData.append(
-                "myFile",
-                uploadedFile,
-                uploadedFile.name,
-                uploadedFile.data
-              );
+            
             formData.append("file", uploadedFile.data);
             console.log(formData);
 
             axios.post("http://localhost:8080/api/drive/google-drive" ,formData,{
             headers: {
-                "Content-type":  'multipart/form-data'
+              'Content-Type': 'multipart/form-data'
               }
         }).then(res=>{
             
@@ -80,7 +75,6 @@ export default function Verification({}) {
     }
     const [data, setData] = useState({
         user: "63624526fe649491f2e3057f",
-        date:1670970230922,
         file: "https://drive.google.com/drive/u/1/folders/1g4jdpAPgTRxWV-fIWrWbPop3CQAifXaI",
         name: "ebrarguler",
       });
@@ -103,7 +97,15 @@ export default function Verification({}) {
           }
         }
       };
-     
+      const handleFileChange = (e) => {
+        const uploadedFile = {
+          preview: URL.createObjectURL(e.target.files[0]),
+          data: e.target.files[0],
+        };
+        console.log(uploadedFile);
+       setUploadedFile(uploadedFile);
+      };
+    
     
     return (
       <div className={styles.login_container}>
@@ -112,15 +114,8 @@ export default function Verification({}) {
             <form className={styles.form_container} onSubmit={handleUploadClicked}>
               <h1>Verify your account:</h1>
               
-              <h5> Upload your verification file as a PDF/PNG/JPG: </h5><input 
-                  type="file" 
-                  value= {file}
-                  verification = {true}
-                  
-                  onChange={(e) => setUploadedFile(e.target.files[0])}
-                  />
-             
-             
+              <h5> Upload your verification file as a PDF/PNG/JPG: </h5><input type="file" name="file" onChange={handleFileChange}></input>
+                
               <button
                 stype="button"
                 className={styles.purple_btn}

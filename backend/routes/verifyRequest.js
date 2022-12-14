@@ -22,14 +22,12 @@ router.post("/", asyncHandler(async (req, res) => {
 				.status(409)
 				.send({ message: "User already verified!" });
 
-		const salt = await bcrypt.genSalt(Number(process.env.SALT));
-		const licence = await bcrypt.hash(req.body.file, salt);
-		
 
-		await new verifyRequest({ ...req.body, file: licence }).save(); //db ye kayıt
+		await new verifyRequest({ ...req.body,  date: Date.now() }).save(); //db ye kayıt
 
 		res.status(201).send({ message: "User verify request is sent successfully" });
 	} catch (error) {
+		console.log(error);
 		res.status(500).send({ message: "Internal Server Error" });
 	}
 }));

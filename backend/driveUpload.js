@@ -25,13 +25,13 @@ const driveUpload = async(file) => {
     const driveService = google.drive(  {version: 'v3', auth} );
 
     let fileMetaData= {
-        name: 'photo1.jpg',
+        name: file.originalname,
         parents: ['1g4jdpAPgTRxWV-fIWrWbPop3CQAifXaI']
     }
 
     let media = {
         mimeType: 'image/jpg',
-        body: bufferToStream(file.buffer)
+        body:  fs.createReadStream(file.path)
 
     }
 
