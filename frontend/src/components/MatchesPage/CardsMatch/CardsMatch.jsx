@@ -48,7 +48,7 @@ const CardsMatch = () => {
                     Date: {card.date}<br/>
                     Time: {card.time}M <br/>
                     </p>
-              <Link to={card.link}>
+              <Link to={card._id}>
                 <button type="button" className="_btn">
                   Go to match details
                 </button>

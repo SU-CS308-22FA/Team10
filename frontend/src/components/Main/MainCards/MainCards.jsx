@@ -20,7 +20,7 @@ const MainCards = () => {
     }
     function handleMatchesClicked() {
         console.log("Welcome to matches page");
-        navigate("/");
+        navigate("/match");
     }
     return(
       <div>
