@@ -26,49 +26,39 @@ function PlayerRate({props}) {
     };
     fetchHandler();
   },[id]);
-  //const [value, setValue] = React.useState(2);
   
-
-/*
-  const handleClicked = (event, newValue) => {
-    setValue(newValue);
-    console.log(newValue);
-    }
-*/
-    /*
-  const handleSubmit1 = async (e,newValue,res) => {
-    e.preventDefault();
-    try {
-      setValue(newValue);
-      console.log(newValue);
-      const url = `http://localhost:8080/api/player/rate/${id}`;
-      const {
-        data: { player: updatedPlayer, message: message },
-      } = await axios.put(url, {totalrating});
-      //console.log(totalratings);
-      res.JSON.stringify(updatedPlayer);
-    } catch (error) {
-      
-    }
-  };
-  */
-    //const [state, dispatch] = useStore();
-    const [totalrating, setTotalRating] = useState(inputs.totalrating);
-    const [ratings, setRatings] = useState(inputs.ratings);
-    const user = JSON.parse(sessionStorage.getItem("user"));
-    const [star, setStar] = useState(2);
     const [errorMessage, setErrorMessage] = useState("");
     const [isInteractive, setIsInteractive] = useState(true);
     const [btnValue, setBtnValue] = useState("Submit");
-    const [ratingEntered, setRatingEntered] = useState(true);
     const [btnDisabled, setBtnDisabled] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+    const [ratings, setRatings] = useState({});
+    const user = JSON.parse(sessionStorage.getItem("user"));
+
+    const [value, setValue] = useState(2);
+    const [star, setStar] = useState(inputs.ratings);
+
+  
     
-      const newRating = {star, postedby: user._id};
+    
+  
+  const handleSubmit = (e,getState) => {
+    e.preventDefault(); 
+
+    
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzlhMTJmYTVhNTM4ZTgyZWQ2N2U5MjgiLCJpYXQiOjE2NzEwNDE3OTcsImV4cCI6MTY3MzYzMzc5N30.9HRLas93kMsY1wandzpS8v_fw1cDteolj7-leKSZrOA",//sıkıntı
+      },
+    }; 
+    
+    console.log(user);
+ 
+      
       axios
-          .put(`http://localhost:8080/api/player/rate/${id}`, newRating)
+          .put(`http://localhost:8080/api/player/rate/${id}`, {star, postedby: user._id},config)
           .then((res) => {
             console.log("off");
               if (res.status === 200 && res.data.message) {
@@ -82,10 +72,10 @@ function PlayerRate({props}) {
               console.log("Error: ", err);
               setErrorMessage("Error! Please try again.");
           });
-      console.log(newRating);
-      setRatings(prevRatings=>[...prevRatings,newRating]);
+      console.log({star, postedby: user._id});
+      //setRatings(prevRatings=>[...prevRatings,newRating]);
       //setRatings(newRating);
-      console.log(ratings);
+      console.log(inputs.ratings);
       
       setIsInteractive(false);
       setBtnValue("Saved");
@@ -143,8 +133,8 @@ function PlayerRate({props}) {
                       
                       name="size-large"
                       value={star}
-                      onChange={e => setStar(e.target.value)}
-                      star={star}
+                      onChange={e => {setValue(e.target.value);setStar(e.target.value)}}
+                      
                   />
                   <button type="button" className="_btn" onClick={handleSubmit}>
                         Submit

@@ -21,6 +21,9 @@ const authMiddleware = asyncHandler(async (req, res, next) => {
         res.status(400).send("Invalid token");
     }
   }
+  else{
+    console.log("token error");
+  }
 
   });
 
