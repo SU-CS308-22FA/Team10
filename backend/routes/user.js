@@ -61,13 +61,13 @@ router.post("/", asyncHandler(async (req, res) => {
 	}
 }));
 
-/*router.get(
+router.get(
 	"/",
 	asyncHandler(async(req,res)=>{
 		const user = await User.find();
 		res.send(user);
 	})
-)*/
+)
 
 router.get(
 	"/:id",

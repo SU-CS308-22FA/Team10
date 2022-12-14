@@ -48,7 +48,7 @@ function App() {
       {user && <Route path="/main" exact element={<Main />} />}
       <Route path="/signup" exact element={<Signup />} />
       <Route path="/login" exact element={<Login />} />
-      <Route path="/" exact element = {<LandingWithoutLogin/>}/>
+      
       <Route path="/aboutUs" exact element={<AboutUs />} />
       <Route path="/player" exact element={<PlayersPage />} />
       <Route path="/player/:id" exact element={<PlayerProfile  />} />

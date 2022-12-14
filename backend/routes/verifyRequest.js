@@ -11,12 +11,14 @@ router.post("/", asyncHandler(async (req, res) => {
 	try {
 		console.log("PostVerified");
 		console.log(req.body);
-		console.log(Date.now());
-		const { error } = validator(req.body);
+		console.log(req.body);
+		const { error } = validator(req.body.preview);
+		console.log(error);
 		if (error)
+			
 			return res.status(400).send({ message: error.details[0].message });
 
-		const verified = await verifyRequest.findOne({ user: req.body.user });
+		const verified = await verifyRequest.findOne({ user : req.body.user });
 		if (verified)
 			return res
 				.status(409)
@@ -32,13 +34,13 @@ router.post("/", asyncHandler(async (req, res) => {
 	}
 }));
 
-/*router.get(
+router.get(
 	"/",
 	asyncHandler(async(req,res)=>{
-		const user = await User.find();
-		res.send(user);
+		const request = await verifyRequest.find();
+		res.send(request);
 	})
-)*/
+)
 
 router.get(
 	"/:id",

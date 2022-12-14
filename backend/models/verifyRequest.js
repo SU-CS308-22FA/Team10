@@ -11,7 +11,7 @@ user: {
     required: true
  },
 file: {
-    type: String
+  
 },
 date:{
     type:Date,
@@ -36,7 +36,7 @@ verifiedSchema.methods.generateAuthToken = function () {
   const validator = (data) => {
     const schema = Joi.object({
       user: Joi.string().required().label("User"),
-      file: Joi.string().required().label("File"),
+      file: Joi.required().label("File"),
       name: Joi.string().required().label("Name")
       
     })
