@@ -1,0 +1,17 @@
+.matchinfos-header {
+  font-size: 40px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+@media (max-width: 1380px) {
+  .matchinfos-header {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .matchinfos-header {
+    font-size: 30px;
+  }
+}

@@ -16,13 +16,13 @@ const Main = () => {
 		sessionStorage.removeItem("token");
 		sessionStorage.removeItem("user");
 		window.location.reload();
-		navigate("/login");
+		navigate("/signup");
 	};
 	const [error, setError] = useState("");
 	const [value, setValue] = useState();
 	function handlePlayersClicked() {
         console.log("Welcome to players page");
-        navigate("/players");
+        navigate("/player");
     }
 	return (
 		<div className={styles.main_container}>
