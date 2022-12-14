@@ -14,9 +14,11 @@ import PlayersPage from "./components/PlayersPage/PlayersPage";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import MatchesPage from "./components/MatchesPage/MatchPage";
 import PlayerProfile from "./components/PlayerProfilePage/PlayerProfileComponent";
-
+import AdminLogin from "./components/Login/AdminLogin";
+import AdminPage from "./components/AdminPage/AdminPage";
 import LandingWithoutLogin from "./components/LandingWithoutLogin/LandingWithoutLogin";
 import Verification from "./components/UserPage/Verification";
+import VerificationRequests from "./components/AdminPage/VerificationRequests";
 import RefereesPage from "./components/RefereesPage/RefereesPage";
 import RefereeProfile from "./components/RefereeProfilePage/RefereeProfileComponent";
 import axios from "axios";
@@ -48,12 +50,15 @@ function App() {
       {user && <Route path="/main" exact element={<Main />} />}
       <Route path="/signup" exact element={<Signup />} />
       <Route path="/login" exact element={<Login />} />
+      <Route path="/admin" exact element={<AdminLogin />} />
+      <Route path="/admin-page" exact element={<AdminPage />} />
+      <Route path="/requests" exact element={<VerificationRequests />} />
       
       <Route path="/aboutUs" exact element={<AboutUs />} />
       <Route path="/player" exact element={<PlayersPage />} />
       <Route path="/player/:id" exact element={<PlayerProfile  />} />
       <Route path="/referee/:id" exact element={<RefereeProfile  />} />
-
+      
       
 
       <Route path="/referee" exact element={<RefereesPage />} />

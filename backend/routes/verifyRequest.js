@@ -35,12 +35,14 @@ router.post("/", asyncHandler(async (req, res) => {
 }));
 
 router.get(
-	"/",
+	"/allrequests",
 	asyncHandler(async(req,res)=>{
-		const request = await verifyRequest.find();
-		res.send(request);
+
+		const requestList = await verifyRequest.find();
+		res.send(requestList);
 	})
 )
+
 
 router.get(
 	"/:id",
@@ -69,7 +71,7 @@ router.delete(
 	asyncHandler(async(req,res)=>{
 		console.log('DeleteVerified');
 		await verifyRequest.findByIdAndDelete(req.params.id);
-		res.status(200).send("verified user deleted successfully")
+		res.status(200).send("request deleted successfully")
 	})
 );
 

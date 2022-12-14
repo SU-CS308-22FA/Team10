@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema({
         data: Buffer,
         contentType: String
     },
+  role: {type: Boolean, default: false}, // if admin then 1, else 0
   team: { type: String},
   file: {type: String, required: false},
   email: { type: String, required: true },
