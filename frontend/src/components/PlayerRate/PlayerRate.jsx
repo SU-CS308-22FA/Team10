@@ -27,6 +27,7 @@ function PlayerRate({props}) {
     fetchHandler();
   },[id]);
   
+    const token = JSON.parse(sessionStorage.getItem("token"));
     const [errorMessage, setErrorMessage] = useState("");
     const [isInteractive, setIsInteractive] = useState(true);
     const [btnValue, setBtnValue] = useState("Submit");
@@ -45,16 +46,16 @@ function PlayerRate({props}) {
   const handleSubmit = (e,getState) => {
     e.preventDefault(); 
 
-    
+    console.log(token);
 
     const config = {
       headers: {
         "Content-Type": "application/json",
-        authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzlhMTJmYTVhNTM4ZTgyZWQ2N2U5MjgiLCJpYXQiOjE2NzEwNDE3OTcsImV4cCI6MTY3MzYzMzc5N30.9HRLas93kMsY1wandzpS8v_fw1cDteolj7-leKSZrOA",//sıkıntı
+        authorization: `Bearer ${token}`,//sıkıntı
       },
     }; 
     
-    console.log(user);
+    console.log("Bearer ",token);
  
       
       axios
