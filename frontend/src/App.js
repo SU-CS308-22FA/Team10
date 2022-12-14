@@ -55,7 +55,7 @@ function App() {
       <Route path="/admin" exact element={<AdminLogin />} />
       <Route path="/admin-page" exact element={<AdminPage />} />
       <Route path="/requests" exact element={<VerificationRequests />} />
-      
+      <Route path="/" element ={<Navigate replace to="/login" />} />
       <Route path="/aboutUs" exact element={<AboutUs />} />
       <Route path="/player" exact element={<PlayersPage />} />
       <Route path="/player/:id" exact element={<PlayerProfile  />} />
