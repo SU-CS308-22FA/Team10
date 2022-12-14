@@ -7,19 +7,7 @@ const asyncHandler = require("../middleware/asyncHandler");
 
 router.get("/players", async (req, res) => {
   try {
-    const search = req.query.search || "";
     let sort = req.query.sort || "age";
-    let position = req.query.position || "All";
-    const positionOptions = [
-      "Goal Keeper",
-      "Right Winger",
-      "Left Winger",
-      "Centre-Forward",
-    ];
-
-    position === "All"
-      ? (position = [...positionOptions])
-      : (position = req.query.position.split(","));
     req.query.sort ? (sort = req.query.sort.split(",")) : (sort = [sort]);
 
     let sortBy = {};
@@ -29,12 +17,7 @@ router.get("/players", async (req, res) => {
       sortBy[sort[0]] = "asc";
     }
 
-    const players = await Player.find({
-      name: { $regex: search, $options: "i" },
-    })
-      .where("position")
-      .in([...position])
-      .sort(sortBy);
+    const players = await Player.find({}).sort(sortBy);
 
     res.status(200).json(players);
   } catch (err) {
@@ -51,6 +34,7 @@ router.get(
     res.status(201).send(player);
   })
 );
+
 router.get(
   "/allplayers",
   asyncHandler(async (req, res) => {

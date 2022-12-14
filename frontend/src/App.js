@@ -10,7 +10,8 @@ import DeleteProfile from "./components/UserPage/DeleteProfile";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import UserPage from "./components/UserPage/UserPage";
-import PlayersPage from "./components/PlayersPage/PlayersPage";
+import PlayersPage from "./components/PlayersPage/default/PlayersPage";
+import PlayersPageAgeSorted from "./components/PlayersPage/sorted-age/PlayersPage";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import MatchesPage from "./components/MatchesPage/MatchPage";
 import PlayerProfile from "./components/PlayerProfilePage/PlayerProfileComponent";
@@ -19,7 +20,6 @@ import LandingWithoutLogin from "./components/LandingWithoutLogin/LandingWithout
 
 import RefereesPage from "./components/RefereesPage/RefereesPage";
 import axios from "axios";
-
 
 function randomName() {
   return "Anonymous ";
@@ -41,26 +41,27 @@ function App() {
     setEditMode(false);
   }
 
-
   return (
     <Routes>
       {user && <Route path="/main" exact element={<Main />} />}
       <Route path="/signup" exact element={<Signup />} />
       <Route path="/login" exact element={<Login />} />
-      <Route path="/" exact element = {<LandingWithoutLogin/>}/>
+      <Route path="/" exact element={<LandingWithoutLogin />} />
       <Route path="/aboutUs" exact element={<AboutUs />} />
       <Route path="/player" exact element={<PlayersPage />} />
-      <Route path="/player/:id" exact element={<PlayerProfile  />} />
-
-      
+      <Route
+        path="/player/age-sorted"
+        exact
+        element={<PlayersPageAgeSorted />}
+      />
+      <Route path="/player/:id" exact element={<PlayerProfile />} />
 
       <Route path="/referees" exact element={<RefereesPage />} />
-      
 
       <Route path="/profile" exact element={<UserPage />} />
       <Route path="/profile/update" exact element={<EditableUserProfile />} />
-      <Route path="/profile/delete" exact element={<DeleteProfile />}/>
-      <Route path="/matches" exact element={<MatchesPage/>}/>
+      <Route path="/profile/delete" exact element={<DeleteProfile />} />
+      <Route path="/matches" exact element={<MatchesPage />} />
     </Routes>
   );
 }
