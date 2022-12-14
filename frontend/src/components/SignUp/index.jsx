@@ -8,7 +8,6 @@ const Signup = () => {
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
-    team: "",
     email: "",
     password: "",
   });

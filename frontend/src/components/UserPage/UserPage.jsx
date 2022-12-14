@@ -28,12 +28,19 @@ const UserPage = () =>{
   const handleDelete = () => {
 		navigate("/profile/delete");
 	};
-
+  const handleVerification = () => {
+		navigate("/profile/verify");
+	};
     const buttonStyle = {
         backgroundColor: withTheme,
         color: purple
     };
+    let verified_status = "";
 
+    if(user.verified)
+        verified_status = "Verified"
+    else
+        verified_status = "Not verified"
     
     return (
       <div>
@@ -45,7 +52,7 @@ const UserPage = () =>{
 				<div className={styles.left}>
 					<form className={styles.form_container} onSubmit={handleUpdate}>
 					
-          <img src={user.image} width={182} height={182} />
+          <img src={image} width={182} height={182} />
           <div>
             <h4>Name:   {user.firstName}  </h4> 
 						
@@ -61,6 +68,15 @@ const UserPage = () =>{
        </div>
        <div className={styles.bottom}>
           <h1>My Profile</h1>
+          <h1></h1>
+          <h1></h1>
+          <h5> Your account is:   <b>{verified_status}</b> </h5>
+          
+          <button stype="button" className={styles.white_btn} onClick={handleVerification}>Verify if not verified</button>
+
+          <h1></h1>
+          <h1></h1>
+          <h1></h1>
           <button stype="button" className={styles.white_btn} onClick={handleDelete}>Delete</button>
         </div>
 		  </div>
