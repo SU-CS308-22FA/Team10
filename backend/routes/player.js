@@ -187,7 +187,7 @@ router.put("/rate/:id",authMiddleware,asyncHandler1(async(req,res)=>{
 		{
 			new:true
 		});
-		res.json(finalPlayer);
+		//res.json(finalPlayer);
 	}catch(error){
 		throw new Error(error)
 
