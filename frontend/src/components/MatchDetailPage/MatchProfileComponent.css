@@ -15,7 +15,7 @@
   flex: 1;
 }
 
-.heading-img-div {
+.heading-img-div1 {
   margin-left: 18.5%;
   align-items: center;
   justify-content: center;
@@ -26,14 +26,14 @@
   object-fit: cover;
 }
 
-.heading-text-div {
+.heading-text-div1 {
   text-align: center;
   justify-content: center;
   margin-right: 3%;
   margin-left: 3%;
 }
 
-.heading-text {
+.heading-text1 {
   font-size: 50px;
   font-weight: 500;
   line-height: 1.1;
