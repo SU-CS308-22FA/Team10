@@ -35,7 +35,7 @@ const getById = async (req, res, next) => {
   const id = req.params.id;
   let referee;
   try {
-    console.log("gizem");
+    console.log("find_by_id");
     referee = await Referee.findById(id);
   } catch (err) {
     console.log(err);

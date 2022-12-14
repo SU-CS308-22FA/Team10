@@ -7,12 +7,9 @@ const playerSchema = new mongoose.Schema({
   position: { type: String, required: true },
   position_category: { type: String, required: true },
   market_value: { type: String, required: true },
-  nationality: { type: String, required: true }
-
+  nationality: { type: String, required: true },
 });
 
+const Player = mongoose.model("player", playerSchema);
 
-
-const Player= mongoose.model("player", playerSchema);
-
-module.exports = { Player};
+module.exports = { Player };
