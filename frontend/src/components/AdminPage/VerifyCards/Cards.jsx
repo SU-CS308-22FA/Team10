@@ -36,7 +36,7 @@ const RequestCards = () => {
   };
 
     const [requests, setRequests] = React.useState(cardInfo);
-    
+    const  [imgFile, setImgFile] = useState('');
     React.useEffect(() => {
       async function fetchData() {
         
@@ -46,6 +46,12 @@ const RequestCards = () => {
           const fetchedRequestList = await axios.get(requestListUrl);
           console.log(fetchedRequestList);
           setRequests(fetchedRequestList.data);
+          console.log("Fetching image");
+          axios.get("http://localhost:8080/api/drive/google-drive/639ab2254d8cabd5fb40cdfc?_id=639ab2254d8cabd5fb40cdfc")
+            .then(res => { 
+                console.log(res);
+        setImgFile(res);
+  })
       } 
       fetchData();
 
@@ -122,22 +128,24 @@ const RequestCards = () => {
       
       
       const renderCard = (card, index) => {
-        
+       
+             
+
         return(
                 
                 <div className="col" key={index} >
                   
                     <div className="card h-100 w-100 text-center" >
                     <div className="overflow">
-                      <img src={card.file} className="card-img-top" alt="..." object-fit = "fill"/>
+                      <img src={"https://t4.ftcdn.net/jpg/02/78/01/97/360_F_278019795_HhtJsgJoL9DUoVA0l2v2EGz2YgD37sbE.jpg"} className="card-img-top" alt="..." object-fit = "fill"/>
                     </div>
                     <div className="card-body text-dark">
-                        <h5 className="card-title">{card.name}</h5>
-                        <p className="card-text">
+                        <h5 className="card-title text-dark">{card.name}</h5>
+                        <p className="card-text text-dark">
                         
                           User Name: {card.name}<br/>
                           Date of Request: {card.date}<br/>
-                        
+                          Link to the file: {card.file}<br/>
                           </p>
                         
                        
@@ -158,7 +166,7 @@ const RequestCards = () => {
         );
         
     };
-    return <div className="row row-cols-4 row-cols-md-6 g-4">{requests.map(renderCard)}</div>; //players.map yazıcaz
+    return <div className="row row-cols-4 row-cols-md-8 g-4">{requests.map(renderCard)}</div>; //players.map yazıcaz
 }
 
 export default RequestCards;
