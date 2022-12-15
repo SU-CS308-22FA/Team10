@@ -25,7 +25,6 @@ import RefereeProfile from "./components/RefereeProfilePage/RefereeProfileCompon
 import MatchProfile from "./components/MatchDetailPage/MatchProfileComponent";
 import axios from "axios";
 
-
 function randomName() {
   return "Anonymous ";
 }
@@ -37,15 +36,14 @@ function App() {
   const [email, setEmail] = useState(randomName());
   const [team, setTeam] = useState(randomName());
   const stored = { firstName, email, team };
-
+  /*
   function handleEditComplete(result) {
     console.log("handleEditComplete", result);
     if (result != null) {
       setName(result.name);
     }
     setEditMode(false);
-  }
-
+  }*/
 
   return (
     <Routes>
@@ -55,32 +53,25 @@ function App() {
       <Route path="/admin" exact element={<AdminLogin />} />
       <Route path="/admin-page" exact element={<AdminPage />} />
       <Route path="/requests" exact element={<VerificationRequests />} />
-      <Route path="/" element ={<Navigate replace to="/login" />} />
+      <Route path="/" element={<Navigate replace to="/login" />} />
       <Route path="/aboutUs" exact element={<AboutUs />} />
       <Route path="/player" exact element={<PlayersPage />} />
-      <Route path="/player/:id" exact element={<PlayerProfile  />} />
-      <Route path="/player/rate/:id" exact element={<PlayerRate  />} />
-      <Route path="/referee/:id" exact element={<RefereeProfile  />} />
+      <Route path="/player/:id" exact element={<PlayerProfile />} />
+      <Route path="/player/rate/:id" exact element={<PlayerRate />} />
+      <Route path="/referee/:id" exact element={<RefereeProfile />} />
 
-      
-
-      <Route path="/match/:id" exact element={<MatchProfile  />} />
-
-
-      
+      <Route path="/match/:id" exact element={<MatchProfile />} />
 
       <Route path="/referee" exact element={<RefereesPage />} />
-      
 
       <Route path="/profile" exact element={<UserPage />} />
       <Route path="/profile/update" exact element={<EditableUserProfile />} />
-      <Route path="/profile/delete" exact element={<DeleteProfile />}/>
+      <Route path="/profile/delete" exact element={<DeleteProfile />} />
 
-      <Route path="/profile/verify" exact element={<Verification />}/>
-      <Route path="/matches" exact element={<MatchesPage/>}/>
+      <Route path="/profile/verify" exact element={<Verification />} />
+      <Route path="/matches" exact element={<MatchesPage />} />
 
-      <Route path="/match" exact element={<MatchesPage/>}/>
-
+      <Route path="/match" exact element={<MatchesPage />} />
     </Routes>
   );
 }
