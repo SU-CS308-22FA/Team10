@@ -1,85 +1,81 @@
 import React from "react";
-import styles from "./card-style.css"
-import { Component } from 'react';
+import styles from "./card-style.css";
+import { Component } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-
 const OverShadowedPlayer = () => {
+  const [card, setCard] = React.useState({});
 
-    const [card, setCard] = React.useState({});
-  
-    const[inputs,setInputs] = useState({});
-    const id = "637d4c95f1ebee2cd4e7fcad";
-    console.log();
-    useEffect(()=>{
-      const fetchHandler=async()=>{
-        await axios
-        .get(`http://localhost:8080/api/player/${id}`)
-        .then((res) => (res.data)).then(data=>setInputs(data.player))
-        
-      };
-      fetchHandler();
-    },[id]);
+  const [inputs, setInputs] = useState({});
+  const id = "637d4c95f1ebee2cd4e7fcad";
+  console.log();
+  useEffect(() => {
+    const fetchHandler = async () => {
+      await axios
+        .get(`https://weeklysoccer.onrender.com/api/player/${id}`)
+        .then((res) => res.data)
+        .then((data) => setInputs(data.player));
+    };
+    fetchHandler();
+  }, [id]);
 
-    const [card2, setCard2] = React.useState({});
-  
-    React.useEffect(() => {
-      async function fetchData() {
-          console.log("Ebrar");
-          const matchUrl =
-            "http://localhost:8080/api/match/637e05299953a84747abc2bb";
-            
-          const fetchedmatch= await axios.get(matchUrl);
-          console.log(fetchedmatch.data);
-          setCard2(fetchedmatch.data);
-      } 
-      fetchData();
+  const [card2, setCard2] = React.useState({});
 
-    },[]);
-    
-      
-        return(
-          
-          <div className="row row-cols-15 row-cols-md-4 g-6">
-                <div className="card-center cardalign w-50 h-50"  >
-                <h3 className="title">Highlighted Player of This Week</h3>
-                    <div className="card h-100 w-100 text-center" >
-                    <div className="overflow">
-                      <img src={inputs.image} className="card-img-center" alt="..." object-fit = "fill"/>
-                    </div>
-                    <div className="card-body text-dark">
-                        <h5 className="card-title">{inputs.name}</h5>
-                        <p className="card-text">
-                          Team: {inputs.club} {<img src= {inputs.icon} width={23} height={23} alt="..."></img>} <br/> 
-                          Age: {inputs.age}<br/>
-                          Position: {inputs.position}<br/>
-                          Merket Vaue: {inputs.market_value}M <br/>
-                          Nationality: {inputs.nationality}
-                          </p>
-                        <Link to={inputs.link}>
-                            <button type="button" className="_btn">
-                               Go to profile
-                            </button>
-                         </Link>
-                    </div>
-                    </div>
-                  
-                </div>
-                
-               
-           
+  React.useEffect(() => {
+    async function fetchData() {
+      console.log("Ebrar");
+      const matchUrl =
+        "https://weeklysoccer.onrender.com/api/match/637e05299953a84747abc2bb";
+
+      const fetchedmatch = await axios.get(matchUrl);
+      console.log(fetchedmatch.data);
+      setCard2(fetchedmatch.data);
+    }
+    fetchData();
+  }, []);
+
+  return (
+    <div className="row row-cols-15 row-cols-md-4 g-6">
+      <div className="card-center cardalign w-50 h-50">
+        <h3 className="title">Highlighted Player of This Week</h3>
+        <div className="card h-100 w-100 text-center">
+          <div className="overflow">
+            <img
+              src={inputs.image}
+              className="card-img-center"
+              alt="..."
+              object-fit="fill"
+            />
           </div>
-        );
-        
-   
-}
+          <div className="card-body text-dark">
+            <h5 className="card-title">{inputs.name}</h5>
+            <p className="card-text">
+              Team: {inputs.club}{" "}
+              {<img src={inputs.icon} width={23} height={23} alt="..."></img>}{" "}
+              <br />
+              Age: {inputs.age}
+              <br />
+              Position: {inputs.position}
+              <br />
+              Merket Vaue: {inputs.market_value}M <br />
+              Nationality: {inputs.nationality}
+            </p>
+            <Link to={inputs.link}>
+              <button type="button" className="_btn">
+                Go to profile
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default OverShadowedPlayer;
-
 
 /*
 {

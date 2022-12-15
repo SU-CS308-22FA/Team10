@@ -11,11 +11,11 @@ const Login = () => {
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
   };
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:8080/api/auth";
+      const url = "https://weeklysoccer.onrender.com/api/auth";
       const { data: res } = await axios.post(url, data);
       console.log(res);
       sessionStorage.setItem("token", JSON.stringify(res.data));
@@ -61,7 +61,6 @@ const Login = () => {
             <button type="submit" className={styles.green_btn}>
               Login
             </button>
-            
           </form>
         </div>
         <div className={styles.bottom}>
