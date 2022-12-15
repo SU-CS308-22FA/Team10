@@ -11,7 +11,7 @@ router.post("/", asyncHandler(async (req, res) => {
 	try {
 		console.log("PostVerified");
 		console.log(req.body);
-		console.log(req.body);
+		
 		const { error } = validator(req.body.preview);
 		console.log(error);
 		if (error)
@@ -22,7 +22,7 @@ router.post("/", asyncHandler(async (req, res) => {
 		if (verified)
 			return res
 				.status(409)
-				.send({ message: "User already verified!" });
+				.send({ message: "User already sent request!" });
 
 
 		await new verifyRequest({ ...req.body,  date: Date.now() }).save(); //db ye kayıt
@@ -67,7 +67,7 @@ router.put(
 
 router.delete(
 	"/:id",
-	isValidObjectId,
+	
 	asyncHandler(async(req,res)=>{
 		console.log('DeleteVerified');
 		await verifyRequest.findByIdAndDelete(req.params.id);
