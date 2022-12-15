@@ -4,7 +4,7 @@
 Our deployed project: https://weeklysoccer.onrender.com/  
 Weekly Soccer is an homogenous system that you can see and rate the top of the player, matches and verified user's votes on referees. You can learn about weekly updates, the best player of the week and comment on latest matches. It has an user-friendly interface which everyone can vote easily.
 
-
+[Code Documentation](https://docs.google.com/document/d/1Gxd_qC44liQVjxzXEJATsTmv0scIVRgO_sri39iLMiA/edit?usp=sharing)
 
 
 ##  How to install and run the software?
