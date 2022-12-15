@@ -16,11 +16,19 @@ export default function Verification({}) {
     const [image, setImage] = useState(user.image);
     const [file, setFile] = useState(user.file);
     const [verification, setVerification] = useState(user.verified);
-    
+    const GOOGLE_BASE_URL = "https://drive.google.com/file/d/";
     const [error, setError] = useState("");
+    const [data, setData] = useState({
+      user: user._id,
+      file: "",
+      name: user.firstName + " "+ user.lastName,
+    });
+   
+
     const handleUploadClicked = async (e) => {
        
         e.preventDefault();
+        console.log(data)
         console.log(uploadedFile);
         if(uploadedFile)
         {
@@ -36,12 +44,15 @@ export default function Verification({}) {
               'Content-Type': 'multipart/form-data'
               }
         }).then(res=>{
-            
+           
            console.log("Uploaded")
-
-           this.setState({msg:res.data.message});
-           this.setState({file:res.data.results.file});
-           console.log(res);
+           console.log(data);
+           console.log(res.data.id)
+           console.log(GOOGLE_BASE_URL + res.data.id);
+           setData(prev => ({...prev, file: GOOGLE_BASE_URL + res.data.id}));
+           console.log(data);
+           
+          
         })
         .catch(err=>console.log(err))
             
@@ -73,25 +84,18 @@ export default function Verification({}) {
       console.log("Cancelled");
       navigate("/profile");
     }
-    const [data, setData] = useState({
-      user: user._id,
-      file: uploadedFile,
-      name: user.firstName + " "+ user.lastName,
-    });
-    const handleChange = ({ currentTarget: input }) => {
-      setData({ ...data, [input.name]: input.value });
-    };
+    
     const handleRequestClicked = async (e) => {
       e.preventDefault();
-        
+      console.log(data);
         try {
           if(!uploadedFile){
             alert("You need to upload file first");
           }
           const url = "http://localhost:8080/api/verify";
-          
+          console.log(data);
           const { data: res } = await axios.post(url, data);
-
+          console.log(res);
           console.log(res.message);
           setResponse(res.data.id) ;
           console.log("my response ");
@@ -106,25 +110,7 @@ export default function Verification({}) {
             setError(error.response.data.message);
           }
         }
-        try {
-          const url =
-            "http://localhost:8080/api/users/" +
-            user._id +
-            "?_id=" +
-            user._id;
-          const {
-            data: { user: updatedUser, message: message },
-          } = await axios.put(url, { firstName: user.firstName, lastName: user.lastName, team:user.team, image: user.image, file: myresponse, email: user.email });
-          sessionStorage.setItem("user", JSON.stringify(updatedUser));
-    
-        } catch (error) {
-          if (
-            error.response &&
-            error.response.status >= 400 &&
-            error.response.status <= 500
-          ) {
-          }
-        }
+        
       };
       
       const handleFileChange = (e) => {
@@ -135,7 +121,7 @@ export default function Verification({}) {
         console.log(uploadedFile);
         setUploadedFile(uploadedFile);
         console.log(myresponse);
-        setData(prev => ({...prev, file: uploadedFile.data}));
+        //setData(prev => ({...prev, file: uploadedFile.data}));
       };
       
     return (

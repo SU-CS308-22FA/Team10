@@ -15,7 +15,7 @@ const Main = () => {
 	const handleLogout = () => {
 		sessionStorage.removeItem("token");
 		sessionStorage.removeItem("user");
-		window.location.reload();
+		
 		navigate("/signup");
 	};
 	const [error, setError] = useState("");

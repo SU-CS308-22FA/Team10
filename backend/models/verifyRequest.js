@@ -11,7 +11,8 @@ user: {
     required: true
  },
 file: {
-  
+  type:String,
+  required: true
 },
 date:{
     type:Date,

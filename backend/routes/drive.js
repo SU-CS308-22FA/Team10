@@ -22,6 +22,7 @@ const deleteFile = (filePath) => { //delete file from local directory
           return;
         }
         const response = await driveUpload(req.file);
+        console.log(response);
         deleteFile(req.file.path);
         console.log("Uploaded succesfully");
         res.json({ id: response.data.id });
