@@ -16,7 +16,7 @@ export default function DeleteProfile({}) {
     e.preventDefault();
     try {
       const url =
-        "http://localhost:8080/api/users/" +
+        "https://weeklysoccer.onrender.com/api/users/" +
         user._id +
         "?_id=" +
         user._id;

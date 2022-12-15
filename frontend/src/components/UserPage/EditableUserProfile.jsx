@@ -23,13 +23,19 @@ export default function EditableUserProfile({}) {
     e.preventDefault();
     try {
       const url =
-        "http://localhost:8080/api/users/" +
+        "https://weeklysoccer.onrender.com/api/users/" +
         user._id +
         "?_id=" +
         user._id;
       const {
         data: { user: updatedUser, message: message },
-      } = await axios.put(url, { firstName, lastName, team, image, email: user.email });
+      } = await axios.put(url, {
+        firstName,
+        lastName,
+        team,
+        image,
+        email: user.email,
+      });
       sessionStorage.setItem("user", JSON.stringify(updatedUser));
 
       navigate("/profile");
@@ -53,22 +59,19 @@ export default function EditableUserProfile({}) {
     color: purple,
   };
 
-  
   return (
     <div className={styles.login_container}>
       <div className={styles.login_form_container}>
         <div className={styles.left}>
           <form className={styles.form_container} onSubmit={handleSaveClicked}>
             <h1>Edit your information:</h1>
-            
-            <h5> Upload an image: </h5><input 
-                type="file" 
-                value= {image}
-                
-                onChange={(e) => setImage(e.target.value)}
-                />
-           
-           <input
+            <h5> Upload an image: </h5>
+            <input
+              type="file"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+            />
+            <input
               type="text"
               value={firstName}
               onChange={(e) => setName(e.target.value)}
@@ -80,21 +83,25 @@ export default function EditableUserProfile({}) {
               onChange={(e) => setLastName(e.target.value)}
               className={styles.input}
             />
-            
-            <label htmlFor="team">Teams</label>{' '}
-            <select id="team"
-                  name="team"
-                  defaultValue={selected}
-                  style={{ color: selected === defaultSelectValue ? "gray" : "black" }}
-                  onChange={e => {setTeam(e.target.value); setSelected(e.target.value)}}>
-
-                  <option value="Fenerbahçe"> Fenerbahçe</option>
-                  <option value="Galatasaray">Galatasaray</option>
-                  <option value="Beşiktaş"> Beşiktaş</option>
-                  <option value="Fenerbahçe"> Fenerbahçe</option>
-                </select>
+            <label htmlFor="team">Teams</label>{" "}
+            <select
+              id="team"
+              name="team"
+              defaultValue={selected}
+              style={{
+                color: selected === defaultSelectValue ? "gray" : "black",
+              }}
+              onChange={(e) => {
+                setTeam(e.target.value);
+                setSelected(e.target.value);
+              }}
+            >
+              <option value="Fenerbahçe"> Fenerbahçe</option>
+              <option value="Galatasaray">Galatasaray</option>
+              <option value="Beşiktaş"> Beşiktaş</option>
+              <option value="Fenerbahçe"> Fenerbahçe</option>
+            </select>
             <h6>Selected: {selected}</h6>
-            
             <button
               stype="button"
               className={styles.purple_btn}

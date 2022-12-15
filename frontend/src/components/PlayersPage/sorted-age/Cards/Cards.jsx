@@ -18,7 +18,7 @@ function Cards() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:8080/api/player/players";
+      const url = "https://weeklysoccer.onrender.com/api/player/players";
       const { data: res } = await axios.get(url, data);
       console.log(data);
       navigate("/playerprofile");
@@ -36,7 +36,7 @@ function Cards() {
   useEffect(() => {
     const fetchPlayers = async () => {
       const response = await fetch(
-        "http://localhost:8080/api/player/players?sort=age"
+        "https://weeklysoccer.onrender.com/api/player/players?sort=age"
       );
       const data = await response.json();
       console.log(data);
