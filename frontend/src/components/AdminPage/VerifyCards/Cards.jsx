@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import cardInfo from "../../cardInfo"
 import axios from "axios";
 import { useState, useEffect } from "react";
-
+import { useParams } from "react-router-dom";
 
 
 const RequestCards = () => {
@@ -50,22 +50,26 @@ const RequestCards = () => {
       fetchData();
 
     },[]);
-    /*
-    const handleApproveClicked = async (e) => {
-        e.preventDefault();
+    
+    const handleApproveClicked = async (userId,requestId) => {
+        
+        const user= 
+              await axios
+              .get(`http://localhost:8080/api/users/${userId}?_id=${userId}`)
+              .then((res) => (res.data))
+              
+        console.log(user)
+            
         try {
-          const request = sessionStorage.getItem("verifyrequest");
+          console.log(userId);
           const url =
-            "http://localhost:8080/api/user/" +
-            user._id +
-            "?_id=" +
-            user._id;
+            "http://localhost:8080/api/users/" +userId +"?_id=" +userId;
           const {
             data: { user: updatedUser, message: message },
           } = await axios.put(url, { firstName: user.firstName, lastName: user.lastName, team: user.team, email: user.email, verified: true });
           sessionStorage.setItem("user", JSON.stringify(updatedUser));
-          window.location.reload();
-          navigate("/profile");
+         
+          
         } catch (error) {
           if (
             error.response &&
@@ -74,54 +78,53 @@ const RequestCards = () => {
           ) {
           }
         }
+       handleRejectClicked(requestId);
+    
+      };
+     
+      
+      const [deleteID, setID] = React.useState();
+      const handleRejectClicked =  async(e) => {
+        
+        console.log(e);
         try {
-            const request = sessionStorage.getItem("verifyrequest");
-            const url =
-              "http://localhost:8080/api/verify/" +
-              request._id+
-              "?_id=" +
-              request._id;
-            const {
-              data: { user: updatedUser, message: message },
-            } = await axios.delete(url, { });
-            sessionStorage.setItem("verifyrequest", JSON.stringify(updatedUser));
-            window.location.reload();
-          } catch (error) {
-            if (
-              error.response &&
-              error.response.status >= 400 &&
-              error.response.status <= 500
-            ) {
-            }
-          }
+        const url =`http://localhost:8080/api/verify/${e}`
+        const { data: res } = await axios.delete(url);
+        console.log(data);
+        
+        console.log(res.message);
+        } catch (error) {
+        if (
+            error.response &&
+            error.response.status >= 400 &&
+            error.response.status <= 500
+        ) {
+            setError(error.response.data.message);
+        }
+        }
+        /*
+        console.log(deleteID);
+        e.preventDefault();
+        
+        const {
+            data: { user: updatedUser, message: message },
+          } = await axios.delete(`http://localhost:8080/api/verify/${deleteID}`, { deleteID})
+          .then((res) => {
+            console.log("off");
+              
+          }).catch((err) => {
+              console.log("Error: ", err);
+              
+          });
+        */
+        window.location.reload();
       };
       
-      const handleRejectClicked = async (e) => {
-        e.preventDefault();
-        try {
-          const url =
-            "http://localhost:8080/api/verify/" +
-            card._id +
-            "?_id=" +
-            card._id;
-          const {
-            data: { user: updatedUser, message: message },
-          } = await axios.delete(url, { email });
-          sessionStorage.setItem("user", JSON.stringify(updatedUser));
-          window.location.reload();
-        } catch (error) {
-          if (
-            error.response &&
-            error.response.status >= 400 &&
-            error.response.status <= 500
-          ) {
-          }
-        }
-      };
-      */
+      
       const renderCard = (card, index) => {
+        
         return(
-              
+                
                 <div className="col" key={index} >
                   
                     <div className="card h-100 w-100 text-center" >
@@ -134,18 +137,19 @@ const RequestCards = () => {
                         
                           User Name: {card.name}<br/>
                           Date of Request: {card.date}<br/>
-                          
+                        
                           </p>
-                        <Link to={card._id}>
-                            <button type="button" className="_btn" >
-                               Approve
-                            </button>
-                         </Link>
-                         <Link to={card._id}>
-                            <button type="button" className="_btn" >
-                               Reject
-                            </button>
-                         </Link>
+                        
+                       
+                        <button type="button" className="_btn" onClick={ ()=> handleApproveClicked(card.user, card._id)} >
+                            Approve
+                        </button>
+                        
+                        
+                        <button type="button" className="_btn" onClick={ ()=> handleRejectClicked(card._id)}  >
+                            Reject
+                        </button>
+                      
                     </div>
                     </div>
                 </div>

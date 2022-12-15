@@ -62,23 +62,23 @@ router.post("/", asyncHandler(async (req, res) => {
 }));
 
 router.get(
-	"/",
-	asyncHandler(async(req,res)=>{
-		const user = await User.find();
-		res.send(user);
-	})
-)
-
-router.get(
 	"/:id",
-	isValidObjectId,
+	
 	asyncHandler(async(req,res)=>{
 		console.log("GetUser");
 		const user = await User.findById(req.params.id);
 		res.send(user);
 	})
 )
-
+/*
+router.get(
+	"/",
+	asyncHandler(async(req,res)=>{
+		const user = await User.find();
+		res.send(user);
+	})
+)
+*/
 router.put(
 	"/:id",
 	isValidObjectId,
