@@ -81,7 +81,7 @@ function PlayerRate({props}) {
       setIsInteractive(false);
       setBtnValue("Saved");
       setBtnDisabled(true);
-        
+      window.location.reload();
     
 }
 

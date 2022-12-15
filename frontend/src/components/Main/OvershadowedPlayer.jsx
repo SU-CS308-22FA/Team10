@@ -12,19 +12,18 @@ const OverShadowedPlayer = () => {
 
     const [card, setCard] = React.useState({});
   
-    React.useEffect(() => {
-      async function fetchData() {
-          console.log("Ebrar");
-          const playerUrl =
-            "http://localhost:8080/api/player/637d4c95f1ebee2cd4e7fcad";
-            
-          const fetchedPlayer = await axios.get(playerUrl);
-          console.log(fetchedPlayer.data);
-          setCard(fetchedPlayer.data);
-      } 
-      fetchData();
-
-    },[]);
+    const[inputs,setInputs] = useState({});
+    const id = "637d4c95f1ebee2cd4e7fcad";
+    console.log();
+    useEffect(()=>{
+      const fetchHandler=async()=>{
+        await axios
+        .get(`http://localhost:8080/api/player/${id}`)
+        .then((res) => (res.data)).then(data=>setInputs(data.player))
+        
+      };
+      fetchHandler();
+    },[id]);
 
     const [card2, setCard2] = React.useState({});
   
@@ -50,18 +49,18 @@ const OverShadowedPlayer = () => {
                 <h3 className="title">Highlighted Player of This Week</h3>
                     <div className="card h-100 w-100 text-center" >
                     <div className="overflow">
-                      <img src={card.image} className="card-img-center" alt="..." object-fit = "fill"/>
+                      <img src={inputs.image} className="card-img-center" alt="..." object-fit = "fill"/>
                     </div>
                     <div className="card-body text-dark">
-                        <h5 className="card-title">{card.name}</h5>
+                        <h5 className="card-title">{inputs.name}</h5>
                         <p className="card-text">
-                          Team: {card.club} {<img src= {card.icon} width={23} height={23} alt="..."></img>} <br/> 
-                          Age: {card.age}<br/>
-                          Position: {card.position}<br/>
-                          Merket Vaue: {card.market_value}M <br/>
-                          Nationality: {card.nationality}
+                          Team: {inputs.club} {<img src= {inputs.icon} width={23} height={23} alt="..."></img>} <br/> 
+                          Age: {inputs.age}<br/>
+                          Position: {inputs.position}<br/>
+                          Merket Vaue: {inputs.market_value}M <br/>
+                          Nationality: {inputs.nationality}
                           </p>
-                        <Link to={card.link}>
+                        <Link to={inputs.link}>
                             <button type="button" className="_btn">
                                Go to profile
                             </button>

@@ -14,7 +14,7 @@ const UserPage = () =>{
   const [data, setData] = useState({
 		firstName: "",
 	});
-
+  
   console.log("USERPAGE")
   const user = JSON.parse(sessionStorage.getItem("user"));
   const navigate = useNavigate();
@@ -27,6 +27,12 @@ const UserPage = () =>{
 	};
   const handleDelete = () => {
 		navigate("/profile/delete");
+	};
+  const handleLogOut = () => {
+		sessionStorage.removeItem("token");
+		sessionStorage.removeItem("user");
+		
+    window.location.reload();
 	};
   const handleVerification = () => {
 		navigate("/profile/verify");
@@ -64,6 +70,7 @@ const UserPage = () =>{
             <h4>Favorite Team: {user.team} </h4>
             </div>
             <button stype="button" className={styles.green_btn} onClick={handleUpdate}>Update</button>
+            <button stype="button" className={styles.green_btn} onclick ={handleLogOut}>Logout</button>
             </form>
        </div>
        <div className={styles.bottom}>
@@ -78,6 +85,7 @@ const UserPage = () =>{
           <h1></h1>
           <h1></h1>
           <button stype="button" className={styles.white_btn} onClick={handleDelete}>Delete</button>
+
         </div>
 		  </div>
       </div>
