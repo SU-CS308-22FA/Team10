@@ -14,7 +14,7 @@ const CardsMatch = () => {
     async function fetchData() {
       console.log("Ebrar");
       const matchListUrl =
-        "https://weeklysoccer.onrender.com/api/match/allmatches";
+        "https://weeklysoccer2.onrender.com/api/match/allmatches";
 
       const fetchedMatchList = await axios.get(matchListUrl);
       console.log(fetchedMatchList);

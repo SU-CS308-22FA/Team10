@@ -19,7 +19,7 @@ function PlayerRate({ props }) {
   useEffect(() => {
     const fetchHandler = async () => {
       await axios
-        .get(`https://weeklysoccer.onrender.com/api/player/${id}`)
+        .get(`https://weeklysoccer2.onrender.com/api/player/${id}`)
         .then((res) => res.data)
         .then((data) => setInputs(data.player));
     };
@@ -54,7 +54,7 @@ function PlayerRate({ props }) {
 
     axios
       .put(
-        `https://weeklysoccer.onrender.com/api/player/rate/${id}`,
+        `https://weeklysoccer2.onrender.com/api/player/rate/${id}`,
         { star, postedby: user._id },
         config
       )

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.8f732667.css",
-    "main.js": "/static/js/main.5dc75ae2.js",
+    "main.css": "/static/css/main.b5c3b4ce.css",
+    "main.js": "/static/js/main.9cb13238.js",
     "static/media/football.png": "/static/media/football.83d7b4fd74fc866b739d.png",
     "static/media/detailed_match.png": "/static/media/detailed_match.57a2dc2dcabc74154e27.png",
     "static/media/referee.png": "/static/media/referee.f9886b0effef3325381d.png",
@@ -18,11 +18,11 @@
     "static/media/68863-1591599151.webp": "/static/media/68863-1591599151.c2d110c3100b899d3f42.webp",
     "static/media/58088-1572949088.webp": "/static/media/58088-1572949088.66ede6bfe15cc48a3f09.webp",
     "index.html": "/index.html",
-    "main.8f732667.css.map": "/static/css/main.8f732667.css.map",
-    "main.5dc75ae2.js.map": "/static/js/main.5dc75ae2.js.map"
+    "main.b5c3b4ce.css.map": "/static/css/main.b5c3b4ce.css.map",
+    "main.9cb13238.js.map": "/static/js/main.9cb13238.js.map"
   },
   "entrypoints": [
-    "static/css/main.8f732667.css",
-    "static/js/main.5dc75ae2.js"
+    "static/css/main.b5c3b4ce.css",
+    "static/js/main.9cb13238.js"
   ]
 }

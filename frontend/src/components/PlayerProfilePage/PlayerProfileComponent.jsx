@@ -16,7 +16,7 @@ function PlayerProfile(props) {
   useEffect(() => {
     const fetchHandler = async () => {
       await axios
-        .get(`https://weeklysoccer.onrender.com/api/player/${id}`)
+        .get(`https://weeklysoccer2.onrender.com/api/player/${id}`)
         .then((res) => res.data)
         .then((data) => setInputs(data.player));
     };

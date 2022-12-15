@@ -13,7 +13,7 @@ const OverShadowedPlayer = () => {
     async function fetchData() {
       console.log("Ebrar");
       const playerUrl =
-        "https://weeklysoccer.onrender.com/api/player/637a8d667757477ec0e70859";
+        "https://weeklysoccer2.onrender.com/api/player/637a8d667757477ec0e70859";
 
       const fetchedPlayer = await axios.get(playerUrl);
       console.log(fetchedPlayer.data);
@@ -28,7 +28,7 @@ const OverShadowedPlayer = () => {
     async function fetchData() {
       console.log("Ebrar");
       const matchUrl =
-        "https://weeklysoccer.onrender.com/api/match/637e05299953a84747abc2bb";
+        "https://weeklysoccer2.onrender.com/api/match/637e05299953a84747abc2bb";
 
       const fetchedmatch = await axios.get(matchUrl);
       console.log(fetchedmatch.data);

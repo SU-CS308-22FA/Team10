@@ -15,7 +15,7 @@ function RefereeInfos(props) {
   useEffect(() => {
     const fetchHandler = async () => {
       await axios
-        .get(`https://weeklysoccer.onrender.com/api/match/${id}`)
+        .get(`https://weeklysoccer2.onrender.com/api/match/${id}`)
         .then((res) => res.data)
         .then((data) => setInputs(data.match));
     };

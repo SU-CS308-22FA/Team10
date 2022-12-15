@@ -16,7 +16,7 @@ function Cards() {
     e.preventDefault();
     try {
       const url =
-        "https://weeklysoccer.onrender.com/api/player/players?sort=totalrating,desc";
+        "https://weeklysoccer2.onrender.com/api/player/players?sort=totalrating,desc";
       const { data: res } = await axios.get(url, data);
       console.log(data);
       navigate("/playerprofile");
@@ -34,7 +34,7 @@ function Cards() {
   useEffect(() => {
     const fetchPlayers = async () => {
       const response = await fetch(
-        "https://weeklysoccer.onrender.com/api/player/players?sort=totalrating,desc"
+        "https://weeklysoccer2.onrender.com/api/player/players?sort=totalrating,desc"
       );
       const data = await response.json();
       console.log(data);

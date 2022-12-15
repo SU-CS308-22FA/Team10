@@ -13,7 +13,7 @@ const UpcomingMatch = () => {
     async function fetchData() {
       console.log("Ebrar");
       const matchUrl =
-        "https://weeklysoccer.onrender.com/api/match/637dfd469953a84747abc2ba";
+        "https://weeklysoccer2.onrender.com/api/match/637dfd469953a84747abc2ba";
 
       const fetchedmatch = await axios.get(matchUrl);
       console.log(fetchedmatch.data);

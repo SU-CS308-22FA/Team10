@@ -15,7 +15,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "https://weeklysoccer.onrender.com/api/auth";
+      const url = "https://weeklysoccer2.onrender.com/api/auth";
       const { data: res } = await axios.post(url, data);
       console.log(res);
       sessionStorage.setItem("token", JSON.stringify(res.data));
