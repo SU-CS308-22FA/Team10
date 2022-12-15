@@ -54,7 +54,87 @@ Run the client
   
 ## How to report a bug
 
-To report a bug about our project you can go to this link and describe the issue:
- https://github.com/SU-CS308-22FA/Team10/issues/new
+To report a bug about our project you can go to this [link]( https://github.com/SU-CS308-22FA/Team10/issues/new) and describe the issue:
+
 
   
+
+## Known Bugs
+ We don't have any known bugs at this moment!
+
+
+##  How to obtain the source code?
+
+Clone the project
+
+```bash
+  git clone https://github.com/SU-CS308-22FA/Team10.git
+```
+
+Go to the backend
+
+```bash
+  cd backend
+```
+
+Create an .env file containing:
+
+`MONGODB_URI`
+
+`JWTPRIVATEKEY`
+
+`SALT`
+
+Install required packages
+
+```bash
+  npm install
+```
+
+Run the server
+
+```bash
+  npm start
+```
+
+
+Go to the frontend in another bash 
+
+```bash
+  cd frontend
+```
+
+Install required packages
+
+```bash
+  npm install
+```
+
+Run the client
+
+```bash
+  npm start
+```
+
+
+## Technologies
+
+ React, Node, Express, MongoDB
+
+## The layout of the directory structure
+
+- backend 
+    - middleware → Validators and handler
+    - routes → Requests coming to the server
+    - models → Database models
+    - package.json → Dependencies of the application 
+    - index.js → The main index file
+    - db.js → The database connection file
+
+- frontend 
+
+    - build → Files used for building
+    - public → Public files like the application icon
+    - src → All of the pages, routes, context files, components
+    - package.json → Dependencies of the application 
+    
