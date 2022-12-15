@@ -1,4 +1,4 @@
-import PlayersPageAgeSorted from "./components/PlayersPage/sorted-age/PlayersPage";
+import PlayersPageAgeSorted from "./components/PlayersPage/sorted-age/PlayersPage.jsx";
 import PlayersPageRatingSorted from "./components/PlayersPage/sorted-rating/PlayersPage";
 import PlayersPageMarketValueSorted from "./components/PlayersPage/sorted-marketValue/PlayersPage";
 import { Route, Routes, Navigate } from "react-router-dom";
