@@ -58,7 +58,6 @@ const OverShadowedPlayer = () => {
                           Team: {card.club} {<img src= {card.icon} width={23} height={23} alt="..."></img>} <br/> 
                           Age: {card.age}<br/>
                           Position: {card.position}<br/>
-                          Position Category: {card.position_category}<br/>
                           Merket Vaue: {card.market_value}M <br/>
                           Nationality: {card.nationality}
                           </p>

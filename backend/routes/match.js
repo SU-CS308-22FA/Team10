@@ -23,5 +23,30 @@ router.get(
 		res.send(matchList);
 	})
 )
+/*
+router.get(
+	"/:id",
+	asyncHandler(async(req,res)=>{
+		console.log("deneme");
+		const matchList = await  Match.findById(req.params.id);
+		res.send(matchList);
+	})
+)
+*/
+const getById = async (req, res, next) => {
+	const id = req.params.id;
+	let match;
+	try {
+	  
+	  match = await Match.findById(id);
+	} catch (err) {
+	  console.log(err);
+	}
+	if (!match) {
+	  return res.status(404).json({ message: "No Match found" });
+	}
+	return res.status(200).json({ match });
+  };
+  router.get("/:id", getById);
 
 module.exports = router;

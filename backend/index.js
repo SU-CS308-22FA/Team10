@@ -1,16 +1,22 @@
+const bodyParser = require('body-parser')
 require("dotenv").config();
 const express = require("express");
 const app = express();
+
 const cors = require("cors");
 const connection = require("./db");
 const userRoutes = require("./routes/user");
 const authRoutes = require("./routes/auth");
 const playerRoutes = require("./routes/player");
 
+const verifyRoutes = require("./routes/verifyRequest");
+
 const matchRoutes = require("./routes/match");
 const path = require('path');
-
 const refereeRoutes = require("./routes/referee");
+
+
+const driveRoutes = require("./routes/drive")
 
 
 // database connection
@@ -18,6 +24,8 @@ connection();
 
 // middlewares
 app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 // routes
@@ -25,8 +33,10 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/player", playerRoutes);
 
-app.use("/api/match", matchRoutes);
+app.use("/api/verify", verifyRoutes);
 
+app.use("/api/match", matchRoutes);
+app.use("/api/drive", driveRoutes);
 
 app.use("/api/referee", refereeRoutes);
 
