@@ -1,13 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.bc4ccad4.css",
-    "main.js": "/static/js/main.7f795d82.js",
+    "main.css": "/static/css/main.de63db18.css",
+    "main.js": "/static/js/main.c43fc23a.js",
+    "static/media/football.png": "/static/media/football.83d7b4fd74fc866b739d.png",
+    "static/media/detailed_match.png": "/static/media/detailed_match.57a2dc2dcabc74154e27.png",
+    "static/media/referee.png": "/static/media/referee.f9886b0effef3325381d.png",
+    "static/media/player_ronaldo.png": "/static/media/player_ronaldo.2135ce1c6f970d53fbde.png",
+    "static/media/player_messi.png": "/static/media/player_messi.397dc041e8b1bff026b2.png",
+    "static/media/match.png": "/static/media/match.fa9f3d7dd1864438c8cb.png",
+    "static/media/player.png": "/static/media/player.ee88eb2b0182473428a0.png",
+    "static/media/landing2.png": "/static/media/landing2.42f4be695cd427591b15.png",
+    "static/media/match_of_week.png": "/static/media/match_of_week.0b03789780ced5901c5c.png",
+    "static/media/landing.png": "/static/media/landing.7828a78daf542c9917d3.png",
+    "static/media/messi.jpg": "/static/media/messi.5992e9306e9af5aec58b.jpg",
+    "static/media/fenerbahce_logo.png": "/static/media/fenerbahce_logo.030a01b6aaa786bd6899.png",
+    "static/media/weekly_soccer.png": "/static/media/weekly_soccer.2d44071adad764acf53a.png",
+    "static/media/318077-1660050345.webp": "/static/media/318077-1660050345.dcc6db29b025f24eefdb.webp",
+    "static/media/68863-1591599151.webp": "/static/media/68863-1591599151.c2d110c3100b899d3f42.webp",
+    "static/media/58088-1572949088.webp": "/static/media/58088-1572949088.66ede6bfe15cc48a3f09.webp",
     "index.html": "/index.html",
-    "main.bc4ccad4.css.map": "/static/css/main.bc4ccad4.css.map",
-    "main.7f795d82.js.map": "/static/js/main.7f795d82.js.map"
+    "main.de63db18.css.map": "/static/css/main.de63db18.css.map",
+    "main.c43fc23a.js.map": "/static/js/main.c43fc23a.js.map"
   },
   "entrypoints": [
-    "static/css/main.bc4ccad4.css",
-    "static/js/main.7f795d82.js"
+    "static/css/main.de63db18.css",
+    "static/js/main.c43fc23a.js"
   ]
 }
