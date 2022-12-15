@@ -16,7 +16,7 @@ function RefereeProfile(props) {
   useEffect(() => {
     const fetchHandler = async () => {
       await axios
-        .get(`http://localhost:8080/api/referee/${id}`)
+        .get(`https://weeklysoccer.onrender.com/api/referee/${id}`)
         .then((res) => res.data)
         .then((data) => setInputs(data.referee));
     };
