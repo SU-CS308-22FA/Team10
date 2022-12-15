@@ -62,7 +62,7 @@ const Cards = () => {
           <div className="card-body text-dark">
             <h5 className="card-title">{card.name}</h5>
             <p className="card-text">
-              Team: {card.club}{" "}
+              Team: {card.team}{" "}
               {<img src={card.icon} width={23} alt="..."></img>} <br />
               Age: {card.age}
               <br />
