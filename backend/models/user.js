@@ -11,14 +11,19 @@ const userSchema = new mongoose.Schema({
         data: Buffer,
         contentType: String
     },
-  team: { type: String, required: false },
+  role: {type: Boolean, default: false}, // if admin then 1, else 0
+  team: { type: String},
+  file: {type: String, required: false},
   email: { type: String, required: true },
   password: { type: String, required: true },
+  verified: {type: Boolean, default: false, required:false},
+  
+
 });
 
 userSchema.methods.generateAuthToken = function () {
   const token = jwt.sign({ _id: this._id }, process.env.JWTPRIVATEKEY, {
-    expiresIn: "7d",
+    expiresIn: "30d",
   });
   return token;
 };
@@ -27,10 +32,9 @@ const User = mongoose.model("user", userSchema);
 
 const validator = (data) => {
   const schema = Joi.object({
+    
     firstName: Joi.string().required().label("First Name"),
     lastName: Joi.string().required().label("Last Name"),
-    image: Joi.image().label("image"),
-    team: Joi.string().required().label("Team"),
     email: Joi.string().email().required().label("Email"),
     password: passwordComplexity().required().label("Password"),
   })

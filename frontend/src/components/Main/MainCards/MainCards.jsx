@@ -11,16 +11,16 @@ const MainCards = () => {
     const navigate = useNavigate();
     function handlePlayersClicked() {
         console.log("Welcome to players page");
-        navigate("/players");
+        navigate("/player");
     }
     
     function handleRefereesClicked() {
         console.log("Welcome to referees page");
-        navigate("/");
+        navigate("/referee");
     }
     function handleMatchesClicked() {
         console.log("Welcome to matches page");
-        navigate("/");
+        navigate("/match");
     }
     return(
       <div>

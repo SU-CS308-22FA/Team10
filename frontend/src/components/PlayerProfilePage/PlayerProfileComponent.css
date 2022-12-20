@@ -8,7 +8,7 @@
 }
 
 .heading-div {
-  display: flex;
+  display:inline-flex;
 }
 
 .heading-div > * {
@@ -16,12 +16,14 @@
 }
 
 .heading-img-div {
-  margin-left: 40%;
+  margin-left: 37.5%;
   align-items: center;
   justify-content: center;
   max-height: 400px;
-  max-width: 250px;
+  max-width: 400px;
   margin-top: 60px;
+
+	object-fit: cover;
 }
 
 .heading-text-div {
@@ -34,6 +36,13 @@
 .heading-text {
   font-size: 50px;
   font-weight: 500;
+  line-height: 1.1;
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+.heading-rate {
+  
   line-height: 1.1;
   text-align: center;
   margin-top: 70px;

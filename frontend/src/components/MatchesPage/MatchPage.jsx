@@ -10,18 +10,21 @@ const MatchesPage = () => {
       <Header />
 
       <ImageSlider />
-
+      
       <p className="title">Last Week's Matches</p>
 
       <CardsMatches />
+
 
       <p className="title">This Week's Matches</p>
 
       <CardsMatches />
 
+
       <p className="title">Next Week's Matches</p>
 
       <CardsMatches />
+
     </div>
   );
 };
