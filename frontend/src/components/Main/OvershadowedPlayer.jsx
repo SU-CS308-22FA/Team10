@@ -30,8 +30,13 @@ const OverShadowedPlayer = () => {
     React.useEffect(() => {
       async function fetchData() {
           console.log("Ebrar");
+
           const matchUrl =
             "http://localhost:8080/api/match/637e05299953a84747abc2bb";
+
+          const playerUrl =
+            "http://localhost:8080/api/player/637a8d667757477ec0e70859";
+
             
           const fetchedmatch= await axios.get(matchUrl);
           console.log(fetchedmatch.data);
@@ -40,6 +45,25 @@ const OverShadowedPlayer = () => {
       fetchData();
 
     },[]);
+
+
+
+    const [card2, setCard2] = React.useState({});
+  
+    React.useEffect(() => {
+      async function fetchData() {
+          console.log("Ebrar");
+          const playerUrl =
+            "http://localhost:8080/api/match/637dfd469953a84747abc2ba";
+            
+          const fetchedPlayer = await axios.get(playerUrl);
+          console.log(fetchedPlayer.data);
+          setCard2(fetchedPlayer.data);
+      } 
+      fetchData();
+
+    },[]);
+
     
       
         return(
@@ -69,10 +93,10 @@ const OverShadowedPlayer = () => {
                     </div>
                   
                 </div>
-                
                
-           
           </div>
+                </div>
+
         );
         
    

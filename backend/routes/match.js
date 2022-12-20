@@ -4,6 +4,7 @@ const {Match} = require("../models/match");
 
 const asyncHandler = require('../middleware/asyncHandler');
 
+
 /*
 router.get(
 	"/637e05299953a84747abc2bb",
@@ -13,8 +14,18 @@ router.get(
 		res.status(201).send({ message: "Match got successfully" });
 	})
 )
-*/
 
+
+
+router.get(
+	"/637dfd469953a84747abc2ba",
+	asyncHandler(async(req,res)=>{
+		console.log("deneme3");
+		const match = await Match.findById("637dfd469953a84747abc2ba");
+		res.status(201).send({ message: "Match got successfully" });
+	})
+)
+*/
 router.get(
 	"/allmatches",
 	asyncHandler(async(req,res)=>{
@@ -23,7 +34,9 @@ router.get(
 		res.send(matchList);
 	})
 )
-/*
+
+
+
 router.get(
 	"/:id",
 	asyncHandler(async(req,res)=>{
@@ -32,7 +45,8 @@ router.get(
 		res.send(matchList);
 	})
 )
-*/
+
+
 const getById = async (req, res, next) => {
 	const id = req.params.id;
 	let match;
@@ -48,5 +62,6 @@ const getById = async (req, res, next) => {
 	return res.status(200).json({ match });
   };
   router.get("/:id", getById);
+
 
 module.exports = router;

@@ -32,6 +32,7 @@ app.use(cors());
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/player", playerRoutes);
+app.use("/api/match", matchRoutes);
 
 app.use("/api/verify", verifyRoutes);
 
