@@ -180,7 +180,7 @@ router.put("/rate/:id",authMiddleware,asyncHandler1(async(req,res)=>{
 		const getallratings = await Player.findById(playerId);
 		let totalRating = getallratings.ratings.length;
 		let ratingsum = getallratings.ratings.map((item)=> item.star).reduce((prev, curr)=>prev + curr,0);
-		let actualRating = Math.round(ratingsum/totalRating);
+		let actualRating = (ratingsum/totalRating*1.0);
 		let finalPlayer = await Player.findByIdAndUpdate(playerId,{
 			totalrating: actualRating,
 		},

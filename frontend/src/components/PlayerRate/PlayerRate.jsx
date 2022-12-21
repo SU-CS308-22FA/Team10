@@ -62,6 +62,7 @@ function PlayerRate({props}) {
           .put(`http://localhost:8080/api/player/rate/${id}`, {star, postedby: user._id},config)
           .then((res) => {
             console.log("off");
+            
               if (res.status === 200 && res.data.message) {
                   setErrorMessage(res.data.message);
               } else if (res.status === 200) {
@@ -81,9 +82,9 @@ function PlayerRate({props}) {
       setIsInteractive(false);
       setBtnValue("Saved");
       setBtnDisabled(true);
-        
+      window.location.reload();
     
-}
+};
 
    
   return (
