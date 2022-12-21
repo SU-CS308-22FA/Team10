@@ -51,7 +51,7 @@ function PlayerRate({props}) {
     const config = {
       headers: {
         "Content-Type": "application/json",
-        authorization: `Bearer ${token}`,//sıkıntı
+        authorization: `Bearer ${token}`,
       },
     }; 
     
@@ -120,29 +120,34 @@ function PlayerRate({props}) {
               <h1 className="heading-text"  style={{ color: "#3B3DB1" }}>
                {inputs.name}
               </h1>
-             
+              <h2>Rating: {inputs.totalrating}</h2>
             </div>
+            
           </div >
-          <div >
+          <div className="heading-text-div1" >
             <form  onSubmit={handleSubmit}>
               <Box
                   sx={{
                       '& > legend': { mt: 2 },
                   }}
                   >
-                  <Typography component="legend">Rate</Typography>
+                  <h3>Rate</h3>
                   <Rating
-                      
-                      name="size-large"
+                  
+                      defaultValue={inputs.totalrating} 
+                      size="large"
+                      name="size-large half-rating"
+                      precision={0.5}
                       value={star}
                       onChange={e => {setValue(e.target.value);setStar(e.target.value)}}
                       
                   />
-                  <button type="button" className="_btn" onClick={handleSubmit}>
+                  <div>
+                    <button type="button" className="_btn" onClick={handleSubmit}>
                         Submit
                     </button>
-                    <h1>{inputs.totalrating}</h1>
                     
+                    </div>
                       
                   </Box>
                 </form>
