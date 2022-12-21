@@ -14,6 +14,7 @@ import PlayersPage from "./components/PlayersPage/PlayersPage";
 import PlayerRate from "./components/PlayerRate/PlayerRate";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import MatchesPage from "./components/MatchesPage/MatchPage";
+import MatchRate from "./components/MatchRate/MatchRate";
 import PlayerProfile from "./components/PlayerProfilePage/PlayerProfileComponent";
 
 import LandingWithoutLogin from "./components/LandingWithoutLogin/LandingWithoutLogin";
@@ -55,6 +56,7 @@ function App() {
       <Route path="/player" exact element={<PlayersPage />} />
       <Route path="/player/:id" exact element={<PlayerProfile  />} />
       <Route path="/player/rate/:id" exact element={<PlayerRate  />} />
+      <Route path="/match/rate/:id" exact element={<MatchRate  />} />
       <Route path="/referee/:id" exact element={<RefereeProfile  />} />
       <Route path="/match/:id" exact element={<MatchProfile  />} />
 
