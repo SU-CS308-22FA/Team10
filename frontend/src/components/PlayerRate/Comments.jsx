@@ -3,17 +3,8 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import cardInfo from "../cardInfo";
-import {
-    Accordion,
-    Badge,
-    Button,
-    Card,
-    Col,
-    Row,
-    Form,
-    Table,
-  } from "react-bootstrap";
 
+  import "./ratingbox.css";
 const Comments = () => {
     const [data, setData] = useState({});
     const [error, setError] = useState("");
@@ -39,12 +30,12 @@ const Comments = () => {
 
     const renderComment = (card, index) => {
         return(
-            <div className="col" key={index} >
-                <div className="card h-100 w-100 text-center" >
+            <div className="card1 w-75 mx-auto" key={index} >
+                <div className="item item--1 h-100 w-100 text-center" >
                     <div className="overflow"></div>
                     <div className="card-body text-dark">
-                        <h1 className="card-text">{card.username}</h1>
-                        <h1 className="card-title">{card.comment}</h1>
+                        <h1 className="text--1">{card.username}</h1>
+                        <h1 className="text--2">{card.comment}</h1>
                     </div>
                 
             </div>
@@ -53,6 +44,6 @@ const Comments = () => {
             </div>
         );
     };
-    return <div className="row row-cols-1 cols-md-4  g-3">{[...comments].reverse().map(renderComment)}</div>; 
+    return <div className="row row-cols-1  g-3">{[...comments].reverse().map(renderComment)}</div>; 
 }
 export default Comments;

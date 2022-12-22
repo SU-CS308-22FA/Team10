@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { Button, inputAdornmentClasses } from "@mui/material";
-
+import "./ratingbox.css";
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
@@ -179,8 +179,12 @@ const handleSend = (e) => {
                       
                   />
                   <div>
-                    <button type="button" className="_btn" onClick={handleSubmit}>
-                        Submit
+                    <button type="button" className="cta" onClick={handleSubmit}>
+                        <span>Submit</span>
+                        <svg viewBox="0 0 13 10" height="10px" width="15px">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
                     </button>
                     
                     </div>
@@ -194,15 +198,17 @@ const handleSend = (e) => {
 
               >
                 <input
+                type="text"
                 placeholder="Enter a thought."
                 value={comment}
                 onChange={e => setComment(e.target.value)}
+                className="input1"
                 />
                 <button 
                 type="submit" 
-                className="_btn"
+                className="cta"
                 onClick={handleSend}>
-                  Send
+                  <span>Send</span>
                 </button>
               </form>
              

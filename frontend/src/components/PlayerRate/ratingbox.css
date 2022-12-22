@@ -1,118 +1,166 @@
-.rating-outer-container {
-    display: flex;
-    flex-direction: column;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    background-color: #fff;
-    margin: 2em 2em 0em 2em;
-    padding: 4em 3.5em 3em 2em;
-    border-radius: 10px;
-    max-width: 900px;
-    flex: 1;
-    width: 100%;
-}
-
-.rating-container {
-    display: flex;
-    flex-direction: row;
-}
-
-.rating-left {
-    display: flex;
-    flex-direction: row;
-    flex: 7;
-}
-
-.rating-team {
-    display: flex;
-    align-items: center;
-}
-
-.rating-team img {
-    width: 28px;
-    margin-right: 5px;
+.cta {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+   }
+   
+   .cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b6baf3;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+   }
+   
+   .cta span {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #3b3db1;
+   }
+   
+   .cta svg {
+    position: relative;
+    top: 0;
     margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #3b3db1;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+   }
+   
+   .cta:hover:before {
+    width: 100%;
+    background: #b6baf3;
+   }
+   
+   .cta:hover svg {
+    transform: translateX(0);
+   }
+   
+   .cta:active {
+    transform: scale(0.95);
+   }
+
+  /* From uiverse.io by @alexruix */
+.input1 {
+    line-height: 28px;
+    border: 2px solid transparent;
+    border-bottom-color: #777;
+    padding: .2rem 0;
+    outline: none;
+    background-color: transparent;
+    color: #0d0c22;
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+   }
+   
+   .input1:focus, input1:hover {
+    outline: none;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    border-color: #7a9cc6;
+   }
+   
+   .input1::placeholder {
+    color: #777;
+   }
+   
+   .input1:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+   }
+   
+  .card1 {
+
+ color: white;
+ background-color:#b6baf3;
+ 
 }
 
-.rating-team a {
-    margin-right: 10px;
-    margin-left: 5px;
+.card1 .item {
+ border-radius: 10px;
+ width: 100%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items:center;
+ 
 }
 
-.rating-left-match {
-    display: flex;
-    flex: 3;
-    justify-content: center;
-    align-items: center;
+.item:hover {
+ transform: scale(0.95);
+ transition: all 0.3s;
 }
 
-.rating-right {
-    text-align: center;
-    flex: 5;
+.item svg {
+ width: 40px;
+ height: 40px;
+ margin-bottom: 7px;
 }
 
-.rating-right-referee {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0.75em;
+.item--1 {
+ background: #c7c7ff;
 }
 
-.rating-right-referee a {
-    color: #444;
-    text-decoration: none;
+.item--2 {
+ background: #ffd8be;
 }
 
-.rating-right-referee a:hover {
-    color: #e51936;
+.item--3 {
+ background: #a9ecbf;
 }
 
-.react-rater-star {
-    color: #ccc !important;
-    font-size: 28px;
+.item--4 {
+ background: #f3bbe1;
 }
 
-.react-rater-star.is-active {
-    color: #fc6 !important;
+.quantity {
+ font-size: 25px;
+ font-weight: 600;
 }
 
-.react-rater-star.will-be-active {
-    color: #fd9 !important;
+.text {
+ font-size: 12px;
+ font-family: inherit;
+ font-weight: 600;
 }
 
-.rating-right-date {
-    color: #999;
-    font-size: 0.75em;
-    margin-top: 0.4em;
+.text--1 {
+ color: rgba(149,149,255,1);
+ font-size: 24px;
+ font-family: inherit;
+ font-weight: 600;
 }
 
-.rating-right-error {
-    color: #dc3545;
-    font-size: 0.75em;
-    margin-top: 0.4em;
+.text--2 {
+ color:#3b3db1;
+ font-size: 30px;
+ font-family: inherit;
+ font-weight: 600;
 }
 
-.rating-comment-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-    align-items: center;
-    margin-top: 0.75em;
-    font-size: 0.75em;
+.text--3 {
+ color: rgba(66,193,110,1);
 }
 
-.rating-comment-add-button a {
-    text-decoration: none;
-    color: #666;
+.text--4 {
+ color: rgba(220,91,183,1);
 }
-
-.rating-comment-add-button a:hover {
-    color: #e51936;
-}
-
-.rating-submit {
-    display: flex;
-    align-items: center;
-    flex: 1.25;
-    justify-content: center;
-}
+   
+   
+   
+   
+   
