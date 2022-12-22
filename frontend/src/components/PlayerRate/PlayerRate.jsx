@@ -12,6 +12,7 @@ import { Button, inputAdornmentClasses } from "@mui/material";
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
+import Comments from "./Comments";
 
 function PlayerRate({props}) {
   const[inputs,setInputs] = useState({});
@@ -64,7 +65,7 @@ function PlayerRate({props}) {
  
       
       axios
-          .put(`http://localhost:8080/api/player/rate/${id}`, {star, postedby: user._id},config)
+          .put(`http://localhost:8080/api/player/rate/${id}`, {star, postedby: user._id, username: user.firstName},config)
           .then((res) => {
             console.log("off");
             
@@ -99,7 +100,7 @@ const handleSend = (e) => {
     },
   }; 
   axios
-          .put(`http://localhost:8080/api/player/comment/${id}`, {comment, postedby: user._id},config)
+          .put(`http://localhost:8080/api/player/comment/${id}`, {comment, postedby: user._id, username:user.firstName+ " "+user.lastName},config)
           .then((res) => {
             console.log("off");
             
@@ -114,10 +115,11 @@ const handleSend = (e) => {
               console.log("Error: ", err);
               setErrorMessage("Error! Please try again.");
           });
-      
+      console.log({comment, postedby: user._id})
       console.log("comment saved");
+      console.log(inputs.comments);
      
-      //window.location.reload();
+      window.location.reload();
 }
 
    
@@ -187,25 +189,26 @@ const handleSend = (e) => {
                 </form>
             </div>
             <div className="heading-text-div1">
-              <input
-              placeholder="Enter a thought."
-              value={comment}
-              onChange={e => setComment(e.target.value)}
-              />
-              <button 
-              type="submit" 
-              className="_btn"
-              onClick={handleSend}>
-                Send
-              </button>
-              <div >
-                {comments.comments.map((comment) => {
-                  return  comment={comment} ;
-                })}
-              </div>
+              <form onSubmit={handleSend
+              }
+
+              >
+                <input
+                placeholder="Enter a thought."
+                value={comment}
+                onChange={e => setComment(e.target.value)}
+                />
+                <button 
+                type="submit" 
+                className="_btn"
+                onClick={handleSend}>
+                  Send
+                </button>
+              </form>
+             
               
             </div>
-           
+            <Comments/>
         </Fade>
         
       </div>

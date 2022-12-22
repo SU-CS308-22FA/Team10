@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const {Player} = require("../models/player");
+const {User} = require("../models/user");
 const { authMiddleware } = require("../middleware/authMiddleware");
-const User = require("../models/user");
+
 const asyncHandler = require('../middleware/asyncHandler');
 const asyncHandler1 = require("express-async-handler");
 
@@ -217,16 +218,18 @@ router.put("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
 	
 	const playerId = req.params.id;
 	const {_id} = req.user;
+	
 	const{comment} = req.body;
 	try{
 		const player = await Player.findById(playerId);
-		
+		const user = await User.findById(_id);
 		
 		const ratePlayer = await Player.findByIdAndUpdate({_id: playerId},{
 			
 			$push: {
 				comments:{
 					comment: comment,
+					username: user.firstName +" "+ user.lastName,
 					postedby: _id,
 				},
 			},
