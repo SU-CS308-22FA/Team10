@@ -38,12 +38,17 @@ function PlayerRate({props}) {
 
     const [value, setValue] = useState(2);
     const [star, setStar] = useState(inputs.ratings);
+    const [comment, setComment] = useState();
 
   
     
-    
+  const comments= {
+    comments : [
+      inputs.comments
+    ]
+  }
   
-  const handleSubmit = (e,getState) => {
+  const handleSubmit = (e) => {
     e.preventDefault(); 
 
     console.log(token);
@@ -85,6 +90,35 @@ function PlayerRate({props}) {
       window.location.reload();
     
 };
+const handleSend = (e) => {
+  e.preventDefault(); 
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }; 
+  axios
+          .put(`http://localhost:8080/api/player/comment/${id}`, {comment, postedby: user._id},config)
+          .then((res) => {
+            console.log("off");
+            
+              if (res.status === 200 && res.data.message) {
+                  setErrorMessage(res.data.message);
+              } else if (res.status === 200) {
+                  setErrorMessage("Your rating submitted successfully");
+              } else {
+                  setErrorMessage("Error! Please try again.");
+              }
+          }).catch((err) => {
+              console.log("Error: ", err);
+              setErrorMessage("Error! Please try again.");
+          });
+      
+      console.log("comment saved");
+     
+      //window.location.reload();
+}
 
    
   return (
@@ -152,6 +186,26 @@ function PlayerRate({props}) {
                   </Box>
                 </form>
             </div>
+            <div className="heading-text-div1">
+              <input
+              placeholder="Enter a thought."
+              value={comment}
+              onChange={e => setComment(e.target.value)}
+              />
+              <button 
+              type="submit" 
+              className="_btn"
+              onClick={handleSend}>
+                Send
+              </button>
+              <div >
+                {comments.comments.map((comment) => {
+                  return  comment={comment} ;
+                })}
+              </div>
+              
+            </div>
+           
         </Fade>
         
       </div>

@@ -139,6 +139,24 @@ const rateById = async (req, res, next) => {
   };
 router.get("/rate/:id", rateById);
 
+const commentById = async (req, res, next) => {
+	
+
+	const id = req.params.id;
+	let player;
+	try {
+		
+	  player = await Player.findById(id);
+	} catch (err) {
+	  console.log(err);
+	}
+	if (!player) {
+	  return res.status(404).json({ message: "No Player found" });
+	}
+	return res.status(200).json({ player });
+  };
+router.get("/comment/:id", commentById);
+
 
 
 router.put("/rate/:id",authMiddleware,asyncHandler1(async(req,res)=>{
@@ -187,6 +205,50 @@ router.put("/rate/:id",authMiddleware,asyncHandler1(async(req,res)=>{
 		{
 			new:true
 		});
+		//res.json(finalPlayer);
+	}catch(error){
+		throw new Error(error)
+
+	}
+}));
+
+
+router.put("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
+	
+	const playerId = req.params.id;
+	const {_id} = req.user;
+	const{comment} = req.body;
+	try{
+		const player = await Player.findById(playerId);
+		
+		
+		const ratePlayer = await Player.findByIdAndUpdate({_id: playerId},{
+			
+			$push: {
+				comments:{
+					comment: comment,
+					postedby: _id,
+				},
+			},
+		},
+		{
+			new:true,
+		}
+		);
+		console.log("comment");
+		//res.json(ratePlayer);
+		/*
+		const getallratings = await Player.findById(playerId);
+		let totalRating = getallratings.ratings.length;
+		let ratingsum = getallratings.ratings.map((item)=> item.star).reduce((prev, curr)=>prev + curr,0);
+		let actualRating = parseFloat(((ratingsum/totalRating*1.0))).toFixed(2);
+		let finalPlayer = await Player.findByIdAndUpdate(playerId,{
+			totalrating: actualRating,
+		},
+		{
+			new:true
+		});
+		*/
 		//res.json(finalPlayer);
 	}catch(error){
 		throw new Error(error)
