@@ -90,6 +90,13 @@
  background-color:#b6baf3;
  
 }
+  .subcard1 {
+    
+    color: white;
+    background-color:#b6baf3;
+    margin-left: 13rem;
+ 
+}
 
 .card1 .item {
  border-radius: 10px;
@@ -165,6 +172,8 @@
 }
    
    
-   
-   
+
+.show-replies {
+    cursor: pointer;
+  }
    

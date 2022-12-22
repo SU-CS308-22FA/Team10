@@ -53,18 +53,20 @@ const Comments = ({setActiveComment}) => {
                     </div>
                     <button type="button" className="cta" onClick={() =>
                         setActiveComment({ id: card.id, type: "replying" })}>
-                        <span>Reply</span>
+                        <span className="show-replies">Reply</span>
                         
                     </button>
+                    
                 </div>
                 
             
             </div>
+            
         );
     };
     const rendersubComment = (card, index) => {
         return(
-            <div className="card1 w-75 " key={index} >
+            <div className="subcard1 w-50 " key={index} >
                 <div className="item item--1 h-100 w-100 text-center" >
                     <div className="overflow"></div>
                     <div className="card-body text-dark">
