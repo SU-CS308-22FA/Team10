@@ -239,20 +239,38 @@ router.put("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
 		}
 		);
 		console.log("comment");
-		//res.json(ratePlayer);
-		/*
-		const getallratings = await Player.findById(playerId);
-		let totalRating = getallratings.ratings.length;
-		let ratingsum = getallratings.ratings.map((item)=> item.star).reduce((prev, curr)=>prev + curr,0);
-		let actualRating = parseFloat(((ratingsum/totalRating*1.0))).toFixed(2);
-		let finalPlayer = await Player.findByIdAndUpdate(playerId,{
-			totalrating: actualRating,
+		
+	}catch(error){
+		throw new Error(error)
+
+	}
+}));
+router.put("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
+	
+	const playerId = req.params.id;
+	const {_id} = req.user;
+	
+	const{subcomment} = req.body;
+	try{
+		const player = await Player.findById(playerId);
+		const user = await User.findById(_id);
+		
+		const ratePlayer = await Player.findByIdAndUpdate({_id: playerId},{
+			
+			$push: {
+				subcomments:{
+					subcomment: subcomment,
+					username: user.firstName +" "+ user.lastName,
+					postedby: _id,
+				},
+			},
 		},
 		{
-			new:true
-		});
-		*/
-		//res.json(finalPlayer);
+			new:true,
+		}
+		);
+		console.log("subcomment");
+		
 	}catch(error){
 		throw new Error(error)
 

@@ -55,9 +55,10 @@
     transform: scale(0.95);
    }
 
-  /* From uiverse.io by @alexruix */
+
 .input1 {
     line-height: 28px;
+    width: 670px;
     border: 2px solid transparent;
     border-bottom-color: #777;
     padding: .2rem 0;
@@ -133,7 +134,8 @@
 }
 
 .text {
- font-size: 12px;
+ font-size: 20px;
+ color: rgba(149,149,255,1);
  font-family: inherit;
  font-weight: 600;
 }
@@ -153,7 +155,9 @@
 }
 
 .text--3 {
- color: rgba(66,193,110,1);
+    color:#3b3db1;
+    font-size: 30px;
+    font-family: inherit;
 }
 
 .text--4 {

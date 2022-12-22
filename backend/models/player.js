@@ -34,8 +34,9 @@ const playerSchema = new mongoose.Schema({
       postedby: {type:mongoose.Schema.Types.ObjectId, ref:"user"},
       username: {type:mongoose.Schema.Types.String, ref:"user"},
       subcomments: [{
-        comment: Number,
+        subcomment: String,
         postedby: {type:mongoose.Schema.Types.ObjectId, ref:"user"},
+        username: {type:mongoose.Schema.Types.String, ref:"user"},
       }],
     },
   ],

@@ -40,14 +40,11 @@ function PlayerRate({props}) {
     const [value, setValue] = useState(2);
     const [star, setStar] = useState(inputs.ratings);
     const [comment, setComment] = useState();
+    const [subcomment, setsubComment] = useState();
 
   
     
-  const comments= {
-    comments : [
-      inputs.comments
-    ]
-  }
+
   
   const handleSubmit = (e) => {
     e.preventDefault(); 
@@ -65,7 +62,7 @@ function PlayerRate({props}) {
  
       
       axios
-          .put(`http://localhost:8080/api/player/rate/${id}`, {star, postedby: user._id, username: user.firstName},config)
+          .put(`http://localhost:8080/api/player/rate/${id}`, {star, postedby: user._id},config)
           .then((res) => {
             console.log("off");
             
@@ -91,7 +88,8 @@ function PlayerRate({props}) {
       window.location.reload();
     
 };
-const handleSend = (e) => {
+
+const handleComment = (e) => {
   e.preventDefault(); 
   const config = {
     headers: {
@@ -116,6 +114,37 @@ const handleSend = (e) => {
               setErrorMessage("Error! Please try again.");
           });
       console.log({comment, postedby: user._id})
+      console.log("comment saved");
+      console.log(inputs.comments);
+     
+      window.location.reload();
+}
+
+const handlesubComment = (e) => {
+  e.preventDefault(); 
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }; 
+  axios
+          .put(`http://localhost:8080/api/player/comment/${id}`, {subcomment, postedby: user._id, username:user.firstName+ " "+user.lastName},config)
+          .then((res) => {
+            console.log("off");
+            
+              if (res.status === 200 && res.data.message) {
+                  setErrorMessage(res.data.message);
+              } else if (res.status === 200) {
+                  setErrorMessage("Your rating submitted successfully");
+              } else {
+                  setErrorMessage("Error! Please try again.");
+              }
+          }).catch((err) => {
+              console.log("Error: ", err);
+              setErrorMessage("Error! Please try again.");
+          });
+      console.log({subcomment, postedby: user._id})
       console.log("comment saved");
       console.log(inputs.comments);
      
@@ -156,7 +185,7 @@ const handleSend = (e) => {
               <h1 className="heading-text"  style={{ color: "#3B3DB1" }}>
                {inputs.name}
               </h1>
-              <h2>Rating: {inputs.totalrating}</h2>
+              <h2 className="text--3">Rating: {inputs.totalrating}</h2>
             </div>
             
           </div >
@@ -167,10 +196,10 @@ const handleSend = (e) => {
                       '& > legend': { mt: 2 },
                   }}
                   >
-                  <h3>Rate</h3>
+                  <h3 className="text">Rate</h3>
                   <Rating
                   
-                      defaultValue={inputs.totalrating} 
+                       
                       size="large"
                       name="size-large half-rating"
                       precision={0.5}
@@ -193,7 +222,7 @@ const handleSend = (e) => {
                 </form>
             </div>
             <div className="heading-text-div1">
-              <form onSubmit={handleSend
+              <form onSubmit={handleComment
               }
 
               >
@@ -207,7 +236,7 @@ const handleSend = (e) => {
                 <button 
                 type="submit" 
                 className="cta"
-                onClick={handleSend}>
+                onClick={handleComment}>
                   <span>Send</span>
                 </button>
               </form>
