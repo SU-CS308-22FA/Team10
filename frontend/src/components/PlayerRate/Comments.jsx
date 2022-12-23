@@ -8,7 +8,8 @@ import "./ratingbox.css";
 import "./comments.css"
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
-const Comments = ({setActiveComment}) => {
+import { set } from "mongoose";
+const Comments = ({currentUserId}) => {
     const token = JSON.parse(sessionStorage.getItem("token"));
     const [errorMessage, setErrorMessage] = useState("");
     const [isInteractive, setIsInteractive] = useState(true);
@@ -19,7 +20,7 @@ const Comments = ({setActiveComment}) => {
     const[inputs,setInputs] = useState({});
     const id = useParams().id;
     const [comments, setComments] = React.useState([]);
-    const [subcomments, setsubComments] = React.useState(cardInfo);
+   const [activeComment, setActiveComment]=useState(null);
     const user = JSON.parse(sessionStorage.getItem("user"));
     const rootComments = comments.filter(
         (comment) => comment.parentId === null
@@ -29,6 +30,21 @@ const Comments = ({setActiveComment}) => {
     }
         
 const createCommentApi = async(comment,parentId=null) => {
+  
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+    }; 
+    
+    axios.post(`http://localhost:8080/api/player/comment/${id}`, {comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId},config)
+    
+        return{comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId};
+        
+       
+  }
+const updateCommentApi = async(comment,parentId) => {
   
     const config = {
       headers: {
@@ -49,7 +65,36 @@ const createCommentApi = async(comment,parentId=null) => {
         createCommentApi(text,parentId).then(comment =>{  //1. text
             console.log(comment)
             setComments([comment, ...comments])
+            setActiveComment(null)
         })
+    }
+
+    const updateComment = (comment, commentId) => {
+        
+        updateCommentApi(comment).then(() => {
+          const updatedComments = comments.map((comment) => {
+            if (comment._id === commentId) {
+              return { ...comment, body: comment };
+            }
+            return comment;
+          });
+          setComments(updatedComments);
+          setActiveComment(null);
+        });
+        
+      };
+
+    
+    const deleteComment = (commentId) => {
+        if (window.confirm('Are you sure you want to delete your comment?')){
+            /*
+            deleteCommentApi(commentId).then(()=>{
+                const updatedComments = comments.filter(comment => comment._id !== commentId);
+                setComments(updatedComments);
+            })
+            */
+            return {};
+        }
     }
 
     useEffect(()=>{
@@ -65,19 +110,31 @@ const createCommentApi = async(comment,parentId=null) => {
         };
         fetchHandler();
     },[id]);
-    console.log(rootComments)
+    console.log(comments)
 
   
     
     
     return(
         <div className="comments">
-            <h3 className="comments-title">Comments</h3>
-            <div className="comment-form-title">Write comment</div>
+            
+            
             <CommentForm submitLabel="Write" handleSubmit={addComment}/>
             <div className="comments-container">
+              
                 {rootComments.map((rootComment)=>(
-                    <Comment key={rootComment._id} comment={rootComment} replies={getReplies(rootComment._id)}/>
+                    
+                    <Comment 
+                        key={rootComment._id} 
+                        comment={rootComment} 
+                        replies={getReplies(rootComment._id)} 
+                        currentUserId={user._id}
+                        deleteComment={deleteComment}
+                        activeComment={activeComment}
+                        updateComment={updateComment}
+                        setActiveComment={setActiveComment}
+                        addComment={addComment}
+                    />
                 ))}
             </div>
 

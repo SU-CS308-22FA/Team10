@@ -12,15 +12,23 @@ const CommentForm = ({handleSubmit, submitLabel,hasCancelButton = false,
     }
 
     return (
-        <form onSubmit={onSubmit}>
-            <textarea
-                className="comment-form-textarea"
+        <form onSubmit={onSubmit} className="heading-text-div1">
+            <input
+                placeholder="Enter a thought."
+                className="input1"
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
             />
-            <button className="comment-form-button" disabled={isTextareaDisabled}>
-                {submitLabel}
-            </button>
+            <div>
+                <button className="cta" disabled={isTextareaDisabled}>
+                
+                    <span>Send</span>
+                            <svg viewBox="0 0 13 10" height="10px" width="15px">
+                            <path d="M1,5 L11,5"></path>
+                            <polyline points="8 1 12 5 8 9"></polyline>
+                            </svg>
+                </button>
+            </div>
             {hasCancelButton && (
                 <button
                 type="button"

@@ -191,28 +191,8 @@ const handleComment = (e) => {
                   </Box>
                 </form>
             </div>
-            <div className="heading-text-div1">
-              <form onSubmit={handleComment
-              }
-
-              >
-                <input
-                type="text"
-                placeholder="Enter a thought."
-                value={comment}
-                onChange={e => setComment(e.target.value)}
-                className="input1"
-                />
-                <button 
-                type="submit" 
-                className="cta"
-                onClick={handleComment}>
-                  <span>Send</span>
-                </button>
-              </form>
-             
+            
               
-            </div>
             <Comments/>
         </Fade>
         
