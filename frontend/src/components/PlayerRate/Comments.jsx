@@ -4,16 +4,54 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import cardInfo from "../cardInfo";
 
-  import "./ratingbox.css";
+import "./ratingbox.css";
+import "./comments.css"
+import Comment from "./Comment";
+import CommentForm from "./CommentForm";
 const Comments = ({setActiveComment}) => {
+    const token = JSON.parse(sessionStorage.getItem("token"));
+    const [errorMessage, setErrorMessage] = useState("");
+    const [isInteractive, setIsInteractive] = useState(true);
+    const [btnValue, setBtnValue] = useState("Submit");
+    const [btnDisabled, setBtnDisabled] = useState(false);
     const [data, setData] = useState({});
     const [error, setError] = useState("");
     const[inputs,setInputs] = useState({});
     const id = useParams().id;
-    const [comments, setComments] = React.useState(cardInfo);
+    const [comments, setComments] = React.useState([]);
     const [subcomments, setsubComments] = React.useState(cardInfo);
     const user = JSON.parse(sessionStorage.getItem("user"));
+    const rootComments = comments.filter(
+        (comment) => comment.parentId === null
+    );
+    const getReplies = commentId =>{
+        return comments.filter(comment=> comment.parentId === commentId)
+    }
+        
+const createCommentApi = async(comment,parentId=null) => {
+  
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+    }; 
     
+    axios.put(`http://localhost:8080/api/player/comment/${id}`, {comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId},config)
+    
+        return{comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId};
+        
+       
+  }
+        
+    const addComment = (text, parentId) =>{  //text
+        console.log('addComment',text,parentId) //text
+        createCommentApi(text,parentId).then(comment =>{  //1. text
+            console.log(comment)
+            setComments([comment, ...comments])
+        })
+    }
+
     useEffect(()=>{
         const fetchHandler=async()=>{
          const fetchedComments =
@@ -21,70 +59,38 @@ const Comments = ({setActiveComment}) => {
         .get(`http://localhost:8080/api/player/${id}`);
       
         setComments(fetchedComments.data.player.comments);
-        console.log(comments);
+        console.log(comments)
 
         
         };
         fetchHandler();
     },[id]);
+    console.log(rootComments)
 
-    useEffect(()=>{
-        const fetchHandler=async()=>{
-         const fetchedsubComments =
-        await axios
-        .get(`http://localhost:8080/api/player/${id}`);
-      
-        setsubComments(fetchedsubComments.data.player.comments);
-        console.log(subcomments);
-        };
-        fetchHandler();
-    },[id]);
+  
     
+    
+    return(
+        <div className="comments">
+            <h3 className="comments-title">Comments</h3>
+            <div className="comment-form-title">Write comment</div>
+            <CommentForm submitLabel="Write" handleSubmit={addComment}/>
+            <div className="comments-container">
+                {rootComments.map((rootComment)=>(
+                    <Comment key={rootComment._id} comment={rootComment} replies={getReplies(rootComment._id)}/>
+                ))}
+            </div>
 
-    const renderComment = (card, index) => {
-        return(
-            <div className="card1 w-75 mx-auto" key={index} >
-                <div className="item item--1 h-100 w-100 text-center" >
-                    <div className="overflow"></div>
-                    <div className="card-body text-dark">
-                        <h1 className="text--1">{card.username}</h1>
-                        <h1 className="text--2">{card.comment}</h1>
-                        
-                    </div>
-                    <button type="button" className="cta" onClick={() =>
-                        setActiveComment({ id: card.id, type: "replying" })}>
-                        <span className="show-replies">Reply</span>
-                        
-                    </button>
-                    
-                </div>
-                
-            
-            </div>
-            
-        );
-    };
-    const rendersubComment = (card, index) => {
-        return(
-            <div className="subcard1 w-50 " key={index} >
-                <div className="item item--1 h-100 w-100 text-center" >
-                    <div className="overflow"></div>
-                    <div className="card-body text-dark">
-                        <h1 className="text--1">{card.username}</h1>
-                        <h1 className="text--2">{card.subcomment}</h1>
-                        
-                    </div>
-                    
-                </div>
-                
-            
-            </div>
-        );
-    };
-    return (
-        <div className="row row-cols-1  g-3">{[...comments].reverse().map(renderComment)}
-             <div className="row row-cols-1  g-3">{[...subcomments].reverse().map(rendersubComment)}</div>
         </div>
-    ); 
+    )
+
+    
 }
 export default Comments;
+/*
+<div key={rootComment._id} >
+                        <h5>{rootComment.username}</h5>
+                        <h4>{rootComment.comment}</h4>
+                        
+                    </div>
+*/

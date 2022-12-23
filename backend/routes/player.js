@@ -231,6 +231,7 @@ router.put("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
 					comment: comment,
 					username: user.firstName +" "+ user.lastName,
 					postedby: _id,
+					parentId: null,
 				},
 			},
 		},
@@ -239,37 +240,6 @@ router.put("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
 		}
 		);
 		console.log("comment");
-		
-	}catch(error){
-		throw new Error(error)
-
-	}
-}));
-router.put("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
-	
-	const playerId = req.params.id;
-	const {_id} = req.user;
-	
-	const{subcomment} = req.body;
-	try{
-		const player = await Player.findById(playerId);
-		const user = await User.findById(_id);
-		
-		const ratePlayer = await Player.findByIdAndUpdate({_id: playerId},{
-			
-			$push: {
-				subcomments:{
-					subcomment: subcomment,
-					username: user.firstName +" "+ user.lastName,
-					postedby: _id,
-				},
-			},
-		},
-		{
-			new:true,
-		}
-		);
-		console.log("subcomment");
 		
 	}catch(error){
 		throw new Error(error)

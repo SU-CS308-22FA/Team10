@@ -100,7 +100,7 @@ const handleComment = (e) => {
   axios
           .put(`http://localhost:8080/api/player/comment/${id}`, {comment, postedby: user._id, username:user.firstName+ " "+user.lastName},config)
           .then((res) => {
-            console.log("off");
+            
             
               if (res.status === 200 && res.data.message) {
                   setErrorMessage(res.data.message);
@@ -113,42 +113,12 @@ const handleComment = (e) => {
               console.log("Error: ", err);
               setErrorMessage("Error! Please try again.");
           });
+          
       console.log({comment, postedby: user._id})
       console.log("comment saved");
       console.log(inputs.comments);
      
-      window.location.reload();
-}
-
-const handlesubComment = (e) => {
-  e.preventDefault(); 
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-      authorization: `Bearer ${token}`,
-    },
-  }; 
-  axios
-          .put(`http://localhost:8080/api/player/comment/${id}`, {subcomment, postedby: user._id, username:user.firstName+ " "+user.lastName},config)
-          .then((res) => {
-            console.log("off");
-            
-              if (res.status === 200 && res.data.message) {
-                  setErrorMessage(res.data.message);
-              } else if (res.status === 200) {
-                  setErrorMessage("Your rating submitted successfully");
-              } else {
-                  setErrorMessage("Error! Please try again.");
-              }
-          }).catch((err) => {
-              console.log("Error: ", err);
-              setErrorMessage("Error! Please try again.");
-          });
-      console.log({subcomment, postedby: user._id})
-      console.log("comment saved");
-      console.log(inputs.comments);
-     
-      window.location.reload();
+      //window.location.reload();
 }
 
    
