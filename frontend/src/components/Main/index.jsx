@@ -10,6 +10,7 @@ import MainCards from "./MainCards/MainCards";
 import Signup from "../SignUp";
 import axios from "axios";
 import OvershadowedPlayer from "./OvershadowedPlayer";
+import UpcomingMatch from "./UpcomingMatch";
 const Main = () => {
 	const navigate = useNavigate();
 	const handleLogout = () => {
@@ -31,7 +32,6 @@ const Main = () => {
 			<ImageSlider/>
 			
 			<OvershadowedPlayer/> 
-			
 			<MainCards/>
 			
 			

@@ -51,7 +51,7 @@ const CardsMatch = () => {
 
               <Link to={card._id}>
 
-              <Link to={card.link}>
+            
 
                 <button type="button" className="_btn">
                   Go to match details

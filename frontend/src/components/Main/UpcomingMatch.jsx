@@ -10,21 +10,18 @@ import { useState, useEffect } from "react";
 
 const UpcomingMatch = () => {
 
-    const [card, setCard] = React.useState({});
-  
-    React.useEffect(() => {
-      async function fetchData() {
-          console.log("Ebrar");
-          const matchUrl =
-            "http://localhost:8080/api/match/637dfd469953a84747abc2ba";
-            
-          const fetchedmatch = await axios.get(matchUrl);
-          console.log(fetchedmatch.data);
-          setCard(fetchedmatch.data);
-      } 
-      fetchData();
-
-    },[]);
+  const id2 = "637dfd469953a84747abc2ba"
+    const[inputs2,setInputs2] = useState({});
+    useEffect(()=>{
+      const fetchHandler=async()=>{
+        await axios
+        .get(`http://localhost:8080/api/match/${id2}`)
+        .then((res) => (res.data)).then(data=>setInputs2(data.match))
+        
+      };
+      fetchHandler();
+    },[id2]);
+   
     
     
       
@@ -32,21 +29,21 @@ const UpcomingMatch = () => {
          
           <div className="card h-100 w-100 text-center">
           <div className="overflow">
-          {<img src= {card.image1} width={70} alt="..."></img>} <br/> 
+          {<img src= {inputs2.image1} width={70} alt="..."></img>} <br/> 
           <p> </p>
           <p> VS </p>
-          {<img src= {card.image2} width={60} alt="..."></img>} <br/> 
+          {<img src= {inputs2.image2} width={60} alt="..."></img>} <br/> 
           </div>
           <div class="card-body text-dark">
-            <h5 class="card-title">{card.title}</h5>
+            <h5 class="card-title">{inputs2.title}</h5>
             <p className="card-text">
-                  Team 1: {card.team1} <br/> 
-                  Team 2: {card.team2}<br/>
-                  Place: {card.place}<br/>
-                  Date: {card.date}<br/>
-                  Time: {card.time}<br/>
+                  Team 1: {inputs2.team1} <br/> 
+                  Team 2: {inputs2.team2}<br/>
+                  Place: {inputs2.place}<br/>
+                  Date: {inputs2.date}<br/>
+                  Time: {inputs2.time}<br/>
                   </p>
-            <Link to={card.link}>
+            <Link to={inputs2.link}>
               <button type="button" className="_btn">
                 Go to match details
               </button>

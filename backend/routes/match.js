@@ -36,7 +36,7 @@ router.get(
 )
 
 
-
+/*
 router.get(
 	"/:id",
 	asyncHandler(async(req,res)=>{
@@ -45,7 +45,7 @@ router.get(
 		res.send(matchList);
 	})
 )
-
+*/
 
 const getById = async (req, res, next) => {
 	const id = req.params.id;
