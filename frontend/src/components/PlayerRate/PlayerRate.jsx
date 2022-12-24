@@ -151,11 +151,11 @@ const handleComment = (e) => {
           </div>
         
           <div className="heading-div">
-            <div className="heading-text-div">
-              <h1 className="heading-text"  style={{ color: "#3B3DB1" }}>
+            <div className="heading-text-div1">
+              <h1 className="heading-text1"  style={{ color: "#3B3DB1" }}>
                {inputs.name}
               </h1>
-              <h2 className="text--3">Rating: {inputs.totalrating}</h2>
+              <h2 className="text--3">Rating: {parseFloat(inputs.totalrating).toFixed(2)}</h2>
             </div>
             
           </div >

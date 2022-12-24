@@ -1,6 +1,6 @@
-.comments1 {
+.comments {
     margin-top: 20px;
-    margin-left: 100px;
+    
   }
   
   .comments-title {
@@ -10,7 +10,6 @@
   
   .comments-container {
     margin-top: 40px;
-    
     
   }
   
@@ -57,7 +56,6 @@
   .comment {
     display: flex;
     margin-bottom: 28px;
-    
     
     
     

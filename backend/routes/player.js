@@ -226,7 +226,7 @@ router.post("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
 		const player = await Player.findById(playerId);
 		const user = await User.findById(_id);
 		
-		const ratePlayer = await Player.findByIdAndUpdate({_id: playerId},{
+		const commentPlayer = await Player.findByIdAndUpdate({_id: playerId},{
 			
 			$push: {
 				comments:{

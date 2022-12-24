@@ -120,7 +120,7 @@ const updateCommentApi = async(comment,parentId) => {
             
             
             <CommentForm submitLabel="Write" handleSubmit={addComment}/>
-            <div className="comments-container">
+            <div className="comments-card">
               
                 {rootComments.map((rootComment)=>(
                     

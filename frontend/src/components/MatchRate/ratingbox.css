@@ -1,0 +1,184 @@
+.cta {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+   }
+   
+   .cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b6baf3;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+   }
+   
+   .cta span {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #3b3db1;
+   }
+   
+   .cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #3b3db1;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+   }
+   
+   .cta:hover:before {
+    width: 100%;
+    background: #b6baf3;
+   }
+   
+   .cta:hover svg {
+    transform: translateX(0);
+   }
+   
+   .cta:active {
+    transform: scale(0.95);
+   }
+
+
+.input1 {
+    line-height: 28px;
+    width: 670px;
+    border: 2px solid transparent;
+    border-bottom-color: #777;
+    padding: .2rem 0;
+    outline: none;
+    background-color: transparent;
+    color: #0d0c22;
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    
+   }
+   
+   .input1:focus, input1:hover {
+    outline: none;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    border-color: #7a9cc6;
+   }
+   
+   .input1::placeholder {
+    color: #777;
+   }
+   
+   .input1:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+   }
+   
+  .card1 {
+
+ color: white;
+ background-color:#b6baf3;
+ 
+}
+  .subcard1 {
+    
+    color: white;
+    background-color:#b6baf3;
+    margin-left: 13rem;
+ 
+}
+
+.card1 .item {
+ border-radius: 10px;
+ width: 100%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items:center;
+ 
+}
+
+.item:hover {
+ transform: scale(0.95);
+ transition: all 0.3s;
+}
+
+.item svg {
+ width: 40px;
+ height: 40px;
+ margin-bottom: 7px;
+}
+
+.item--1 {
+ background: #c7c7ff;
+}
+
+.item--2 {
+ background: #ffd8be;
+}
+
+.item--3 {
+ background: #a9ecbf;
+}
+
+.item--4 {
+ background: #f3bbe1;
+}
+
+.quantity {
+ font-size: 25px;
+ font-weight: 600;
+}
+
+.text {
+ font-size: 20px;
+ color: rgba(149,149,255,1);
+ font-family: inherit;
+ font-weight: 600;
+}
+
+.text--1 {
+ color: rgba(149,149,255,1);
+ font-size: 24px;
+ font-family: inherit;
+ font-weight: 600;
+}
+
+.text--2 {
+ color:#3b3db1;
+ font-size: 30px;
+ font-family: inherit;
+ font-weight: 600;
+}
+
+.text--3 {
+    color:#3b3db1;
+    font-size: 30px;
+    font-family: inherit;
+}
+
+.text--4 {
+ color: rgba(220,91,183,1);
+}
+   
+   
+.matchprofile-main {
+  width: 100%;
+  align-items: center;
+  
+}
+.show-replies {
+  cursor: pointer;
+}
+   

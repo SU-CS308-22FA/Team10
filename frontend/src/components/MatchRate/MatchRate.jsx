@@ -12,6 +12,7 @@ import { Button, inputAdornmentClasses } from "@mui/material";
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
+import MatchComments from "./MatchComments";
 
 function MatchRate({props}) {
   const[inputs,setInputs] = useState({});
@@ -125,7 +126,7 @@ function MatchRate({props}) {
               <h1 className="heading-text1" style={{ color: "#3B3DB1" }}>
                 {inputs.team1} vs. {inputs.team2}
               </h1>
-              <h2>Rating: {inputs.totalrating}</h2>
+              <h2 className="text--3">Rating: {parseFloat(inputs.totalrating).toFixed(2)}</h2>
             </div>
             
           </div>
@@ -136,7 +137,7 @@ function MatchRate({props}) {
                       '& > legend': { mt: 2 },
                   }}
                   >
-                  <h3>Rate</h3>
+                  <h3 className="text">Rate</h3>
                   <Rating
                       
                       name="size-large half-rating"
@@ -148,8 +149,12 @@ function MatchRate({props}) {
                       
                   />
                   <div>
-                  <button type="button" className="_btn" onClick={handleSubmit}>
-                        Submit
+                  <button type="button" className="cta" onClick={handleSubmit}>
+                        <span>Submit</span>
+                        <svg viewBox="0 0 13 10" height="10px" width="15px">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
                     </button>
                     
                     </div>
@@ -157,6 +162,7 @@ function MatchRate({props}) {
                   </Box>
                 </form>
             </div>
+            <MatchComments/>
         </Fade>
         
       </div>
