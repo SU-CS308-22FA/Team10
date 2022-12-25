@@ -50,6 +50,7 @@ function PlayerRate({ props }) {
     e.preventDefault(); 
     e.preventDefault();
 
+    
     console.log(token);
 
     const config = {
