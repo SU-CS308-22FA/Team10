@@ -169,7 +169,7 @@ const handleComment = (e) => {
                     setValue(e.target.value);
                     setStar(e.target.value);
                   }}
-                >
+                />
                   <h3 className="text">Rate</h3>
                   <Rating
 
