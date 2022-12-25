@@ -48,6 +48,7 @@ const getById = async (req, res, next) => {
 	return res.status(200).json({ match });
   };
   router.get("/:id", getById);
+
 const rateById = async (req, res, next) => {
 	
 	console.log("get match")
@@ -171,5 +172,4 @@ router.post("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
 
 	}
 }));
-
 module.exports = router;
