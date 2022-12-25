@@ -50,6 +50,7 @@ const getById = async (req, res, next) => {
   router.get("/:id", getById);
 
 const rateById = async (req, res, next) => {
+	
 	console.log("get match")
 	const id = req.params.id;
 	let match;
