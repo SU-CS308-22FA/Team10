@@ -161,15 +161,8 @@ const handleComment = (e) => {
                   "& > legend": { mt: 2 },
                 }}
               >
-                <Typography component="legend">Rate</Typography>
-                <Rating
-                  name="size-large"
-                  value={star}
-                  onChange={(e) => {
-                    setValue(e.target.value);
-                    setStar(e.target.value);
-                  }}
-                />
+              
+                
                   <h3 className="text">Rate</h3>
                   <Rating
 
