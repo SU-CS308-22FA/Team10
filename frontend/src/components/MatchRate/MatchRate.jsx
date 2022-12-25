@@ -21,7 +21,7 @@ function MatchRate({props}) {
   useEffect(()=>{
     const fetchHandler=async()=>{
       await axios
-      .get(`https://weeklysoccer2.onrender.com/api/match/${id}`)
+      .get(`https://weeklysoccer.onrender.com/api/match/${id}`)
       .then((res) => (res.data)).then(data=>setInputs(data.match))
       
     };
@@ -60,7 +60,7 @@ function MatchRate({props}) {
  
       
       axios
-          .put(`https://weeklysoccer2.onrender.com/api/match/rate/${id}`, {star, postedby: user._id},config)
+          .put(`https://weeklysoccer.onrender.com/api/match/rate/${id}`, {star, postedby: user._id},config)
           .then((res) => {
         
             
