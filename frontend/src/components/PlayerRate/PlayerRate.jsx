@@ -145,14 +145,16 @@ const handleComment = (e) => {
           </div>
 
           <div className="heading-div">
-            <div className="heading-text-div">
-              <h1 className="heading-text" style={{ color: "#3B3DB1" }}>
-                {inputs.name}
+            <div className="heading-text-div1">
+              <h1 className="heading-text1"  style={{ color: "#3B3DB1" }}>
+               {inputs.name}
               </h1>
+              <h2 className="text--3">Rating: {parseFloat(inputs.totalrating).toFixed(2)}</h2>
             </div>
-          </div>
-          <div>
-            <form onSubmit={handleSubmit}>
+            
+          </div >
+          <div className="heading-text-div1" >
+            <form  onSubmit={handleSubmit}>
               <Box
                 sx={{
                   "& > legend": { mt: 2 },
@@ -166,14 +168,35 @@ const handleComment = (e) => {
                     setValue(e.target.value);
                     setStar(e.target.value);
                   }}
-                />
-                <button type="button" className="_btn" onClick={handleSubmit}>
-                  Submit
-                </button>
-                <h1>{inputs.totalrating}</h1>
-              </Box>
-            </form>
-          </div>
+                >
+                  <h3 className="text">Rate</h3>
+                  <Rating
+                  
+                       
+                      size="large"
+                      name="size-large half-rating"
+                      precision={0.5}
+                      value={star}
+                      onChange={e => {setValue(e.target.value);setStar(e.target.value)}}
+                      
+                  />
+                  <div>
+                    <button type="button" className="cta" onClick={handleSubmit}>
+                        <span>Submit</span>
+                        <svg viewBox="0 0 13 10" height="10px" width="15px">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                    </button>
+                    
+                    </div>
+                      
+                  </Box>
+                </form>
+            </div>
+            
+              
+            <Comments/>
         </Fade>
       </div>
     </div>
