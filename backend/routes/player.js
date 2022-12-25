@@ -213,6 +213,24 @@ const commentById = async (req, res, next) => {
   };
 router.get("/comment/:id", commentById);
 
+const commentById = async (req, res, next) => {
+	
+
+	const id = req.params.id;
+	let player;
+	try {
+		
+	  player = await Player.findById(id);
+	} catch (err) {
+	  console.log(err);
+	}
+	if (!player) {
+	  return res.status(404).json({ message: "No Player found" });
+	}
+	return res.status(200).json({ player });
+  };
+router.get("/comment/:id", commentById);
+
 
 
 router.put("/rate/:id",authMiddleware,asyncHandler1(async(req,res)=>{
@@ -334,5 +352,71 @@ router.put("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
 	}
 }))
 
+
+router.post("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
+	
+	const playerId = req.params.id;
+	const {_id} = req.user;
+	
+	const{comment} = req.body;
+	const{parentId} = req.body;
+
+	try{
+		const player = await Player.findById(playerId);
+		const user = await User.findById(_id);
+		
+		const commentPlayer = await Player.findByIdAndUpdate({_id: playerId},{
+			
+			$push: {
+				comments:{
+					comment: comment,
+					username: user.firstName +" "+ user.lastName,
+					postedby: _id,
+					parentId: parentId,
+				},
+			},
+		},
+		{
+			new:true,
+		}
+		);
+		console.log("comment");
+		
+	}catch(error){
+		throw new Error(error)
+
+	}
+}));
+
+router.put("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
+	
+	const playerId = req.params.id;
+	const {_id} = req.user;
+	
+	const{comment} = req.body;
+	const{parentId} = req.body;
+
+	try{
+		const player = await Player.findById(playerId);
+		let alreadycommented = player.comments.find((userId) => userId.postedby.toString() === _id.toString());
+		if (alreadycommented){
+			const updateComment = await Player.updateOne(
+				{
+					comments:{$elemMatch: alreadycommented},
+				},
+				{
+					$set:{"comments.$.comment":comment},
+				},
+				
+			);
+			//res.json(updateRating);
+		}
+		console.log("update comment");
+		
+	}catch(error){
+		throw new Error(error)
+
+	}
+}))
 
 module.exports = router;

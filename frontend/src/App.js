@@ -17,6 +17,7 @@ import PlayersPage from "./components/PlayersPage/PlayersPage";
 import PlayerRate from "./components/PlayerRate/PlayerRate";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import MatchesPage from "./components/MatchesPage/MatchPage";
+import MatchRate from "./components/MatchRate/MatchRate";
 import PlayerProfile from "./components/PlayerProfilePage/PlayerProfileComponent";
 import AdminLogin from "./components/Login/AdminLogin";
 import AdminPage from "./components/AdminPage/AdminPage";
