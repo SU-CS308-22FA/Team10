@@ -38,7 +38,7 @@ const createCommentApi = async(comment,parentId=null) => {
       },
     }; 
     
-    axios.post(`http://localhost:8080/api/player/comment/${id}`, {comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId},config)
+    axios.post(`https://weeklysoccer.onrender.com/api/player/comment/${id}`, {comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId},config)
     
         return{comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId};
         
@@ -53,7 +53,7 @@ const updateCommentApi = async(comment,parentId) => {
       },
     }; 
     
-    axios.put(`http://localhost:8080/api/player/comment/${id}`, {comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId},config)
+    axios.put(`https://weeklysoccer.onrender.com/api/player/comment/${id}`, {comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId},config)
     
         return{comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId};
         
@@ -101,7 +101,7 @@ const updateCommentApi = async(comment,parentId) => {
         const fetchHandler=async()=>{
          const fetchedComments =
         await axios
-        .get(`http://localhost:8080/api/player/${id}`);
+        .get(`https://weeklysoccer.onrender.com/api/player/${id}`);
       
         setComments(fetchedComments.data.player.comments);
         console.log(comments)

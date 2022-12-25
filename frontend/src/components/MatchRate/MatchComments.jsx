@@ -31,7 +31,7 @@ const createCommentApi = async(comment,parentId=null) => {
       },
     }; 
     
-    axios.post(`http://localhost:8080/api/match/comment/${id}`, {comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId},config)
+    axios.post(`https://weeklysoccer2.onrender.com/api/match/comment/${id}`, {comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId},config)
     
         return{comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId};
         
@@ -49,7 +49,7 @@ const createCommentApi = async(comment,parentId=null) => {
         const fetchHandler=async()=>{
         const fetchedComments =
         await axios
-        .get(`http://localhost:8080/api/match/${id}`);
+        .get(`https://weeklysoccer2.onrender.com/api/match/${id}`);
     
         setComments(fetchedComments.data.match.comments);
         console.log(comments)

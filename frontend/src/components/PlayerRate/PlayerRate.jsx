@@ -64,7 +64,7 @@ function PlayerRate({ props }) {
 
 
       axios
-          .put(`http://localhost:8080/api/player/rate/${id}`, {star, postedby: user._id},config)
+          .put(`https://weeklysoccer.onrender.com/api/player/rate/${id}`, {star, postedby: user._id},config)
           .then((res) => {
             console.log("off");
 
@@ -100,7 +100,7 @@ const handleComment = (e) => {
     },
   };
   axios
-          .put(`http://localhost:8080/api/player/comment/${id}`, {comment, postedby: user._id, username:user.firstName+ " "+user.lastName},config)
+          .put(`https://weeklysoccer.onrender.com/api/player/comment/${id}`, {comment, postedby: user._id, username:user.firstName+ " "+user.lastName},config)
           .then((res) => {
 
 

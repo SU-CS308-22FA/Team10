@@ -22,7 +22,7 @@ const Cards = () => {
       async function fetchData() {
 
           const playerListUrl =
-            "http://localhost:8080/api/player/allplayers";
+            "https://weeklysoccer.onrender.com/api/player/allplayers";
 
           const fetchedPlayerList = await axios.get(playerListUrl);
           console.log(fetchedPlayerList);
