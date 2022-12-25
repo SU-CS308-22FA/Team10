@@ -14,24 +14,6 @@ const Cards = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const url = "https://weeklysoccer.onrender.com/api/player/allplayers";
-      const { data: res } = await axios.get(url, data);
-      console.log(data);
-
-      console.log(res.message);
-    } catch (error) {
-      if (
-        error.response &&
-        error.response.status >= 400 &&
-        error.response.status <= 500
-      ) {
-        setError(error.response.data.message);
-      }
-    }
-  };
 
   const [players, setPlayers] = React.useState(cardInfo);
 
