@@ -195,70 +195,77 @@ const rateById = async (req, res, next) => {
   return res.status(200).json({ player });
 };
 router.get("/rate/:id", rateById);
+const commentById = async (req, res, next) => {
+	
 
-router.put(
-  "/rate/:id",
-  authMiddleware,
-  asyncHandler1(async (req, res) => {
-    console.log("putt");
-    const playerId = req.params.id;
-    const { _id } = req.user;
-    const { star } = req.body;
-    try {
-      const player = await Player.findById(playerId);
-      let alreadyRated = player.ratings.find(
-        (userId) => userId.postedby.toString() === _id.toString()
-      );
-      if (alreadyRated) {
-        const updateRating = await Player.updateOne(
-          {
-            ratings: { $elemMatch: alreadyRated },
-          },
-          {
-            $set: { "ratings.$.star": star },
-          },
-          {
-            new: true,
-          }
-        );
-        //res.json(updateRating);
-      } else {
-        const ratePlayer = await Player.findByIdAndUpdate(
-          { _id: playerId },
-          {
-            $push: {
-              ratings: {
-                star: star,
-                postedby: _id,
-              },
-            },
-          },
-          {
-            new: true,
-          }
-        );
-        //res.json(ratePlayer);
-      }
-      const getallratings = await Player.findById(playerId);
-      let totalRating = getallratings.ratings.length;
-      let ratingsum = getallratings.ratings
-        .map((item) => item.star)
-        .reduce((prev, curr) => prev + curr, 0);
-      let actualRating = (ratingsum / totalRating) * 1.0;
-      let finalPlayer = await Player.findByIdAndUpdate(
-        playerId,
-        {
-          totalrating: actualRating,
-        },
-        {
-          new: true,
-        }
-      );
-      //res.json(finalPlayer);
-    } catch (error) {
-      throw new Error(error);
-    }
-  })
-);
+	const id = req.params.id;
+	let player;
+	try {
+		
+	  player = await Player.findById(id);
+	} catch (err) {
+	  console.log(err);
+	}
+	if (!player) {
+	  return res.status(404).json({ message: "No Player found" });
+	}
+	return res.status(200).json({ player });
+  };
+router.get("/comment/:id", commentById);
+
+
+
+router.put("/rate/:id",authMiddleware,asyncHandler1(async(req,res)=>{
+	console.log("putt");
+	const playerId = req.params.id;
+	const {_id} = req.user;
+	const{star} = req.body;
+	try{
+		const player = await Player.findById(playerId);
+		let alreadyRated = player.ratings.find((userId) => userId.postedby.toString() === _id.toString());
+		if (alreadyRated){
+			const updateRating = await Player.updateOne(
+				{
+					ratings:{$elemMatch: alreadyRated},
+				},
+				{
+					$set:{"ratings.$.star":star},
+				},
+				{
+					new:true,
+				}
+			);
+			//res.json(updateRating);
+		}else{
+			const ratePlayer = await Player.findByIdAndUpdate({_id: playerId},{
+				$push: {
+					ratings:{
+						star: star,
+						postedby: _id,
+					},
+				},
+			},
+			{
+				new:true,
+			}
+			);
+			//res.json(ratePlayer);
+		}
+		const getallratings = await Player.findById(playerId);
+		let totalRating = getallratings.ratings.length;
+		let ratingsum = getallratings.ratings.map((item)=> item.star).reduce((prev, curr)=>prev + curr,0);
+		let actualRating = parseFloat(((ratingsum/totalRating*1.0))).toFixed(2);
+		let finalPlayer = await Player.findByIdAndUpdate(playerId,{
+			totalrating: actualRating,
+		},
+		{
+			new:true
+		});
+		//res.json(finalPlayer);
+	}catch(error){
+		throw new Error(error)
+
+	}
+}));
 
 module.exports = router;
