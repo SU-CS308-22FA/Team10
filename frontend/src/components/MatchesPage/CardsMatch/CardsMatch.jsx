@@ -31,26 +31,28 @@ const CardsMatch = () => {
             {<img src={card.image1} width={70} alt="..."></img>} <br />
             <p> </p>
             <p> VS </p>
-            {<img src={card.image2} width={60} alt="..."></img>} <br />
-          </div>
-          <div class="card-body text-dark">
-            <h5 class="card-title">{card.title}</h5>
-            <p className="card-text">
-              Team 1: {card.team1} <br />
-              Team 2: {card.team2}
-              <br />
-              Place: {card.place}
-              <br />
-              Date: {card.date}
-              <br />
-              Time: {card.time}M <br />
-            </p>
-            <Link to={card._id}>
-              <button type="button" className="_btn">
-                Go to match details
-              </button>
-            </Link>
-          </div>
+            {<img src= {card.image2} width={60} alt="..."></img>} <br/> 
+            </div>
+            <div class="card-body text-dark">
+              <h5 class="card-title">{card.title}</h5>
+              <p className="card-text">
+                    Team 1: {card.team1} <br/> 
+                    Team 2: {card.team2}<br/>
+                    Place: {card.place}<br/>
+                    Date: {card.date}<br/>
+                    Time: {card.time}M <br/>
+                    </p>
+              <Link to={card._id}>
+                <button type="button" className="_btn">
+                  Go to match details
+                </button>
+              </Link>
+              <Link to={"rate/"+card._id}>
+                <button type="button" className="_btn" >
+                    Rate
+                </button>
+              </Link>
+            </div>
         </div>
       </div>
     );
