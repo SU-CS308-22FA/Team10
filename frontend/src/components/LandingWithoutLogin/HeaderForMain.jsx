@@ -17,7 +17,7 @@ const HeaderForMain = () => {
           value="undefined"
         >
           <Typography variant="title" marginRight={108}>
-            <a href="/main">
+            <a href="/">
               <img src={image} width={182} height={64} />
             </a>
           </Typography>
