@@ -15,12 +15,13 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "https://weeklysoccer.vercel.app/api/auth";
+      const url = "https://weeklysoccer.onrender.com/api/auth";
       const { data: res } = await axios.post(url, data);
       console.log(res);
-      sessionStorage.setItem("token", res.data);
+      sessionStorage.setItem("token", JSON.stringify(res.data));
       sessionStorage.setItem("user", JSON.stringify(res.user));
-      window.location = "/";
+
+      window.location = "/main";
     } catch (error) {
       if (
         error.response &&
