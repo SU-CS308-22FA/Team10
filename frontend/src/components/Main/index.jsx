@@ -17,7 +17,7 @@ const Main = () => {
 		sessionStorage.removeItem("token");
 		sessionStorage.removeItem("user");
 		
-		navigate("/signup");
+		navigate("/");
 	};
 	const [error, setError] = useState("");
 	const [value, setValue] = useState();
