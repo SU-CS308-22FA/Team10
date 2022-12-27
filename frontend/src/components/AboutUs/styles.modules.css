@@ -71,3 +71,129 @@
 	align-items: center;
 	color: #3b3db1;
 }
+
+.cards2 {
+	perspective: 800px;
+	text-align: center;
+	margin-top: 30px;
+  	display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card2 {
+	width: 500px;
+	height: 550px;
+	background: #3405a3;
+	border: 2px solid #555555;
+	border-radius: 4px;
+	position: relative;
+	transform-style: preserve-3d;
+	will-change: transform;
+	transition: transform .5s;
+	
+  }
+  
+  .card2:hover {
+	transform: translateZ(10px) rotateX(20deg) rotateY(20deg);
+  }
+  
+  .card2_title {
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: transform .5s;
+	font: 1000 3rem monospace;
+	text-shadow: -1px -1px 0 #b6baf3,  
+	  1px -1px 0 #b6baf3,
+	  -1px 1px 0 #b6baf3,
+	   1px 1px 0 #b6baf3;
+  }
+  
+  .card2:hover .card_title {
+	transform: translateZ(50px);
+  }
+
+  .whoarewe {
+	text-align: center;
+	justify-content: center;
+	margin-right: 3%;
+	margin-left: 3%;
+
+	font-size: 50px;
+	text-align: center;
+
+	color: #3b3db1;
+	font-weight: bold;
+	font-family: "Playfair Display";
+	font-size: 5em;
+  }
+
+
+  
+  .card3 {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:20px;
+	margin-bottom:20px;
+	width: 690px;
+	height: 254px;
+	background: #3405a3;
+	border-radius: 15px;
+	box-shadow: 1px 5px 60px 0px #100a886b;
+	
+   }
+   
+   .card3 .card3-border-top {
+	width: 60%;
+	height: 3%;
+	background: #6b64f3;
+	margin: auto;
+	border-radius: 0px 0px 15px 15px;
+   }
+   
+   .card3 span {
+	font-weight: 600;
+	color: white;
+	text-align: center;
+	display: block;
+	padding-top: 10px;
+	font-size: 16px;
+   }
+   
+   .card3 .job {
+	font-weight: 400;
+	color: white;
+	display: block;
+	text-align: center;
+	padding-top: 3px;
+	font-size: 18px;
+   }
+   
+   .card3 .img {
+	width: 150px;
+	height: 150px;
+	background: #6b64f3;
+	border-radius: 15px;
+	margin: auto;
+	margin-top: 25px;
+   }
+   
+   .card3 button {
+	padding: 8px 25px;
+	display: block;
+	margin: auto;
+	border-radius: 8px;
+	border: none;
+	margin-top: 30px;
+	background: #6b64f3;
+	color: white;
+	font-weight: 600;
+   }
+   
+   .card3 button:hover {
+	background: #534bf3;
+   }
+
+  
