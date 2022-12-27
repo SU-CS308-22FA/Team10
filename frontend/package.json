@@ -16,6 +16,7 @@
     "glamor": "^2.20.40",
     "joi": "^17.6.4",
     "mdb-react-ui-kit": "^5.0.0",
+    "mongoose": "^6.8.1",
     "react": "^18.2.0",
     "react-app-rewired": "^2.2.1",
     "react-bootstrap": "^2.7.0",
