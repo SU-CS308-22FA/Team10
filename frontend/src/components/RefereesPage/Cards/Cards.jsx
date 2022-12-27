@@ -85,6 +85,11 @@ const Cards = () => {
                 Profile
               </button>
             </Link>
+            <Link to={"rate/"+card._id}>
+              <button type="button" className="_btn" >
+                  Rate
+              </button>
+            </Link>
           </div>
         </div>
       </div>
