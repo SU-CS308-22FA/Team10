@@ -10,8 +10,6 @@ const VerificationRequests = () => {
 		<div className={styles.main_container}>
 			<HeaderForAdmin/>
 			
-			
-			
 			<p className="title">Verification Requests From Users</p>
 			
 			<RequestCards/>
