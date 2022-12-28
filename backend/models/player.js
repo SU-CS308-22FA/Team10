@@ -27,7 +27,15 @@ const playerSchema = new mongoose.Schema({
   totalrating: {
     type:Number,
     default: 0,
-  }
+  },
+  comments: [
+    {
+      comment: String,
+      postedby: {type:mongoose.Schema.Types.ObjectId, ref:"user"},
+      username: {type:mongoose.Schema.Types.String, ref:"user"},
+      parentId: {type:mongoose.Schema.Types.ObjectId},
+    },
+  ],
   
   
 
