@@ -13,6 +13,7 @@ import PlayersPage from "./components/PlayersPage/PlayersPage";
 import PlayerRate from "./components/PlayerRate/PlayerRate";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import MatchesPage from "./components/MatchesPage/MatchPage";
+import MatchRate from "./components/MatchRate/MatchRate";
 import PlayerProfile from "./components/PlayerProfilePage/PlayerProfileComponent";
 import AdminLogin from "./components/Login/AdminLogin";
 import AdminPage from "./components/AdminPage/AdminPage";
@@ -25,7 +26,7 @@ import RefereeRate from "./components/RefereeRate/RefereeRate";
 import MatchProfile from "./components/MatchDetailPage/MatchProfileComponent";
 import NotAuthError from "./requirements/NotAuthError";
 import NotAuthError2 from "./requirements/NotAuthError2";
-
+import Scrape from "./components/AdminPage/Scrape";
 
 
 function App() {
@@ -33,7 +34,21 @@ function App() {
 
   return (
     <Routes>
+
+      {user && <Route path="/main" exact element={<Main />} />}
+      <Route path="/signup" exact element={<Signup />} />
+      <Route path="/login" exact element={<Login />} />
+      <Route path="/" exact element = {<LandingWithoutLogin/>}/>
+      <Route path="/aboutUs" exact element={<AboutUs />} />
+      <Route path="/player" exact element={<PlayersPage />} />
+      <Route path="/player/:id" exact element={<PlayerProfile  />} />
+      <Route path="/player/rate/:id" exact element={<PlayerRate  />} />
+      <Route path="/match/rate/:id" exact element={<MatchRate  />} />
+      <Route path="/referee/:id" exact element={<RefereeProfile  />} />
+      <Route path="/match/:id" exact element={<MatchProfile  />} />
+
       <Route path="/main" exact element={<Main />} />
+
 
       { user ?
         <>
@@ -74,12 +89,22 @@ function App() {
             <>
               <Route path="/admin-page" exact element={<AdminPage/>}/>
               <Route path="/requests" exact element={<VerificationRequests/>}/>
+              <Route path="/admin/scrape" exact element={<Scrape />} />
+              <Route path="/player" exact element={<PlayersPage/>}/>
+              <Route path="/player/:id" exact element={<PlayerProfile/>}/>
+              <Route path="/player/rate/:id" exact element={<PlayerRate/>}/>
+
+
+              <Route path="/referee" exact element={<RefereesPage/>}/>
+              <Route path="/referee/:id" exact element={<RefereeProfile/>}/>
+              <Route path="/referee/rate/:id" exact element={<RefereeRate/>}/>
             </>
           }
         </>
         :
         <>
           <Route path="/admin" exact element={<AdminLogin />} />
+          
           <Route path="/signup" exact element={<Signup />} />
           <Route path="/login" exact element={<Login />} />
           <Route path="/player" exact element={<PlayersPage/>}/>
