@@ -11,7 +11,7 @@ const Login = () => {
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -20,7 +20,8 @@ const Login = () => {
       console.log(res);
       sessionStorage.setItem("token", JSON.stringify(res.data));
       sessionStorage.setItem("user", JSON.stringify(res.user));
-      window.location = "/";
+
+      window.location = "/main";
     } catch (error) {
       if (
         error.response &&
@@ -60,6 +61,7 @@ const Login = () => {
             <button type="submit" className={styles.green_btn}>
               Login
             </button>
+            
           </form>
         </div>
         <div className={styles.bottom}>

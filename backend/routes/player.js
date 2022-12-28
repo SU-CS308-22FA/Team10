@@ -25,14 +25,7 @@ router.post("/addPlayer", async(req, res) => {
 
 
 
-router.get(
-	"/637a8ed97757477ec0e7085bf",
-	asyncHandler(async(req,res)=>{
-		
-		const player = await Player.findById("637a8ed97757477ec0e7085b");
-		res.status(201).send(player);
-	})
-)
+
 router.get(
 	"/allplayers",
 	asyncHandler(async(req,res)=>{
@@ -42,6 +35,15 @@ router.get(
 	})
 )
 /*
+
+router.get(
+	"/:id",
+	asyncHandler(async(req,res)=>{
+		console.log("Guler");
+		const playerList = await Player.findById(req.params.id);
+		res.send(playerList);
+}))
+
 router.get(
 	"/:id",
 	asyncHandler(async(req,res)=>{
@@ -49,6 +51,14 @@ router.get(
 		const playerList = await Player.findById(req.params.id);
 		res.send(playerList);
 	})
+	router.get(
+	"/637a8ed97757477ec0e7085bf",
+	asyncHandler(async(req,res)=>{
+		
+		const player = await Player.findById("637a8ed97757477ec0e7085b");
+		res.status(201).send(player);
+	})
+)
 )
 */
 
@@ -95,6 +105,7 @@ const getById = async (req, res, next) => {
 	}
 	return res.status(200).json({ player });
   };
+
 router.get("/:id", getById);
 
 
@@ -198,7 +209,11 @@ router.put("/rate/:id",authMiddleware,asyncHandler1(async(req,res)=>{
 		const getallratings = await Player.findById(playerId);
 		let totalRating = getallratings.ratings.length;
 		let ratingsum = getallratings.ratings.map((item)=> item.star).reduce((prev, curr)=>prev + curr,0);
+
 		let actualRating = parseFloat(((ratingsum/totalRating*1.0))).toFixed(2);
+
+		let actualRating = (ratingsum/totalRating*1.0);
+
 		let finalPlayer = await Player.findByIdAndUpdate(playerId,{
 			totalrating: actualRating,
 		},

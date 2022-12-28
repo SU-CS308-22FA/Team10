@@ -54,7 +54,11 @@ function PlayerRate({props}) {
     const config = {
       headers: {
         "Content-Type": "application/json",
+
         authorization: `Bearer ${token}`,
+
+        authorization: `Bearer ${token}`,//sıkıntı
+
       },
     }; 
     

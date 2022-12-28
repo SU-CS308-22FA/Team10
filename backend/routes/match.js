@@ -5,12 +5,24 @@ const {User} = require("../models/user");
 const { authMiddleware } = require("../middleware/authMiddleware");
 const asyncHandler = require('../middleware/asyncHandler');
 const asyncHandler1 = require("express-async-handler");
+
 /*
 router.get(
 	"/637e05299953a84747abc2bb",
 	asyncHandler(async(req,res)=>{
 		console.log("deneme3");
 		const match = await Match.findById("637e05299953a84747abc2bb");
+		res.status(201).send({ message: "Match got successfully" });
+	})
+)
+
+
+
+router.get(
+	"/637dfd469953a84747abc2ba",
+	asyncHandler(async(req,res)=>{
+		console.log("deneme3");
+		const match = await Match.findById("637dfd469953a84747abc2ba");
 		res.status(201).send({ message: "Match got successfully" });
 	})
 )
@@ -23,6 +35,8 @@ router.get(
 		res.send(matchList);
 	})
 )
+
+
 /*
 router.get(
 	"/:id",
@@ -33,6 +47,7 @@ router.get(
 	})
 )
 */
+
 const getById = async (req, res, next) => {
 	const id = req.params.id;
 	let match;
