@@ -5,6 +5,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 import image from "../img/weekly_soccer.png";
 import styles from "../Main/styles.modules.css";
+
+
 const HeaderForAdmin = () => {
   const navigate = useNavigate();
 	const handleLogout = () => {
