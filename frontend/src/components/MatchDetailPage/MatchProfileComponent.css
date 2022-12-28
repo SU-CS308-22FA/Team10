@@ -25,7 +25,16 @@
 
   object-fit: cover;
 }
+.heading-img-div2 {
+  margin-right: 18.5%;
+  align-items: center;
+  justify-content: center;
+  max-height: 400px;
+  max-width: 400px;
+  margin-top: 60px;
 
+  object-fit: cover;
+}
 .heading-text-div1 {
   text-align: center;
   justify-content: center;
@@ -38,7 +47,18 @@
   font-weight: 500;
   line-height: 1.1;
   text-align: center;
-  margin-top: 70px;
+  justify-content: center;
+  margin-top: 200px;
+  margin-bottom: 20px;
+}
+
+.heading-text2 {
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 1.1;
+  text-align: center;
+  justify-content: center;
+  margin-top: 120px;
   margin-bottom: 20px;
 }
 

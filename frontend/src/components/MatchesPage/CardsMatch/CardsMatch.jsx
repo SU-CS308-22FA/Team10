@@ -12,7 +12,6 @@ const CardsMatch = () => {
 
   React.useEffect(() => {
     async function fetchData() {
-      console.log("Ebrar");
       const matchListUrl =
         "https://weeklysoccer.onrender.com/api/match/allmatches";
 
@@ -25,28 +24,27 @@ const CardsMatch = () => {
 
   const renderCard = (card, index) => {
     return (
-      <div className="col">
+      <div className="col" >
         <div className="card h-100 w-100 text-center" key={index}>
-          <div className="overflow">
-            {<img src={card.image1} width={70} alt="..."></img>} <br />
-            <p> </p>
-            <p> VS </p>
-            {<img src= {card.image2} width={60} alt="..."></img>} <br/> 
-            </div>
+          <div className="column">
+             {<img src={card.image1} width={100} alt="..."></img>}
+             &nbsp;&nbsp;VS&nbsp;&nbsp; 
+             {<img src= {card.image2} width={100} alt="..."></img>}
+          </div>
             <div class="card-body text-dark">
               <h5 class="card-title">{card.title}</h5>
               <p className="card-text">
                     Team 1: {card.team1} <br/> 
                     Team 2: {card.team2}<br/>
-                    Place: {card.place}<br/>
                     Date: {card.date}<br/>
-                    Time: {card.time}M <br/>
+                    Time: {card.time} <br/>
                     </p>
               <Link to={card._id}>
                 <button type="button" className="_btn">
-                  Go to match details
+                  Statistics
                 </button>
               </Link>
+              <p></p>
               <Link to={"rate/"+card._id}>
                 <button type="button" className="_btn" >
                     Rate
@@ -58,9 +56,9 @@ const CardsMatch = () => {
     );
   };
   return (
-    <div className="row row-cols-4 row-cols-md-6 g-4">
-      {matches.map(renderCard)}
-    </div>
+      <div className="row row-cols-4 row-cols-md-5 g-4">
+        {matches.map(renderCard)}
+      </div>
   ); //players.map yazıcaz
 };
 
