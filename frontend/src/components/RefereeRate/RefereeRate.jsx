@@ -11,7 +11,7 @@ import "./ratingbox.css";
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
-import Comments from "./Comment";
+import RefereeComments from "./RefereeComments";
 
 
 function RefereeRate({props}) {
@@ -43,7 +43,7 @@ function RefereeRate({props}) {
   const [subcomment, setsubComment] = useState();
 
   
-  const handleSubmit = (e) => {
+  const handleSubmit = (e,getState) => {
     e.preventDefault(); 
 
     console.log(token);
@@ -59,7 +59,7 @@ function RefereeRate({props}) {
       axios
           .put(`http://localhost:8080/api/referee/rate/${id}`, {star, postedby: user._id},config)
           .then((res) => {
-            console.log("off");
+        
             
               if (res.status === 200 && res.data.message) {
                   setErrorMessage(res.data.message);
@@ -75,57 +75,25 @@ function RefereeRate({props}) {
       console.log({star, postedby: user._id});
       //setRatings(prevRatings=>[...prevRatings,newRating]);
       //setRatings(newRating);
-      console.log(inputs.ratings);
+      console.log(inputs.totalrating);
       
       setIsInteractive(false);
       setBtnValue("Saved");
       setBtnDisabled(true);
       window.location.reload();
     
-  };
-
-const handleComment = (e) => {
-  e.preventDefault(); 
-  const config = {
-    headers: {
-      "Content-Type": "application/json",
-      authorization: `Bearer ${token}`,
-    },
-  }; 
-  axios
-      .put(`http://localhost:8080/api/referee/comment/${id}`, {comment, postedby: user._id, username:user.firstName+ " "+user.lastName},config)
-      .then((res) => {
-        
-        
-          if (res.status === 200 && res.data.message) {
-              setErrorMessage(res.data.message);
-          } else if (res.status === 200) {
-              setErrorMessage("Your rating submitted successfully");
-          } else {
-              setErrorMessage("Error! Please try again.");
-          }
-      }).catch((err) => {
-          console.log("Error: ", err);
-          setErrorMessage("Error! Please try again.");
-      });
-      
-  console.log({comment, postedby: user._id})
-  console.log("comment saved");
-  console.log(inputs.comments);
-  
-  //window.location.reload();
-}
+};
 
    
   return (
     
-<div className="playerprofile-main">
-      <Header />
-        
-      <div className="basic-playerprofile">
-      
+
+    <div className="refereeprofile-main">
+      <Header />        
+      <div className="basic-refereeprofile">
         <Fade bottom duration={2000} distance="40px">
-          <div className="heading-div">
+       
+        <div className="heading-div">
             <div className="heading-img-div" style={{display:"flex"}}>
             
               <ReactRoundedImage
@@ -140,12 +108,14 @@ const handleComment = (e) => {
               />
             <div>
                 
-            </div>
-            </div>
+                </div>
+                </div>
+                
+              </div>
             
-          </div>
+          
         
-          <div className="heading-div">
+              <div className="heading-div">
             <div className="heading-text-div1">
               <h1 className="heading-text1"  style={{ color: "#3B3DB1" }}>
                {inputs.name}
@@ -188,13 +158,13 @@ const handleComment = (e) => {
             </div>
             
               
-            <Comments/>
+            <RefereeComments/>
         </Fade>
+        
         
       </div>
     </div>
   );
 }
-
 
 export default RefereeRate;

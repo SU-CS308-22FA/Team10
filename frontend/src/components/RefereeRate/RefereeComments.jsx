@@ -1,0 +1,92 @@
+import React from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import cardInfo from "../cardInfo";
+
+import "./ratingbox.css";
+import "./comments.css"
+import RefereeComment from "./RefereeComment";
+import RefereeCommentForm from "./RefereeCommentForm";
+import { set } from "mongoose";
+
+
+const RefereeComments = ({currentUserId}) => {
+  const token = JSON.parse(sessionStorage.getItem("token"));
+  const id = useParams().id;
+  const [comments, setComments] = React.useState([]);
+ const [activeComment, setActiveComment]=useState(null);
+  const user = JSON.parse(sessionStorage.getItem("user"));
+  const rootComments = comments.filter(
+      (comment) => comment.parentId === null
+  );
+  const getReplies = commentId =>{
+      return comments.filter(comment=> comment.parentId === commentId)
+  }
+      
+const createCommentApi = async(comment,parentId=null) => {
+
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }; 
+  
+  axios.post(`http://localhost:8080/api/referee/comment/${id}`, {comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId},config)
+  
+      return{comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId};
+      
+     
+}
+const addComment = (text, parentId) =>{  //text
+  console.log('addComment',text,parentId) //text
+  createCommentApi(text,parentId).then(comment =>{  //1. text
+      console.log(comment)
+      setComments([comment, ...comments])
+      setActiveComment(null)
+  })
+  }
+  useEffect(()=>{
+      const fetchHandler=async()=>{
+      const fetchedComments =
+      await axios
+      .get(`http://localhost:8080/api/referee/${id}`);
+  
+      setComments(fetchedComments.data.referee.comments);
+      console.log(comments)
+
+      
+      };
+      fetchHandler();
+  },[id]);
+  console.log(comments)
+  return(
+      <div className="comments1">
+          
+          
+          <RefereeCommentForm submitLabel="Write" handleSubmit={addComment}/>
+          <div className="comments-card">
+            
+              {rootComments.map((rootComment)=>(
+                  
+                  <RefereeComment 
+                      key={rootComment._id} 
+                      comment={rootComment} 
+                      replies={getReplies(rootComment._id)} 
+                      currentUserId={user._id}
+                      
+                      activeComment={activeComment}
+                  
+                      setActiveComment={setActiveComment}
+                      addComment={addComment}
+                  />
+              ))}
+          </div>
+
+      </div>
+  )
+
+
+}
+export default RefereeComments;

@@ -1,4 +1,4 @@
-import CommentForm from "./CommentForm";
+import RefereeCommentForm from "./RefereeCommentForm";
 
 const Comment = ({comment,replies, currentUserId,deleteComment,activeComment,setActiveComment,updateComment,addComment,parentId=null})=>{
    
@@ -22,7 +22,7 @@ const Comment = ({comment,replies, currentUserId,deleteComment,activeComment,set
                 </div>
                 {!isEditing&&<div className="comment-text">{comment.comment}</div>}
                 {isEditing&&(
-                    <CommentForm submitLabel="Update" 
+                    <RefereeCommentForm submitLabel="Update" 
                      hasCancelButton 
                      initialText={comment.comment} 
                      handleSubmit={(comment)=>updateComment(comment,comment._id)}
@@ -46,7 +46,7 @@ const Comment = ({comment,replies, currentUserId,deleteComment,activeComment,set
                 {
                     
                 isReplying && (
-                    <CommentForm submitLabel="Reply" handleSubmit={(comment)=> addComment(comment,replyId)}/>
+                    <RefereeCommentForm submitLabel="Reply" handleSubmit={(comment)=> addComment(comment,replyId)}/>
                 )}
                 {replies.length > 0 && (
                     <div className="replies">

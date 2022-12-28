@@ -9,6 +9,7 @@ import "./comments.css"
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 import { set } from "mongoose";
+
 const Comments = ({currentUserId}) => {
     const token = JSON.parse(sessionStorage.getItem("token"));
     const [errorMessage, setErrorMessage] = useState("");

@@ -212,8 +212,6 @@ router.put("/rate/:id",authMiddleware,asyncHandler1(async(req,res)=>{
 
 		let actualRating = parseFloat(((ratingsum/totalRating*1.0))).toFixed(2);
 
-		let actualRating = (ratingsum/totalRating*1.0);
-
 		let finalPlayer = await Player.findByIdAndUpdate(playerId,{
 			totalrating: actualRating,
 		},

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const CommentForm = ({handleSubmit, submitLabel,hasCancelButton = false,
+const RefereeCommentForm = ({handleSubmit, submitLabel,hasCancelButton = false,
     handleCancel,
     initialText = "",})=>{
     const [comment, setComment] = useState("");
@@ -42,4 +42,4 @@ const CommentForm = ({handleSubmit, submitLabel,hasCancelButton = false,
             
     );
 };
-export default CommentForm;
+export default RefereeCommentForm;
