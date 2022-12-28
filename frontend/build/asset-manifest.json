@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.74a0b0b6.css",
-    "main.js": "/static/js/main.ec208e30.js",
+    "main.css": "/static/css/main.1159807d.css",
+    "main.js": "/static/js/main.490e04e4.js",
     "static/media/football.png": "/static/media/football.83d7b4fd74fc866b739d.png",
+    "static/media/ball.jpg": "/static/media/ball.82d5861dfbfbfd4e1993.jpg",
     "static/media/detailed_match.png": "/static/media/detailed_match.57a2dc2dcabc74154e27.png",
     "static/media/referee.png": "/static/media/referee.f9886b0effef3325381d.png",
     "static/media/player_ronaldo.png": "/static/media/player_ronaldo.2135ce1c6f970d53fbde.png",
     "static/media/player_messi.png": "/static/media/player_messi.397dc041e8b1bff026b2.png",
+    "static/media/hero-4.jpg": "/static/media/hero-4.320f45ba3506bdb91a56.jpg",
     "static/media/player.png": "/static/media/player.ee88eb2b0182473428a0.png",
     "static/media/landing2.png": "/static/media/landing2.42f4be695cd427591b15.png",
     "static/media/match_of_week.png": "/static/media/match_of_week.0b03789780ced5901c5c.png",
@@ -18,11 +20,11 @@
     "static/media/68863-1591599151.webp": "/static/media/68863-1591599151.c2d110c3100b899d3f42.webp",
     "static/media/58088-1572949088.webp": "/static/media/58088-1572949088.66ede6bfe15cc48a3f09.webp",
     "index.html": "/index.html",
-    "main.74a0b0b6.css.map": "/static/css/main.74a0b0b6.css.map",
-    "main.ec208e30.js.map": "/static/js/main.ec208e30.js.map"
+    "main.1159807d.css.map": "/static/css/main.1159807d.css.map",
+    "main.490e04e4.js.map": "/static/js/main.490e04e4.js.map"
   },
   "entrypoints": [
-    "static/css/main.74a0b0b6.css",
-    "static/js/main.ec208e30.js"
+    "static/css/main.1159807d.css",
+    "static/js/main.490e04e4.js"
   ]
 }
