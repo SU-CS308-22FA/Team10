@@ -12,7 +12,6 @@ const CardsMatch = () => {
 
   React.useEffect(() => {
     async function fetchData() {
-      console.log("Ebrar");
       const matchListUrl =
         "https://weeklysoccer.onrender.com/api/match/allmatches";
 
