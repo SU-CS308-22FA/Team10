@@ -1,6 +1,10 @@
-import styles from "../Main//styles.modules.css";
+
 import React from "react";
 import HeaderForAdmin from "./HeaderForAdmin";
+import { Link, Navigate , useNavigate} from "react-router-dom"; 
+import styles from "./styles.module.css";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 /*
 const puppeteer = require('puppeteer');
@@ -11,32 +15,85 @@ async function scrapeProduct(url) {
 
 }
 */
+
 const Scrape = () => {
+  const [data, setData] = useState({});
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
   function handleScrape() {
+  
+  }
+  /*
+  const handlePlayersScrape= async(e) =>{
+    e.preventDefault();
+   
+    try {
+      
+      const url = "http://localhost:8080/api/scraper" ;
+      
+      const { data: res } = await axios.get("https://tr.wikipedia.org/wiki/2022-23_S%C3%BCper_Lig");
+      console.log("ebol");
+      console.log(data);
+      
+      
+      
+      console.log(res.message);
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ) {
+        setError(error.response.data.message);
+      }
+    }
     
   }
+  function handleRefereesScrape() {
+    scrapeProduct("https://tr.wikipedia.org/wiki/2022-23_S%C3%BCper_Lig").then(function() {
+      console.log("scrape tamam");
+    }
+    );
+  }
+  */
+  function handleMatchesScrape() {
+  
+  }
+
     return (
-		<div className={styles.main_container}>
-			<HeaderForAdmin/>
-			<p className="title">Update all database</p>
-            <div class="wrapper">
-            <div class="link_wrapper">
-                <a href="#">Scrape!</a>
-                <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
-                    <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
-                </svg>
-                </div>
-            </div>
-            
-            </div>
-			<button
-              stype="button"
-              className={styles.gray_btn}
-              
-            >
+      <div><HeaderForAdmin/>
+      <div className={styles.login_container}>
+      <div className={styles.login_form_container}>
+      
+        <div className={styles.left}>
+       
+          <form className={styles.form_container}>
+          
+          <h1> Players</h1>
+          <button type="submit" className={styles.green_btn} onClick={handleMatchesScrape}>
+            Scrape Players
+          </button>
+          <h1>Referees</h1>
+          <button type="submit" className={styles.green_btn}>
+            Scrape Referees
+          </button>
+          <h1>Matches</h1>
+          <button type="submit" className={styles.green_btn}>
+            Scrape Matches
+          </button>
+          </form>
+          
+        </div>
+        <div className={styles.bottom}>
+        <h1 color = "white" className="title">Update all database</h1>
+          <Link to="/signup">
+            <button type="button" className={styles.white_btn}>
               Scrape
             </button>
+          </Link>
+        </div>
+      </div>
+    </div>
 		</div>
     );
 }

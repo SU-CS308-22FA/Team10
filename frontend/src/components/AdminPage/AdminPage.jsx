@@ -28,9 +28,7 @@ const AdminPage = () => {
 		<div className={styles.main_container}>
 			<HeaderForAdmin/>
 			<ImageSlider/>
-			<MainCards/>
-			
-				
+			<MainCards/>	
 		</div>
 	);
 };
