@@ -155,7 +155,7 @@ const handleComment = (e) => {
           </div>
         
           <div className="heading-div">
-            <div className="heading-text-div1">
+            <div className="heading-text-div4">
               <h1 className="heading-text1"  style={{ color: "#3B3DB1" }}>
                {inputs.name}
               </h1>
