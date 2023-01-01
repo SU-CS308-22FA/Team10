@@ -1,8 +1,12 @@
 const mongoose = require("mongoose");
+const { stringify } = require("querystring");
 
 const matchSchema = new mongoose.Schema({
   team1: { type: String, required: true },
   team2: { type: String, required: true },
+  logo1: {type:String},
+  logo2: {type:String},
+  week: {type: Number},
   place: { type: String, required: true },
   date: { type: String, required: true },
   time: { type: String, required: true },
@@ -31,6 +35,6 @@ const matchSchema = new mongoose.Schema({
 
 
 
-const Match= mongoose.model("matches", matchSchema);
+const Match = mongoose.model("matches", matchSchema);
 
-module.exports = { Match};
+module.exports = {Match};

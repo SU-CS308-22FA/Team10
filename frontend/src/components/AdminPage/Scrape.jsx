@@ -20,9 +20,8 @@ const Scrape = () => {
   const [data, setData] = useState({});
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  function handleScrape() {
+  const [weekNum, setWeekNum] = useState();
   
-  }
   /*
   const handlePlayersScrape= async(e) =>{
     e.preventDefault();
@@ -56,31 +55,42 @@ const Scrape = () => {
     );
   }
   */
-  function handleMatchesScrape() {
+  const handleMatchesScrape =  async(e) => {
+        
+    console.log("The week num is ", e);
+    await axios
+      .post(`http://localhost:8080/api/match/updateMatch`, {e})
+      .then((res) => (res.data))
+  };
   
-  }
-
     return (
       <div><HeaderForAdmin/>
+      
       <div className={styles.login_container}>
       <div className={styles.login_form_container}>
       
         <div className={styles.left}>
        
-          <form className={styles.form_container}>
+          <form className={styles.form_container} >
           
-          <h1> Players</h1>
-          <button type="submit" className={styles.green_btn} onClick={handleMatchesScrape}>
-            Scrape Players
+          <h3> Delete all comments and rates of the players and referees</h3>
+          <button type="submit" className={styles.green_btn} >
+             Delete rate & comments
           </button>
-          <h1>Referees</h1>
-          <button type="submit" className={styles.green_btn}>
-            Scrape Referees
+          <h3>Choose which week we are currently in</h3>
+
+
+          <input
+              type="number"
+              value={weekNum}
+              onChange={(e) => setWeekNum(e.target.value)}
+              className={styles.input}/>
+         
+         <button type="button" className={styles.green_btn} onClick={ ()=> handleMatchesScrape(weekNum)}  >
+          Get that week's match information
           </button>
-          <h1>Matches</h1>
-          <button type="submit" className={styles.green_btn}>
-            Scrape Matches
-          </button>
+          
+          
           </form>
           
         </div>

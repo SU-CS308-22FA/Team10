@@ -34,10 +34,10 @@ const CardsMatch = () => {
           <div className="col" >
           <div className="card h-100 w-100 text-center" key={index}>
             <div className="overflow">
-            {<img src= {card.image1} width={70} alt="..."></img>} <br/> 
+            {<img src= {card.logo1} width={70} alt="..."></img>} <br/> 
             <p> </p>
             <p> VS </p>
-            {<img src= {card.image2} width={60} alt="..."></img>} <br/> 
+            {<img src= {card.logo2} width={60} alt="..."></img>} <br/> 
             </div>
             <div class="card-body text-dark">
               <h5 class="card-title">{card.title}</h5>
@@ -46,7 +46,8 @@ const CardsMatch = () => {
                     Team 2: {card.team2}<br/>
                     Place: {card.place}<br/>
                     Date: {card.date}<br/>
-                    Time: {card.time}M <br/>
+                    Time: {card.time}<br/>
+                    Week: {card.week}<br/>
                     </p>
 
               <Link to={card._id}>
