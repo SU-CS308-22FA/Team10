@@ -10,6 +10,24 @@ const matchSchema = new mongoose.Schema({
   place: { type: String, required: true },
   date: { type: String, required: true },
   time: { type: String, required: true },
+
+  gf: { type: String },
+  ga: { type: String },
+  poss: { type: String},
+  team1_goals: { type: String },
+  team1_shots: { type: String},
+  team1_shots_on_target: { type: String},
+  team1_shot_percentage: { type: String },
+  team1_pk: { type: String},
+  team1_pkatt: { type: String },
+  team2_shots: { type: String},
+  team2_shots_on_target: { type: String },
+  team2_shot_percentage: { type: String},
+  team2_pk: { type: String},
+  team2_pkatt: { type: String},
+  comp: { type: String},
+
+
   ratings: [
     {
       star: Number,

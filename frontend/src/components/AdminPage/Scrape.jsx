@@ -21,8 +21,14 @@ const Scrape = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const [weekNum, setWeekNum] = useState();
-  
-  /*
+
+    const handlePlayerScrape =  async() => {
+      console.log("Player Data");
+      await axios
+        .post(`http://localhost:8080/api/player/updatePlayers`)
+        .then((res) => (res.data))
+  };
+  /*ß
   const handlePlayersScrape= async(e) =>{
     e.preventDefault();
    
@@ -74,7 +80,7 @@ const Scrape = () => {
           <form className={styles.form_container} >
           
           <h3> Delete all comments and rates of the players and referees</h3>
-          <button type="submit" className={styles.green_btn} >
+          <button type="submit" className={styles.green_btn} onClick = {handlePlayerScrape}> 
              Delete rate & comments
           </button>
           <h3>Choose which week we are currently in</h3>

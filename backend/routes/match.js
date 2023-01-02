@@ -62,7 +62,6 @@ router.post("/updateMatch",asyncHandler(async (req, res)=>{
                 weekCount +=1;
             }
             if(weekCount==weekNum) {
-							
                 const team1 = resp.data.response[i].teams.home.name;
                 const team2 = resp.data.response[i].teams.away.name;
                 const place = resp.data.response[i].fixture.venue.name;
@@ -71,14 +70,12 @@ router.post("/updateMatch",asyncHandler(async (req, res)=>{
                 const logo2 = resp.data.response[i].teams.away.logo;
 				const time = "20.00";
 				const week = weekCount;
-				
+				const team1_goals = resp.data.response[i].goals.home;
+				const team2_goals = resp.data.response[i].goals.away;
+
 				
 				console.log("PostMatch");
-				if(count == 0) {
-					console.log("count=0")
-					count+=1;
-					console.log("silindi")
-				}
+				
 				await new Match({team1, team2, logo1, logo2, week, place,date, time}).save(); //db ye kayıt
 				console.log("eklendi");
 				
