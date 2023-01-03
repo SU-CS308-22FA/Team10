@@ -37,7 +37,7 @@ const MainCards = () => {
                 </div>
              
              {error && <div className={styles.error_msg}>{error}</div>}
-             <button type="submit" className={"green_btn"}>
+             <button type="submit" className={"green_btn"} id = "playersid">
                  Players
              </button>
              </form>
