@@ -5,6 +5,7 @@ const {Match} = require("../models/match");
 const { authMiddleware } = require("../middleware/authMiddleware");
 const asyncHandler = require('../middleware/asyncHandler');
 const asyncHandler1 = require("express-async-handler");
+const {User} = require("../models/user");
 const {MongoClient} = require("mongodb");
 
 // Replace the uri string with your MongoDB deployment's connection string.
