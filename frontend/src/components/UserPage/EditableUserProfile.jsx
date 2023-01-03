@@ -64,12 +64,7 @@ export default function EditableUserProfile({}) {
         <div className={styles.left}>
           <form className={styles.form_container} onSubmit={handleSaveClicked}>
             <h1>Edit your information:</h1>
-            <h5> Upload an image: </h5>
-            <input
-              type="file"
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
-            />
+            
             <input
               type="text"
               value={firstName}
@@ -103,17 +98,30 @@ export default function EditableUserProfile({}) {
             <h6>Selected: {selected}</h6>
             <button
               stype="button"
-              className={styles.purple_btn}
+              className="cta"
               onClick={handleSaveClicked}
             >
+              <span>
               Save
+              </span>
+              <svg viewBox="0 0 13 10" height="10px" width="15px">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
             </button>
+            
             <button
               stype="button"
-              className={styles.purple_btn}
+              className="cta"
               onClick={handleCancelClicked}
             >
+              <span>
               Cancel
+              </span>
+              <svg viewBox="0 0 13 10" height="10px" width="15px">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
             </button>
           </form>
         </div>

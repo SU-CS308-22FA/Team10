@@ -5,6 +5,54 @@ const { Referee } = require("../models/referee");
 const { User } = require("../models/user");
 const asyncHandler = require("../middleware/asyncHandler");
 
+router.post("/addReferee", async (req, res) => {
+  const {
+    name,
+    age,
+    domestic_league,
+    international_league,
+    image,
+    bio,
+    career,
+    matches,
+    yellow,
+    secondyellow,
+    red,
+    penalty,
+    ratings,
+    totalrating,
+    comments
+  } = req.body;
+  const newReferee = new Referee({
+    name,
+    age,
+    domestic_league,
+    international_league,
+    image,
+    bio,
+    career,
+    matches,
+    yellow,
+    secondyellow,
+    red,
+    penalty,
+    ratings,
+    totalrating,
+    comments
+  });
+
+  try {
+    const referee = await Referee.findOne({ name: name });
+    if (referee) throw Error("This referee already exists");
+
+    const savedReferee = await newReferee.save();
+    if (!savedReferee)
+      throw Error("Something went wrong while saving the referee");
+  } catch (e) {
+    res.status(400).json({ error: e.message });
+  }
+});
+
 router.get(
   "/637d9bdbb9e9d9d7f5703984",
   asyncHandler(async (req, res) => {

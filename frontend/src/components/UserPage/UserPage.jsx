@@ -77,7 +77,7 @@ const UserPage = () =>{
           <h1>My Profile</h1>
           <h1></h1>
           <h1></h1>
-          <h5> Your account is:   <b>{verified_status}</b> </h5>
+          <h5 className={styles.textverify}> Your account is:   <b>{verified_status}</b> </h5>
           
           <button stype="button" className={styles.white_btn} onClick={handleVerification}>Verify if not verified</button>
 

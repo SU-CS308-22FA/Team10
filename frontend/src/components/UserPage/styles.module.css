@@ -76,6 +76,10 @@
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
+.textverify {
+	color: white;
+
+}
 
 .bottom h1 {
 	margin-top: 30;
