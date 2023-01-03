@@ -30,10 +30,9 @@ const HeaderForAdmin = () => {
             </a>
           </Typography>
 
-          <Tab LinkComponent={NavLink} to="/requests" label="Verification Requests" />
-          <Tab LinkComponent={NavLink} to="/player" label="Players" />
-          <Tab LinkComponent={NavLink} to="/matches" label="Matches" />
-          <Tab LinkComponent={NavLink} to="/referee" label="Referees" />
+          <Tab LinkComponent={NavLink} to="/requests" label="Verification Requests" />     
+          <Tab LinkComponent={NavLink} to="/admin/scrape" label="Update data" />
+          <Tab LinkComponent={NavLink} to="/main" label="Main" />
           <Tab onClick={handleLogout}  label="Log Out" />
         </Tabs>
       </Toolbar>

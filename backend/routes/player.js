@@ -5,7 +5,7 @@ const { authMiddleware } = require("../middleware/authMiddleware");
 const {User} = require("../models/user");
 const asyncHandler = require("../middleware/asyncHandler");
 const asyncHandler1 = require("express-async-handler");
-
+const axios = require("axios");
 
 router.post("/addPlayer", async(req, res) => {
     const {name, team, age, position, market_value, nationality,icon,image,desc,dateOB,height,placeOB,youthCareer,transferHist,joined,number,ratings,totalrating} = req.body;
@@ -22,6 +22,68 @@ router.post("/addPlayer", async(req, res) => {
         res.status(400).json({ error: e.message });
     }
 });
+
+async function deleteAllPlayerRecords() {
+	try {
+	  const database = client.db("test");
+	  const players = database.collection("players");
+	  
+	  const result = await players.deleteMany({});
+	  console.log("Deleted " + result.deletedCount + " documents");
+	} finally {
+	  await client.close();
+	}
+}
+router.post("/updatePlayers",asyncHandler(async (req, res)=>{
+   
+	console.log("upload started");
+	//await deleteAllPlayerRecords();
+	const options = {
+		method: 'GET',
+		url: 'https://api-football-v1.p.rapidapi.com/v3/players',
+		params: {league: '203', season: '2022'},
+		headers: {
+		  'X-RapidAPI-Key': '602c4adf1bmsh910076b23b3f397p1880d5jsn734017665c2d',
+		  'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+		}
+	  };
+	  
+	  axios.request(options).then(async function (resp) {
+		  console.log(resp.data.response[1].player);
+		  console.log(resp.data.response[1]);
+		  console.log(resp.data.response.length);
+		  for(var i=0; i<resp.data.response.length; i++) {
+			const name = resp.data.response[i].player.firstName +" " + resp.data.response[i].player.lastName;
+			const age =resp.data.response[i].player.age;
+			const team = resp.data.response[i].statistics[0].team.name;
+			const icon = resp.data.response[i].statistics[0].team.logo;
+			const nationality = resp.data.response[i].player.nationality;
+			const image = resp.data.response[i].player.photo;
+			const position = resp.data.response[i].statistics[0].games.position;
+			const height =resp.data.response[i].player.height;
+			const weight = resp.data.response[i].player.weight;
+			const birthDate = resp.data.response[i].player.birth.date;
+			const birthPlace = resp.data.response[i].player.birth.place + ", " + resp.data.response[i].player.birth.country;
+			const league = resp.data.response[i].statistics[0].league.name + ", " + resp.data.response[i].statistics[0].league.country + ", " +resp.data.response[i].statistics[0].league.season;
+			const cards = "Yellow: " + resp.data.response[i].statistics[0].cards.yellow +" YellowRed: " + resp.data.response[i].statistics[0].cards.yellowred + " Red: " + resp.data.response[i].statistics[0].cards.red;
+			const fouls = "Drawn: "+ resp.data.response[i].statistics[0].fouls.drawn + " Committed: " + resp.data.response[i].statistics[0].fouls.committed;
+			const penalty = "Won: "  + resp.data.response[i].statistics[0].penalty.won
+			+ " Committed: " + resp.data.response[i].statistics[0].penalty.committed 
+			+" Scored: "+resp.data.response[i].statistics[0].penalty.scored 
+			+ " Missed: " + resp.data.response[i].statistics[0].penalty.missed 
+			+ " Saved: " + resp.data.response[i].statistics[0].penalty.saved;
+
+			const goals = "Total :" + resp.data.response[i].statistics[0].goals.total;
+            
+			await new Player({name, age, team, icon, image, nationality, position, height, weight, birthDate, birthPlace, league, cards, fouls, penalty, goals}).save(); //db ye kayıt
+			console.log("eklendi");
+		  } 
+		  
+	  }).catch(function (error) {
+		  console.error(error);
+	  });
+	
+}));
 
 
 
