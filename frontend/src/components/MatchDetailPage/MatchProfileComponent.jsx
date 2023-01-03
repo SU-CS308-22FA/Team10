@@ -35,7 +35,7 @@ function MatchProfile(props) {
           <div className="heading-div">
             <div className="heading-img-div1" style={{ display: "flex" }}>
               <ReactRoundedImage
-                image={inputs.image1}
+                image={inputs.logo1}
                 roundedColor="#3b3db1"
                 imageWidth="250"
                 imageHeight="250"
@@ -50,7 +50,7 @@ function MatchProfile(props) {
             
             <div className="heading-img-div2" style={{ display: "flex" }}>
               <ReactRoundedImage
-                image={inputs.image2}
+                image={inputs.logo2}
                 roundedColor="#3b3db1"
                 imageWidth="250"
                 imageHeight="250"
