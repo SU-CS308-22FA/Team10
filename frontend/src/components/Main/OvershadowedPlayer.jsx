@@ -19,7 +19,7 @@ const OverShadowedPlayer = () => {
     useEffect(()=>{
       const fetchHandler=async()=>{
         await axios
-        .get(`http://localhost:8080/api/player/${id}`)
+        .get(`https://weeklysoccer.onrender.com/api/player/${id}`)
         .then((res) => (res.data)).then(data=>setInputs(data.player))
         
       };
@@ -30,7 +30,7 @@ const OverShadowedPlayer = () => {
     useEffect(()=>{
       const fetchHandler=async()=>{
         await axios
-        .get(`http://localhost:8080/api/match/${id2}`)
+        .get(`https://weeklysoccer.onrender.com/api/match/${id2}`)
         .then((res) => (res.data)).then(data=>setInputs2(data.match))
         
       };
@@ -41,7 +41,7 @@ const OverShadowedPlayer = () => {
     useEffect(()=>{
       const fetchHandler=async()=>{
         await axios
-        .get(`http://localhost:8080/api/match/${id2}`)
+        .get(`https://weeklysoccer.onrender.com/api/match/${id2}`)
         .then((res) => (res.data)).then(data=>setInputs2(data.match))
         
       };
@@ -52,9 +52,9 @@ const OverShadowedPlayer = () => {
       async function fetchData() {
           console.log("Ebrar");
           const matchUrl =
-            "http://localhost:8080/api/match/637e05299953a84747abc2bb";
+            "https://weeklysoccer.onrender.com/api/match/637e05299953a84747abc2bb";
           const playerUrl =
-            "http://localhost:8080/api/player/637a8d667757477ec0e70859";
+            "https://weeklysoccer.onrender.com/api/player/637a8d667757477ec0e70859";
             
           const fetchedmatch= await axios.get(matchUrl);
           console.log(fetchedmatch.data);

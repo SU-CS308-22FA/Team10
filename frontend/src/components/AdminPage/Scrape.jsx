@@ -25,7 +25,7 @@ const Scrape = () => {
     const handlePlayerScrape =  async() => {
       console.log("Player Data");
       await axios
-        .post(`http://localhost:8080/api/player/updatePlayers`)
+        .post(`https://weeklysoccer.onrender.com/api/player/updatePlayers`)
         .then((res) => (res.data))
   };
   /*ß
@@ -34,7 +34,7 @@ const Scrape = () => {
    
     try {
       
-      const url = "http://localhost:8080/api/scraper" ;
+      const url = "https://weeklysoccer.onrender.com/api/scraper" ;
       
       const { data: res } = await axios.get("https://tr.wikipedia.org/wiki/2022-23_S%C3%BCper_Lig");
       console.log("ebol");
@@ -65,7 +65,7 @@ const Scrape = () => {
         
     console.log("The week num is ", e);
     await axios
-      .post(`http://localhost:8080/api/match/updateMatch`, {e})
+      .post(`https://weeklysoccer.onrender.com/api/match/updateMatch`, {e})
       .then((res) => (res.data))
   };
   

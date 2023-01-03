@@ -14,7 +14,7 @@ const UpcomingMatch = () => {
     useEffect(()=>{
       const fetchHandler=async()=>{
         await axios
-        .get(`http://localhost:8080/api/match/${id2}`)
+        .get(`https://weeklysoccer.onrender.com/api/match/${id2}`)
         .then((res) => (res.data)).then(data=>setInputs2(data.match))
 
       };

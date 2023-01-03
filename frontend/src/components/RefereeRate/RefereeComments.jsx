@@ -33,7 +33,7 @@ const createCommentApi = async(comment,parentId=null) => {
     },
   }; 
   
-  axios.post(`http://localhost:8080/api/referee/comment/${id}`, {comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId},config)
+  axios.post(`https://weeklysoccer.onrender.com/api/referee/comment/${id}`, {comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId},config)
   
       return{comment, postedby: user._id, username:user.firstName+ " "+user.lastName,parentId};
       
@@ -51,7 +51,7 @@ const addComment = (text, parentId) =>{  //text
       const fetchHandler=async()=>{
       const fetchedComments =
       await axios
-      .get(`http://localhost:8080/api/referee/${id}`);
+      .get(`https://weeklysoccer.onrender.com/api/referee/${id}`);
   
       setComments(fetchedComments.data.referee.comments);
       console.log(comments)
