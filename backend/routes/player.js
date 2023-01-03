@@ -6,6 +6,9 @@ const {User} = require("../models/user");
 const asyncHandler = require("../middleware/asyncHandler");
 const asyncHandler1 = require("express-async-handler");
 const axios = require("axios");
+const {MongoClient} = require("mongodb");
+const uri = process.env.MONGODB_URI;
+const client = new MongoClient(uri);
 
 router.post("/addPlayer", async(req, res) => {
     const {name, team, age, position, market_value, nationality,icon,image,desc,dateOB,height,placeOB,youthCareer,transferHist,joined,number,ratings,totalrating} = req.body;
@@ -37,11 +40,14 @@ async function deleteAllPlayerRecords() {
 router.post("/updatePlayers",asyncHandler(async (req, res)=>{
    
 	console.log("upload started");
-	//await deleteAllPlayerRecords();
+	await deleteAllPlayerRecords();
+	for(var j=3;j<6; j++) {
+
+	
 	const options = {
 		method: 'GET',
 		url: 'https://api-football-v1.p.rapidapi.com/v3/players',
-		params: {league: '203', season: '2022'},
+		params: {league: '203', season: '2022', page: j},
 		headers: {
 		  'X-RapidAPI-Key': '602c4adf1bmsh910076b23b3f397p1880d5jsn734017665c2d',
 		  'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
@@ -53,7 +59,7 @@ router.post("/updatePlayers",asyncHandler(async (req, res)=>{
 		  console.log(resp.data.response[1]);
 		  console.log(resp.data.response.length);
 		  for(var i=0; i<resp.data.response.length; i++) {
-			const name = resp.data.response[i].player.firstName +" " + resp.data.response[i].player.lastName;
+			const name = resp.data.response[i].player.name;
 			const age =resp.data.response[i].player.age;
 			const team = resp.data.response[i].statistics[0].team.name;
 			const icon = resp.data.response[i].statistics[0].team.logo;
@@ -82,7 +88,7 @@ router.post("/updatePlayers",asyncHandler(async (req, res)=>{
 	  }).catch(function (error) {
 		  console.error(error);
 	  });
-	
+	}
 }));
 
 
