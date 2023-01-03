@@ -19,7 +19,7 @@ const refereeSchema = new mongoose.Schema({
       postedby: {type:mongoose.Schema.Types.ObjectId, ref:"user"},
     },
   ],
-  
+
   totalrating: {
     type:Number,
     default: 0,
@@ -32,7 +32,9 @@ const refereeSchema = new mongoose.Schema({
       parentId: {type:mongoose.Schema.Types.ObjectId},
     },
   ],
-});
+},
+{timestamps : true}
+);
 
 const Referee = mongoose.model("referee", refereeSchema);
 

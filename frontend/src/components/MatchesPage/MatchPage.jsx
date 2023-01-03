@@ -29,7 +29,7 @@ const MatchesPage = () => {
                   lg={10}
                   className="px-0 mx-auto d-flex align-items-center">
                   <div className="text-center">
-  
+
                     <div className="px-4 px-sm-0 text-black mt-4">
                       <h1 className="display-2 mb-5 font-weight-bold">
                         Match of the Week
@@ -37,7 +37,7 @@ const MatchesPage = () => {
                       <p className="font-size-xl text-black-50 mb-3">
                         The match got the highest average rank this week according to the vote's of the weeklysoccer members.
                       </p>
-         
+
                       <div className="divider border-2 border-light my-5 border-light opacity-2 mx-auto rounded-circle w-50" />
                       <div>
                         <Button
@@ -74,19 +74,15 @@ const MatchesPage = () => {
           </div>
         </div>
       </div>
-    </Fragment>      
-    
+    </Fragment>
+
     <p className="title">All Matches</p>
 
     <CardsMatches />
 
-      
+
     </div>
   );
 };
 
 export default MatchesPage;
-
-
-
-

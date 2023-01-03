@@ -27,19 +27,24 @@ const CardsMatch = () => {
       <div className="col" >
         <div className="card h-100 w-100 text-center" key={index}>
           <div className="column">
-             {<img src={card.image1} width={100} alt="..."></img>}
-             &nbsp;&nbsp;VS&nbsp;&nbsp; 
-             {<img src= {card.image2} width={100} alt="..."></img>}
+             {<img src={card.logo1} width={100} alt="..."></img>}
+             &nbsp;&nbsp;VS&nbsp;&nbsp;
+             {<img src= {card.logo2} width={100} alt="..."></img>}
           </div>
             <div class="card-body text-dark">
               <h5 class="card-title">{card.title}</h5>
               <p className="card-text">
-                    Team 1: {card.team1} <br/> 
+                    Team 1: {card.team1} <br/>
                     Team 2: {card.team2}<br/>
                     Date: {card.date}<br/>
-                    Time: {card.time} <br/>
+                    Time: {card.time}<br/>
+                    Week: {card.week}<br/>
                     </p>
+
               <Link to={card._id}>
+
+
+
                 <button type="button" className="_btn">
                   Statistics
                 </button>

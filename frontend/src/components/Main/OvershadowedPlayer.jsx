@@ -9,46 +9,123 @@ import { useState, useEffect } from "react";
 const OverShadowedPlayer = () => {
   const [card, setCard] = React.useState({});
 
-  const [inputs, setInputs] = useState({});
-  const id = "637d4c95f1ebee2cd4e7fcad";
-  console.log();
-  useEffect(() => {
-    const fetchHandler = async () => {
-      await axios
-        .get(`https://weeklysoccer.onrender.com/api/player/${id}`)
-        .then((res) => res.data)
-        .then((data) => setInputs(data.player));
-    };
-    fetchHandler();
-  }, [id]);
 
-  const [card2, setCard2] = React.useState({});
 
-  React.useEffect(() => {
-    async function fetchData() {
-      console.log("Ebrar");
-      const matchUrl =
-        "https://weeklysoccer.onrender.com/api/match/637e05299953a84747abc2bb";
+    const[inputs,setInputs] = useState({});
+    const id = "637d4c95f1ebee2cd4e7fcad";
 
-      const fetchedmatch = await axios.get(matchUrl);
-      console.log(fetchedmatch.data);
-      setCard2(fetchedmatch.data);
-    }
-    fetchData();
-  }, []);
+    console.log();
+    useEffect(()=>{
+      const fetchHandler=async()=>{
+        await axios
+        .get(`http://localhost:8080/api/player/${id}`)
+        .then((res) => (res.data)).then(data=>setInputs(data.player))
 
-  return (
-    <div className="row row-cols-15 row-cols-md-4 g-6">
-      <div className="card-center cardalign w-50 h-50">
-        <h3 className="title">Highlighted Player of This Week</h3>
-        <div className="card h-100 w-100 text-center">
-          <div className="overflow">
-            <img
-              src={inputs.image}
-              className="card-img-center"
-              alt="..."
-              object-fit="fill"
-            />
+      };
+      fetchHandler();
+    },[id]);
+    const id2 = "637dfd469953a84747abc2ba"
+    const[inputs2,setInputs2] = useState({});
+    useEffect(()=>{
+      const fetchHandler=async()=>{
+        await axios
+        .get(`http://localhost:8080/api/match/${id2}`)
+        .then((res) => (res.data)).then(data=>setInputs2(data.match))
+
+      };
+      fetchHandler();
+    },[id2]);
+/*
+    const[inputs2,setInputs2] = useState({});
+    useEffect(()=>{
+      const fetchHandler=async()=>{
+        await axios
+        .get(`http://localhost:8080/api/match/${id2}`)
+        .then((res) => (res.data)).then(data=>setInputs2(data.match))
+
+      };
+      fetchHandler();
+    },[id2]);
+
+    React.useEffect(() => {
+      async function fetchData() {
+          console.log("Ebrar");
+
+          const matchUrl =
+            "http://localhost:8080/api/match/637e05299953a84747abc2bb";
+
+          const playerUrl =
+            "http://localhost:8080/api/player/637a8d667757477ec0e70859";
+
+
+          const fetchedmatch= await axios.get(matchUrl);
+          console.log(fetchedmatch.data);
+          setCard2(fetchedmatch.data);
+      }
+      fetchData();
+
+    },[]);
+*/
+
+
+
+
+        return(
+          <div>
+          <div className="row row-cols-15 row-cols-md-4 g-6">
+              <div className="card-center cardalign w-50 h-50"  >
+                <h3 className="title">Highlighted Player of This Week</h3>
+                  <div className="card h-100 w-100 text-center" >
+                    <div className="overflow">
+                      <img src={inputs.image} className="card-img-center" alt="..." object-fit = "fill"/>
+                    </div>
+                    <div className="card-body text-dark">
+                        <h5 className="card-title">{inputs.name}</h5>
+                        <p className="card-text">
+                          Team: {inputs.club} {<img src= {inputs.icon} width={23} height={23} alt="..."></img>} <br/>
+                          Age: {inputs.age}<br/>
+                          Position: {inputs.position}<br/>
+                          Merket Vaue: {inputs.market_value}M <br/>
+                          Nationality: {inputs.nationality}
+                          </p>
+                        <Link to={inputs.link}>
+                            <button type="button" className="_btn">
+                               Go to profile
+                            </button>
+                         </Link>
+                    </div>
+                 </div>
+
+                </div>
+                <div className="card-center cardalign w-50 h-50"  >
+                <h3 className="title">Upcoming Match Very Soon!</h3>
+                <div className="card h-100 w-100 text-center">
+                <div className="overflow">
+                {<img src= {inputs2.image1} width={172} alt="..."></img>} <br/>
+                <p> </p>
+                <p> VS </p>
+                {<img src= {inputs2.image2} width={150} alt="..."></img>} <br/>
+                </div>
+                <div class="card-body text-dark">
+                  <h5 class="card-title">{inputs2.title}</h5>
+                  <p className="card-text">
+                        Team 1: {inputs2.team1} <br/>
+                        Team 2: {inputs2.team2}<br/>
+                        Place: {inputs2.place}<br/>
+                        Date: {inputs2.date}<br/>
+                        Time: {inputs2.time}<br/>
+                        </p>
+                  <Link to={inputs2.link}>
+                    <button type="button" className="_btn">
+                      Go to match details
+                    </button>
+                  </Link>
+                </div>
+                  </div>
+
+            </div>
+
+          </div>
           </div>
           <div className="card-body text-dark">
             <h5 className="card-title">{inputs.name}</h5>
@@ -86,7 +163,7 @@ export default OverShadowedPlayer;
                     <div className="card-body text-dark">
                         <h5 className="card-title">{card.name}</h5>
                         <p className="card-text">
-                          Team: {card.club} {<img src= {card.icon} width={23} height={23} alt="..."></img>} <br/> 
+                          Team: {card.club} {<img src= {card.icon} width={23} height={23} alt="..."></img>} <br/>
                           Age: {card.age}<br/>
                           Position: {card.position}<br/>
                           Position Category: {card.position_category}<br/>
@@ -159,15 +236,15 @@ export default OverShadowedPlayer;
                 <h3 className="title">Upcoming Match: Very Soon!</h3>
                 <div className="card h w-100 text-center">
                 <div className="overflow">
-                {<img src= {card2.image1} width={70} alt="..."></img>} <br/> 
+                {<img src= {card2.image1} width={70} alt="..."></img>} <br/>
                 <p> </p>
                 <p> VS </p>
-                {<img src= {card2.image2} width={60} alt="..."></img>} <br/> 
+                {<img src= {card2.image2} width={60} alt="..."></img>} <br/>
                 </div>
                 <div class="card-body text-dark">
-                
+
                   <p className="card-text">
-                        Team 1: {card2.team1} <br/> 
+                        Team 1: {card2.team1} <br/>
                         Team 2: {card2.team2}<br/>
                         Place: {card2.place}<br/>
                         Date: {card2.date}<br/>
@@ -180,4 +257,29 @@ export default OverShadowedPlayer;
                   </Link>
                 </div>
               </div>
+
+
+               <div className="card h-100 w-100 text-center">
+          <div className="overflow">
+          {<img src= {inputs2.image1} width={70} alt="..."></img>} <br/>
+          <p> </p>
+          <p> VS </p>
+          {<img src= {inputs2.image2} width={60} alt="..."></img>} <br/>
+          </div>
+          <div class="card-body text-dark">
+            <h5 class="card-title">{inputs2.title}</h5>
+            <p className="card-text">
+                  Team 1: {inputs2.team1} <br/>
+                  Team 2: {inputs2.team2}<br/>
+                  Place: {inputs2.place}<br/>
+                  Date: {inputs2.date}<br/>
+                  Time: {inputs2.time}<br/>
+                  </p>
+            <Link to={inputs2.link}>
+              <button type="button" className="_btn">
+                Go to match details
+              </button>
+            </Link>
+          </div>
+        </div>
 */

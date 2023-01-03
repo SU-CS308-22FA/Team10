@@ -5,6 +5,7 @@ const { authMiddleware } = require("../middleware/authMiddleware");
 const {User} = require("../models/user");
 const asyncHandler = require("../middleware/asyncHandler");
 const asyncHandler1 = require("express-async-handler");
+const axios = require("axios");
 
 router.post("/addPlayer", async (req, res) => {
   const {
@@ -60,11 +61,72 @@ router.post("/addPlayer", async (req, res) => {
   }
 });
 
+async function deleteAllPlayerRecords() {
+	try {
+	  const database = client.db("test");
+	  const players = database.collection("players");
+
+	  const result = await players.deleteMany({});
+	  console.log("Deleted " + result.deletedCount + " documents");
+	} finally {
+	  await client.close();
+	}
+}
+router.post("/updatePlayers",asyncHandler(async (req, res)=>{
+
+	console.log("upload started");
+	//await deleteAllPlayerRecords();
+	const options = {
+		method: 'GET',
+		url: 'https://api-football-v1.p.rapidapi.com/v3/players',
+		params: {league: '203', season: '2022'},
+		headers: {
+		  'X-RapidAPI-Key': '602c4adf1bmsh910076b23b3f397p1880d5jsn734017665c2d',
+		  'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+		}
+	  };
+
+	  axios.request(options).then(async function (resp) {
+		  console.log(resp.data.response[1].player);
+		  console.log(resp.data.response[1]);
+		  console.log(resp.data.response.length);
+		  for(var i=0; i<resp.data.response.length; i++) {
+			const name = resp.data.response[i].player.firstName +" " + resp.data.response[i].player.lastName;
+			const age =resp.data.response[i].player.age;
+			const team = resp.data.response[i].statistics[0].team.name;
+			const icon = resp.data.response[i].statistics[0].team.logo;
+			const nationality = resp.data.response[i].player.nationality;
+			const image = resp.data.response[i].player.photo;
+			const position = resp.data.response[i].statistics[0].games.position;
+			const height =resp.data.response[i].player.height;
+			const weight = resp.data.response[i].player.weight;
+			const birthDate = resp.data.response[i].player.birth.date;
+			const birthPlace = resp.data.response[i].player.birth.place + ", " + resp.data.response[i].player.birth.country;
+			const league = resp.data.response[i].statistics[0].league.name + ", " + resp.data.response[i].statistics[0].league.country + ", " +resp.data.response[i].statistics[0].league.season;
+			const cards = "Yellow: " + resp.data.response[i].statistics[0].cards.yellow +" YellowRed: " + resp.data.response[i].statistics[0].cards.yellowred + " Red: " + resp.data.response[i].statistics[0].cards.red;
+			const fouls = "Drawn: "+ resp.data.response[i].statistics[0].fouls.drawn + " Committed: " + resp.data.response[i].statistics[0].fouls.committed;
+			const penalty = "Won: "  + resp.data.response[i].statistics[0].penalty.won
+			+ " Committed: " + resp.data.response[i].statistics[0].penalty.committed
+			+" Scored: "+resp.data.response[i].statistics[0].penalty.scored
+			+ " Missed: " + resp.data.response[i].statistics[0].penalty.missed
+			+ " Saved: " + resp.data.response[i].statistics[0].penalty.saved;
+
+			const goals = "Total :" + resp.data.response[i].statistics[0].goals.total;
+
+			await new Player({name, age, team, icon, image, nationality, position, height, weight, birthDate, birthPlace, league, cards, fouls, penalty, goals}).save(); //db ye kayıt
+			console.log("eklendi");
+		  }
+
+	  }).catch(function (error) {
+		  console.error(error);
+	  });
+
+}));
+
 router.get("/players", async (req, res) => {
   try {
     let sort = req.query.sort || "age";
     req.query.sort ? (sort = req.query.sort.split(",")) : (sort = [sort]);
-
     let sortBy = {};
     if (sort[1]) {
       sortBy[sort[0]] = sort[1];
@@ -108,7 +170,7 @@ router.get(
 	router.get(
 	"/637a8ed97757477ec0e7085bf",
 	asyncHandler(async(req,res)=>{
-		
+
 		const player = await Player.findById("637a8ed97757477ec0e7085b");
 		res.status(201).send(player);
 	})
@@ -119,7 +181,7 @@ router.get(
 /*
 
 router.put("/:id", async(req, res) => {
-    
+
     //const newPlayer = new Player({ name, team, age, position, market_value, nationality,icon,image,desc,dateOB,height,placeOB,youthCareer,transferHist,joined,number,ratings,totalrating });
 	const id = req.params.id;
 	const { totalrating } = req.body;
@@ -137,7 +199,7 @@ router.put(
 "/:id",
 	asyncHandler(async(req,res)=>{
 		const id = req.params.id;
-		
+
 		console.log("g");
 		await Player.findByIdAndUpdate(id);
 		const player = await Player.findById(id);
@@ -196,12 +258,12 @@ const rateById = async (req, res, next) => {
 };
 router.get("/rate/:id", rateById);
 const commentById = async (req, res, next) => {
-	
+
 
 	const id = req.params.id;
 	let player;
 	try {
-		
+
 	  player = await Player.findById(id);
 	} catch (err) {
 	  console.log(err);
@@ -272,19 +334,19 @@ router.put("/rate/:id",authMiddleware,asyncHandler1(async(req,res)=>{
 
 
 router.post("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
-	
+
 	const playerId = req.params.id;
 	const {_id} = req.user;
-	
+
 	const{comment} = req.body;
 	const{parentId} = req.body;
 
 	try{
 		const player = await Player.findById(playerId);
 		const user = await User.findById(_id);
-		
+
 		const commentPlayer = await Player.findByIdAndUpdate({_id: playerId},{
-			
+
 			$push: {
 				comments:{
 					comment: comment,
@@ -299,7 +361,7 @@ router.post("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
 		}
 		);
 		console.log("comment");
-		
+
 	}catch(error){
 		throw new Error(error)
 
@@ -307,10 +369,10 @@ router.post("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
 }));
 
 router.put("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
-	
+
 	const playerId = req.params.id;
 	const {_id} = req.user;
-	
+
 	const{comment} = req.body;
 	const{parentId} = req.body;
 
@@ -325,12 +387,12 @@ router.put("/comment/:id",authMiddleware,asyncHandler1(async(req,res)=>{
 				{
 					$set:{"comments.$.comment":comment},
 				},
-				
+
 			);
 			//res.json(updateRating);
 		}
 		console.log("update comment");
-		
+
 	}catch(error){
 		throw new Error(error)
 
