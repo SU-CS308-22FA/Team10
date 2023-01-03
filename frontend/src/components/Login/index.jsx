@@ -40,6 +40,7 @@ const Login = () => {
           <form className={styles.form_container} onSubmit={handleSubmit}>
             <h1>Login to Your Account</h1>
             <input
+              id = "user-email"
               type="email"
               placeholder="Email"
               name="email"
@@ -49,6 +50,7 @@ const Login = () => {
               className={styles.input}
             />
             <input
+              id = "user-password"
               type="password"
               placeholder="Password"
               name="password"
