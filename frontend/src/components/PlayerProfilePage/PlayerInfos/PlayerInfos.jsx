@@ -27,29 +27,27 @@ function PlayerInfos(props) {
         title: "Personal Information",
         descriptions: [
           "Full name: " + inputs.name,
-          "Date of birth:	" + inputs.dateOB,
-          "Place of birth:	" + inputs.placeOB,
+          "Date of birth:	" + inputs.birthDate,
+          "Place of birth:	" + inputs.birthPlace,
+          "Nationality: " + inputs.nationality,
           "Height:	" + inputs.height,
+          "Weight:	" + inputs.weight,
           "Position(s):	" + inputs.position,
         ],
       },
       {
-        title: "Club Information",
+        title: "Career",
         descriptions: [
           "Current team:	" + inputs.team,
-          "Joined:	" + inputs.joined,
-          "Number: " + inputs.number,
+          "League:	" + inputs.league,
+          "Cards: " + inputs.cards,
+          "Goals: " + inputs.goals,
+          "Fouls: " + inputs.fouls,
         ],
       },
 
-      {
-        title: "Youth Career",
-        descriptions: [inputs.youthCareer + " "],
-      },
-      {
-        title: "Transfer History",
-        descriptions: [inputs.transferHist + " "],
-      },
+      
+      
     ],
   };
 
