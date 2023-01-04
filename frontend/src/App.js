@@ -30,7 +30,12 @@ import MatchProfile from "./components/MatchDetailPage/MatchProfileComponent";
 import NotAuthError from "./requirements/NotAuthError";
 import NotAuthError2 from "./requirements/NotAuthError2";
 import Scrape from "./components/AdminPage/Scrape";
-
+import PlayersPageWithoutLogin from "./components/PlayersPage/default/PlayersPageWithoutLogin.jsx";
+import RefereesPageWithoutLogin from "./components/RefereesPage/RefereesPageWithoutLogin.jsx";
+import MatchesPageWithoutLogin from "./components/MatchesPage/MatchesPageWithoutLogin.jsx";
+import PlayerProfileWithoutLogin from "./components/PlayerProfilePage/PlayerProfileWithoutLogin.jsx";
+import RefereeProfileWithoutLogin from "./components/RefereeProfilePage/RefereeProfileComponentWithoutLogin.jsx";
+import MatchProfileWithoutLogin from "./components/MatchDetailPage/MatchProfileWithoutLogin.jsx";
 
 function App() {
   const user = JSON.parse(sessionStorage.getItem("user"));
@@ -98,18 +103,18 @@ function App() {
           
           <Route path="/signup" exact element={<Signup />} />
           <Route path="/login" exact element={<Login />} />
-          <Route path="/player" exact element={<PlayersPage/>}/>
-          <Route path="/player/:id" exact element={<PlayerProfile/>}/>
-          <Route path="/referee" exact element={<RefereesPage/>}/>
-          <Route path="/referee/:id" exact element={<RefereeProfile/>}/>
+          <Route path="/player" exact element={<PlayersPageWithoutLogin/>}/>
+          <Route path="/player/:id" exact element={<PlayerProfileWithoutLogin/>}/>
+          <Route path="/referee" exact element={<RefereesPageWithoutLogin/>}/>
+          <Route path="/referee/:id" exact element={<RefereeProfileWithoutLogin/>}/>
 
           <Route path="/player/rate/:id" exact element={<NotAuthError2 />} />
           <Route path="/referee/rate/:id" exact element={<NotAuthError2 />} />
           <Route path="/match/rate/:id" exact element={<NotAuthError2 />} />
           <Route path="/" exact element={<LandingWithoutLogin />} />
           
-          <Route path="/match" exact element={<MatchesPage/>}/>
-          <Route path="/match/:id" exact element={<MatchProfile/>}/>
+          <Route path="/match" exact element={<MatchesPageWithoutLogin/>}/>
+          <Route path="/match/:id" exact element={<MatchProfileWithoutLogin/>}/>
           
         </>
       }
