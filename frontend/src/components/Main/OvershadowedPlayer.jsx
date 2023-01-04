@@ -25,9 +25,23 @@ const OverShadowedPlayer = () => {
     fetchData();
   }, []);
 
+  const [match, setMatch] = React.useState();
+  React.useEffect(() => {
+    async function fetchData() {
+      const match =
+        "https://weeklysoccer.onrender.com/api/match/maxmatch";
 
+      const fetchedMatch = await axios.get(match);
+      console.log(fetchedMatch.data[0]._id);
+      setMatch(fetchedMatch.data[0]._id);
+     
+    }
+    fetchData();
+  }, []);
+
+    const id2 =match;
     const id1 = player;
-    console.log(id1)
+    console.log(id2)
     
     //const id1 = "63b4e6c27c20961432543b92";
 
@@ -46,12 +60,12 @@ const OverShadowedPlayer = () => {
 
 
 
-    const id2 = "637dfd469953a84747abc2ba"
+    //const id2 = "637dfd469953a84747abc2ba"
     const[inputs2,setInputs2] = useState({});
     useEffect(()=>{
       const fetchHandler=async()=>{
         await axios
-        .get(`https://weeklysoccer.onrender.com/api/match/63b4ce05ab4b0d88b700a46f`)
+        .get(`https://weeklysoccer.onrender.com/api/match/${id2}`)
         .then((res) => (res.data)).then(data=>setInputs2(data.match))
         
       };
@@ -104,7 +118,8 @@ const OverShadowedPlayer = () => {
                           Age: {inputs.age}<br/>
                           Position: {inputs.position}<br/>
 
-                          Nationality: {inputs.nationality}
+                          Nationality: {inputs.nationality}<br/>
+                          Rating: {inputs.totalrating}
                           </p>
                         <Link to={inputs.link}>
                             <button type="button" className="_btn">
@@ -132,6 +147,7 @@ const OverShadowedPlayer = () => {
                         Place: {inputs2.place}<br/>
                         Date: {inputs2.date}<br/>
                         Time: {inputs2.time}<br/>
+                        Rating: {inputs2.totalrating}<br/>
                         </p>
                   <Link to={inputs2.link}>
                     <button type="button" className="_btn">

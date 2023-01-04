@@ -19,7 +19,14 @@ router.get(
 		res.send(matchList);
 	})
 )
-
+router.get(
+	"/maxmatch",
+	asyncHandler(async (req, res) => {
+	  const maxmatch = await Match.find({}).sort({totalrating:-1}).limit(1);
+	  res.status(200).json(maxmatch);
+	  
+	})
+  );
 async function deleteAllMatchRecords() {
 	try {
 	  const database = client.db("test");
