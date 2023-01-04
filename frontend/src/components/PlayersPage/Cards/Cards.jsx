@@ -25,12 +25,13 @@ const Cards = () => {
             "https://weeklysoccer.onrender.com/api/player/allplayers";
 
           const fetchedPlayerList = await axios.get(playerListUrl);
-          console.log(fetchedPlayerList);
+          console.log(fetchedPlayerList.data);
           setPlayers(fetchedPlayerList.data);
       }
       fetchData();
 
     },[]);
+    
 
 
       const renderCard = (card, index) => {
@@ -48,7 +49,7 @@ const Cards = () => {
                           Team: {card.club} {<img src= {card.icon} width={23} alt="..."></img>} <br/>
                           Age: {card.age}<br/>
                           Position: {card.position}<br/>
-                          Market Vaue: {card.market_value} <br/>
+
                           Nationality: {card.nationality}
                           </p>
                         <Link to={card._id}>

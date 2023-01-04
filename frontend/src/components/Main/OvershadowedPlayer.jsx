@@ -19,7 +19,7 @@ const OverShadowedPlayer = () => {
     useEffect(()=>{
       const fetchHandler=async()=>{
         await axios
-        .get(`https://weeklysoccer.onrender.com/api/player/${id}`)
+        .get(`https://weeklysoccer.onrender.com/api/player/63b4e6c27c20961432543b90`)
         .then((res) => (res.data)).then(data=>setInputs(data.player))
         
       };
@@ -30,7 +30,7 @@ const OverShadowedPlayer = () => {
     useEffect(()=>{
       const fetchHandler=async()=>{
         await axios
-        .get(`https://weeklysoccer.onrender.com/api/match/${id2}`)
+        .get(`https://weeklysoccer.onrender.com/api/match/63b4ce05ab4b0d88b700a46f`)
         .then((res) => (res.data)).then(data=>setInputs2(data.match))
         
       };
@@ -82,7 +82,7 @@ const OverShadowedPlayer = () => {
                           Team: {inputs.club} {<img src= {inputs.icon} width={23} height={23} alt="..."></img>} <br/> 
                           Age: {inputs.age}<br/>
                           Position: {inputs.position}<br/>
-                          Merket Vaue: {inputs.market_value}M <br/>
+
                           Nationality: {inputs.nationality}
                           </p>
                         <Link to={inputs.link}>
@@ -98,10 +98,10 @@ const OverShadowedPlayer = () => {
                 <h3 className="title">Upcoming Match Very Soon!</h3>
                 <div className="card h-100 w-100 text-center">
                 <div className="overflow">
-                {<img src= {inputs2.image1} width={172} alt="..."></img>} <br/> 
+                {<img src= {inputs2.logo1} width={172} alt="..."></img>} <br/> 
                 <p> </p>
                 <p> VS </p>
-                {<img src= {inputs2.image2} width={150} alt="..."></img>} <br/> 
+                {<img src= {inputs2.logo2} width={150} alt="..."></img>} <br/> 
                 </div>
                 <div class="card-body text-dark">
                   <h5 class="card-title">{inputs2.title}</h5>
