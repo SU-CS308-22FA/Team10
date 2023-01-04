@@ -21,9 +21,7 @@ const PlayersPage = () => {
           <Dropdown.Item href="/player">Default</Dropdown.Item>
           <Dropdown.Item href="/player/age-sorted">Age</Dropdown.Item>
           <Dropdown.Item href="/player/rating-sorted">Rating</Dropdown.Item>
-          <Dropdown.Item href="/player/market-value-sorted">
-            Market Value
-          </Dropdown.Item>
+          
         </Dropdown.Menu>
       </Dropdown>
       <Cards />

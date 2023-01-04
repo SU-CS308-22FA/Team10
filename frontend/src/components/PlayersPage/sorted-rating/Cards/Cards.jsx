@@ -77,7 +77,7 @@ function Cards() {
               <br />
               Position: {card.position}
               <br />
-              Market Value: {card.market_value} <br />
+              
               Nationality: {card.nationality} <br />
               Total Rating: {card.totalrating}
             </p>
