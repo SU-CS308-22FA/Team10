@@ -82,8 +82,6 @@ router.post("/updatePlayers",asyncHandler(async (req, res)=>{
 	console.log("upload started");
 	await deleteAllPlayerRecords();
 	for(var j=3;j<6; j++) {
-
-	
 	const options = {
 		method: 'GET',
 		url: 'https://api-football-v1.p.rapidapi.com/v3/players',
@@ -93,7 +91,6 @@ router.post("/updatePlayers",asyncHandler(async (req, res)=>{
 		  'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
 		}
 	  };
-	  
 	  axios.request(options).then(async function (resp) {
 		  console.log(resp.data.response[1].player);
 		  console.log(resp.data.response[1]);
@@ -118,13 +115,11 @@ router.post("/updatePlayers",asyncHandler(async (req, res)=>{
 			+" Scored: "+resp.data.response[i].statistics[0].penalty.scored 
 			+ " Missed: " + resp.data.response[i].statistics[0].penalty.missed 
 			+ " Saved: " + resp.data.response[i].statistics[0].penalty.saved;
-
 			const goals = "Total :" + resp.data.response[i].statistics[0].goals.total;
-            
+
 			await new Player({name, age, team, icon, image, nationality, position, height, weight, birthDate, birthPlace, league, cards, fouls, penalty, goals}).save(); //db ye kayıt
 			console.log("eklendi");
 		  } 
-		  
 	  }).catch(function (error) {
 		  console.error(error);
 	  });
@@ -166,6 +161,7 @@ router.get(
 	  
 	})
   );
+
 
 /*
 

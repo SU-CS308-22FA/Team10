@@ -50,10 +50,12 @@ function App() {
               
               <Route path="/match" exact element={<MatchesPage/>}/>
               <Route path="/match/:id" exact element={<MatchProfile/>}/>
+              <Route path="/main/match/:id" exact element={<MatchProfile/>}/>
               <Route path="/match/rate/:id" exact element={<MatchRate  />} />
 
               <Route path="/player" exact element={<PlayersPage/>}/>
               <Route path="/player/:id" exact element={<PlayerProfile/>}/>
+              <Route path="/main/player/:id" exact element={<PlayerProfile/>}/>
               <Route path="/player/rate/:id" exact element={<PlayerRate/>}/>
 
               <Route path="/referee" exact element={<RefereesPage/>}/>

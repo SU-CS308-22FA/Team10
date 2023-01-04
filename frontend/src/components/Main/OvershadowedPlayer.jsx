@@ -109,7 +109,7 @@ const OverShadowedPlayer = () => {
                 <h3 className="title">Highlighted Player of This Week</h3>
                   <div className="card h-100 w-100 text-center" >
                     <div className="overflow">
-                      <img src={inputs.image} className="card-img-center" alt="..." object-fit = "fill"/>
+                      <img src={inputs.image} width={200} height={200} className="card-img-center" alt="..." object-fit = "fill"></img>
                     </div>
                     <div className="card-body text-dark">
                         <h5 className="card-title">{inputs.name}</h5>
@@ -121,7 +121,7 @@ const OverShadowedPlayer = () => {
                           Nationality: {inputs.nationality}<br/>
                           Rating: {inputs.totalrating}
                           </p>
-                        <Link to={inputs._id}>
+                        <Link to={"player/"+inputs._id}>
                             <button type="button" className="_btn">
                                Go to profile
                             </button>
@@ -134,10 +134,9 @@ const OverShadowedPlayer = () => {
                 <h3 className="title">Upcoming Match Very Soon!</h3>
                 <div className="card h-100 w-100 text-center">
                 <div className="overflow">
-                {<img src= {inputs2.logo1} width={172} alt="..."></img>} <br/> 
-                <p> </p>
-                <p> VS </p>
-                {<img src= {inputs2.logo2} width={150} alt="..."></img>} <br/> 
+                {<img src={inputs2.logo1} width={182} alt="..."></img>}
+                 &nbsp;&nbsp;VS&nbsp;&nbsp;
+                {<img src= {inputs2.logo2} width={182} alt="..."></img>}
                 </div>
                 <div class="card-body text-dark">
                   <h5 class="card-title">{inputs2.title}</h5>
@@ -149,7 +148,7 @@ const OverShadowedPlayer = () => {
                         Time: {inputs2.time}<br/>
                         Rating: {inputs2.totalrating}<br/>
                         </p>
-                  <Link to={inputs2._id}>
+                  <Link to={"match/"+inputs2._id}>
                     <button type="button" className="_btn">
                       Go to match statistics
                     </button>
