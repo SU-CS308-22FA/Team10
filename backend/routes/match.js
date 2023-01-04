@@ -113,8 +113,9 @@ router.post("/updateMatch",asyncHandler(async (req, res)=>{
 						const red2 = response2.data.response[1].statistics[11].value;
 						const goalkeeper_saves1 = response2.data.response[0].statistics[12].value;
 						const goalkeeper_saves2 = response2.data.response[1].statistics[12].value;
-
-					await new Match({team1, team2, logo1, logo2, week, place,date, time, team1_goals, team2_goals, referee, team1_shots, team2_shots, team1_shots_off_goal, team2_shots_off_goal, team1_shots_total, team2_shots_total, team1_shots_blocked, team2_shots_blocked, fouls1, fouls2, yellow1, yellow2, red1, red2,offsides1, offsides2, goalkeeper_saves1, goalkeeper_saves2 }).save(); //db ye kayıt
+						const predictWinner1 = 1;
+						const predictWinner2 = 0;
+					await new Match({team1, team2, logo1, logo2, week, place,date, time, team1_goals, team2_goals, referee, team1_shots, team2_shots, team1_shots_off_goal, team2_shots_off_goal, team1_shots_total, team2_shots_total, team1_shots_blocked, team2_shots_blocked, fouls1, fouls2, yellow1, yellow2, red1, red2,offsides1, offsides2, goalkeeper_saves1, goalkeeper_saves2, predictWinner1, predictWinner2 }).save(); //db ye kayıt
 				  }).catch(function (error) {
 					  console.error(error);
 				  });

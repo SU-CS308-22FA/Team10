@@ -6,6 +6,11 @@ const {User} = require("../models/user");
 const asyncHandler = require("../middleware/asyncHandler");
 const asyncHandler1 = require("express-async-handler");
 const axios = require("axios");
+const {MongoClient} = require("mongodb");
+
+// Replace the uri string with your MongoDB deployment's connection string.
+const uri = process.env.MONGODB_URI;
+const client = new MongoClient(uri);
 
 router.post("/addPlayer", async (req, res) => {
   const {

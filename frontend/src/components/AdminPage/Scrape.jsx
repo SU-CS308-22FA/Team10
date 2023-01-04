@@ -63,11 +63,13 @@ const Scrape = () => {
       .then((res) => (res.data))
 };
   const handleMatchesScrape =  async(e) => {
-        
+    
     console.log("The week num is ", e);
     await axios
       .post(`https://weeklysoccer.onrender.com/api/match/updateMatch`, {e})
       .then((res) => (res.data))
+  
+    
   };
   
     return (
