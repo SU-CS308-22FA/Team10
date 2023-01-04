@@ -161,10 +161,9 @@ router.get(
 router.get(
   "/maxplayer",
   asyncHandler(async (req, res) => {
-    const playerList = await Player.find();
-    const max = 0;
-	max = playerList.find().sort({totalrating:-1}).limit(1)
-	res.send(max);
+    const maxplayer = await Player.find({}).sort({totalrating:-1}).limit(1);
+    res.status(200).json(maxplayer);
+	
   })
 );
 

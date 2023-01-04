@@ -10,21 +10,38 @@ import { useState, useEffect } from "react";
 
 const OverShadowedPlayer = () => {
 
-    
+  const [player, setPlayer] = React.useState({});
+  React.useEffect(() => {
+    async function fetchData() {
+      const playerListUrl =
+        "https://weeklysoccer.onrender.com/api/player/maxplayer";
+
+      const fetchedPlayerList = await axios.get(playerListUrl);
+      console.log(fetchedPlayerList.data);
+      setPlayer(fetchedPlayerList.data);
+     
+    }
+    fetchData();
+  }, []);
+
+
+    const id1 = player[0]._id
   
     const[inputs,setInputs] = useState({});
-    const id = "637d4c95f1ebee2cd4e7fcad";
-   
-    console.log();
+    
+    
     useEffect(()=>{
       const fetchHandler=async()=>{
         await axios
-        .get(`https://weeklysoccer.onrender.com/api/player/63b4e6c27c20961432543b90`)
+        .get(`https://weeklysoccer.onrender.com/api/player/${id1}`)
         .then((res) => (res.data)).then(data=>setInputs(data.player))
         
       };
       fetchHandler();
-    },[id]);
+    },[id1]);
+
+
+
     const id2 = "637dfd469953a84747abc2ba"
     const[inputs2,setInputs2] = useState({});
     useEffect(()=>{

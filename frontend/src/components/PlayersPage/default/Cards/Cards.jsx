@@ -43,19 +43,7 @@ const Cards = () => {
     }
     fetchData();
   }, []);
-  React.useEffect(() => {
-    async function fetchData() {
-
-        const playerListUrl =
-          "https://weeklysoccer.onrender.com/api/player/maxplayer";
-
-        const maxp = await axios.get(playerListUrl);
-        console.log(maxp);
-        
-    }
-    fetchData();
-
-  },[]);
+  
 
   const renderCard = (card, index) => {
     return (
