@@ -22,12 +22,7 @@ const Scrape = () => {
   const navigate = useNavigate();
   const [weekNum, setWeekNum] = useState();
 
-    const handlePlayerScrape =  async() => {
-      console.log("Player Data");
-      await axios
-        .post(`https://weeklysoccer.onrender.com/api/player/updatePlayers`)
-        .then((res) => (res.data))
-  };
+    
   /*ß
   const handlePlayersScrape= async(e) =>{
     e.preventDefault();
@@ -61,6 +56,12 @@ const Scrape = () => {
     );
   }
   */
+  const handlePlayerScrape =  async() => {
+    console.log("Player Data");
+    await axios
+      .post(`https://weeklysoccer.onrender.com/api/player/updatePlayers`)
+      .then((res) => (res.data))
+};
   const handleMatchesScrape =  async(e) => {
         
     console.log("The week num is ", e);
@@ -79,8 +80,8 @@ const Scrape = () => {
        
           <form className={styles.form_container} >
           
-          <h3> Delete all comments and rates of the players and referees</h3>
-          <button type="submit" className={styles.green_btn} onClick = {handlePlayerScrape}> 
+          <h3> Delete all comments and rates of the players</h3>
+          <button type="submit" className={styles.green_btn} onClick={ ()=> handlePlayerScrape()}> 
              Delete rate & comments
           </button>
           <h3>Choose which week we are currently in</h3>
@@ -100,14 +101,7 @@ const Scrape = () => {
           </form>
           
         </div>
-        <div className={styles.bottom}>
-        <h1 color = "white" className="title">Update all database</h1>
-          <Link to="/signup">
-            <button type="button" className={styles.white_btn}>
-              Scrape
-            </button>
-          </Link>
-        </div>
+        
       </div>
     </div>
 		</div>
