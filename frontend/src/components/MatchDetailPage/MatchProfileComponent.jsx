@@ -45,7 +45,7 @@ function MatchProfile(props) {
             </div>
               <h1 className="heading-text1" style={{ color: "#3B3DB1" }}>
 
-                {inputs.gf} - {inputs.ga}
+                {inputs.team1_goals} - {inputs.team2_goals}
               </h1>
             
             <div className="heading-img-div2" style={{ display: "flex" }}>
@@ -85,7 +85,7 @@ function MatchProfile(props) {
                 Competition
               </h5>
               <p className="card-text">
-                {inputs.comp}
+                {"Superlig 2022-2023"}
               </p>
             </div>
           </Card>
@@ -136,43 +136,53 @@ function MatchProfile(props) {
             <tbody>
               <tr align="center">
                 <th scope="row" className="card-body text-center" style={{ color: "#3B3DB1" }}>Goals</th>
-                <td className="card-body text-center">{inputs.gf}</td>
-                <td className="card-body text-center">{inputs.ga}</td>
+                <td className="card-body text-center">{inputs.team1_goals}</td>
+                <td className="card-body text-center">{inputs.team2_goals}</td>
               </tr>
               <tr align="center">
-                <th scope="row" className="card-body text-center" style={{ color: "#3B3DB1" }}>Shots</th>
+                <th scope="row" className="card-body text-center" style={{ color: "#3B3DB1" }}>Shots on Goal</th>
                 <td className="card-body text-center">{inputs.team1_shots}</td>
                 <td className="card-body text-center">{inputs.team2_shots}</td>
               </tr>
               <tr align="center">
-                <th scope="row" className="card-body text-center" style={{ color: "#3B3DB1" }}>Shots on Target</th>
-                <td className="card-body text-center">{inputs.team1_shots_on_target}</td>
-                <td className="card-body text-center">{inputs.team2_shots_on_target}</td>
+                <th scope="row" className="card-body text-center" style={{ color: "#3B3DB1" }}>Shots off Goal</th>
+                <td className="card-body text-center">{inputs.team1_shots_off_goal}</td>
+                <td className="card-body text-center">{inputs.team2_shots_off_goal}</td>
               </tr>
               <tr align="center">
-                <th scope="row" className="card-body text-center" style={{ color: "#3B3DB1" }}>Shot Percentage</th>
-                <td className="card-body text-center">{inputs.team1_shot_percentage}</td>
-                <td className="card-body text-center">{inputs.team2_shot_percentage}</td>
+                <th scope="row" className="card-body text-center" style={{ color: "#3B3DB1" }}>Total Shots</th>
+                <td className="card-body text-center">{inputs.team1_shots_total}</td>
+                <td className="card-body text-center">{inputs.team2_shots_total}</td>
               </tr>
               <tr align="center">
-                <th scope="row" className="card-body text-center" style={{ color: "#3B3DB1" }}>Goal / Shot</th>
-                <td className="card-body text-center">{inputs.gf}/{inputs.team1_shots}</td>
-                <td className="card-body text-center">{inputs.ga}/{inputs.team2_shots}</td>
+                <th scope="row" className="card-body text-center" style={{ color: "#3B3DB1" }}>Blocked Shots</th>
+                <td className="card-body text-center">{inputs.team1_shots_blocked}</td>
+                <td className="card-body text-center">{inputs.team2_shots_blocked}</td>
               </tr>
               <tr align="center">
-                <th scope="row" className="card-body text-center" style={{ color: "#3B3DB1" }}>Goal / Shot on Target</th>
-                <td className="card-body text-center">{inputs.gf}/{inputs.team1_shots_on_target}</td>
-                <td className="card-body text-center">{inputs.ga}/{inputs.team2_shots_on_target}</td>
+                <th scope="row" className="card-body text-center" style={{ color: "#3B3DB1" }}>Fouls</th>
+                <td className="card-body text-center">{inputs.fouls1}</td>
+                <td className="card-body text-center">{inputs.fouls2}</td>
               </tr>
               <tr align="center">
-                <th scope="row" className="card-body text-center" style={{ color: "#3B3DB1" }}>Penalty Kicks Made</th>
-                <td className="card-body text-center">{inputs.team1_pk}</td>
-                <td className="card-body text-center">{inputs.team2_pk}</td>
+                <th scope="row" className="card-body text-center" style={{ color: "#3B3DB1" }}>Offsides</th>
+                <td className="card-body text-center">{inputs.offsides1}</td>
+                <td className="card-body text-center">{inputs.offsides2}</td>
               </tr>
               <tr align="center">
-                <th scope="row" width="250px" className="card-body text-center" style={{ color: "#3B3DB1" }}>Penalty Kicks Attempted</th>
-                <td className="card-body text-center">{inputs.team1_pkatt}</td>
-                <td className="card-body text-center">{inputs.team2_pkatt}</td>
+                <th scope="row" width="250px" className="card-body text-center" style={{ color: "#3B3DB1" }}>Yellow Cards</th>
+                <td className="card-body text-center">{inputs.yellow1}</td>
+                <td className="card-body text-center">{inputs.yellow2}</td>
+              </tr>
+              <tr align="center">
+                <th scope="row" width="250px" className="card-body text-center" style={{ color: "#3B3DB1" }}>Red Cards</th>
+                <td className="card-body text-center">{inputs.red1}</td>
+                <td className="card-body text-center">{inputs.red2}</td>
+              </tr>
+              <tr align="center">
+                <th scope="row" width="250px" className="card-body text-center" style={{ color: "#3B3DB1" }}>Goalkeeper Saves</th>
+                <td className="card-body text-center">{inputs.goalkeeper_saves1}</td>
+                <td className="card-body text-center">{inputs.goalkeeper_saves2}</td>
               </tr>
             </tbody>
           </table>

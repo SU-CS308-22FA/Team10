@@ -103,6 +103,8 @@ export default function Verification({}) {
         setError(error.response.data.message);
       }
     }
+    console.log("Verification request is sent")
+    navigate("/profile");
   };
 
   const handleFileChange = (e) => {
@@ -150,6 +152,10 @@ export default function Verification({}) {
             >
               Send Verification Request
             </button>
+            <h5> </h5>
+            <h5> </h5>
+            <h5> </h5>
+            <h5> You need to wait until admin see and approve your request </h5>
           </form>
         </div>
       </div>

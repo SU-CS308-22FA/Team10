@@ -37,28 +37,15 @@ function App() {
 
   return (
     <Routes>
-
-      {user && <Route path="/main" exact element={<Main />} />}
-      <Route path="/signup" exact element={<Signup />} />
-      <Route path="/login" exact element={<Login />} />
-      <Route path="/" exact element = {<LandingWithoutLogin/>}/>
-      <Route path="/aboutUs" exact element={<AboutUs />} />
-      <Route path="/player" exact element={<PlayersPage />} />
-      <Route path="/player/:id" exact element={<PlayerProfile />} />
-      <Route path="/player/rate/:id" exact element={<PlayerRate />} />
-      <Route path="/match/rate/:id" exact element={<MatchRate  />} />
-      <Route path="/referee/:id" exact element={<RefereeProfile  />} />
-      <Route path="/match/:id" exact element={<MatchProfile  />} />
-
-      <Route path="/main" exact element={<Main />} />
-
-
       { user ?
         <>
           { !user.role ?
             <>
+              <Route path="/main" exact element={<Main />} />
+              
               <Route path="/match" exact element={<MatchesPage/>}/>
               <Route path="/match/:id" exact element={<MatchProfile/>}/>
+              <Route path="/match/rate/:id" exact element={<MatchRate  />} />
 
               <Route path="/player" exact element={<PlayersPage/>}/>
               <Route path="/player/:id" exact element={<PlayerProfile/>}/>
@@ -96,7 +83,8 @@ function App() {
               <Route path="/player" exact element={<PlayersPage/>}/>
               <Route path="/player/:id" exact element={<PlayerProfile/>}/>
               <Route path="/player/rate/:id" exact element={<PlayerRate/>}/>
-
+              <Route path="/match/:id" exact element={<MatchProfile/>}/>
+              <Route path="/match/rate/:id" exact element={<MatchRate  />} />
 
               <Route path="/referee" exact element={<RefereesPage/>}/>
               <Route path="/referee/:id" exact element={<RefereeProfile/>}/>
@@ -107,7 +95,7 @@ function App() {
         :
         <>
           <Route path="/admin" exact element={<AdminLogin />} />
-
+          
           <Route path="/signup" exact element={<Signup />} />
           <Route path="/login" exact element={<Login />} />
           <Route path="/player" exact element={<PlayersPage/>}/>
@@ -119,9 +107,10 @@ function App() {
           <Route path="/referee/rate/:id" exact element={<NotAuthError2 />} />
           <Route path="/match/rate/:id" exact element={<NotAuthError2 />} />
           <Route path="/" exact element={<LandingWithoutLogin />} />
-
+          
           <Route path="/match" exact element={<MatchesPage/>}/>
           <Route path="/match/:id" exact element={<MatchProfile/>}/>
+          
         </>
       }
     </Routes>
@@ -129,3 +118,17 @@ function App() {
 }
 
 export default App;
+ /*
+      {user && <Route path="/main" exact element={<Main />} />}
+      <Route path="/signup" exact element={<Signup />} />
+      <Route path="/login" exact element={<Login />} />
+      <Route path="/" exact element = {<LandingWithoutLogin/>}/>
+      <Route path="/aboutUs" exact element={<AboutUs />} />
+      <Route path="/player" exact element={<PlayersPage />} />
+      <Route path="/player/:id" exact element={<PlayerProfile />} />
+      <Route path="/referee/:id" exact element={<RefereeProfile  />} />
+      <Route path="/match/:id" exact element={<MatchProfile  />} />
+
+      <Route path="/main" exact element={<Main />} />
+
+ */

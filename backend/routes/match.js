@@ -65,20 +65,60 @@ router.post("/updateMatch",asyncHandler(async (req, res)=>{
                 const team1 = resp.data.response[i].teams.home.name;
                 const team2 = resp.data.response[i].teams.away.name;
                 const place = resp.data.response[i].fixture.venue.name;
-                const date = resp.data.response[i].fixture.date;
+                let date = resp.data.response[i].fixture.date;
+				
                 const logo1 = resp.data.response[i].teams.home.logo;
                 const logo2 = resp.data.response[i].teams.away.logo;
-				const time = "20.00";
+				const time = date.substring(11,16);
+				date = date.substring(0,10);
 				const week = weekCount;
 				const team1_goals = resp.data.response[i].goals.home;
 				const team2_goals = resp.data.response[i].goals.away;
-
-
+			    const referee = resp.data.response[i].fixture.referee;
+				const fixture_id =  resp.data.response[i].fixture.id;
 				console.log("PostMatch");
 
-				await new Match({team1, team2, logo1, logo2, week, place,date, time}).save(); //db ye kayıt
-				console.log("eklendi");
 
+				const options = {
+					method: 'GET',
+					url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures/statistics',
+					params: {fixture: fixture_id},
+					headers: {
+					  'X-RapidAPI-Key': '602c4adf1bmsh910076b23b3f397p1880d5jsn734017665c2d',
+					  'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+					}
+				  };
+				  
+				  axios.request(options).then(async function (response2) {
+					  console.log(response2.data);
+					  console.log("statistics");
+					  console.log(response2.data.response[1]);
+					  const team1_shots = response2.data.response[0].statistics[0].value;
+						const team2_shots = response2.data.response[1].statistics[0].value;
+						const team1_shots_off_goal= response2.data.response[0].statistics[1].value;
+						const team2_shots_off_goal= response2.data.response[1].statistics[1].value;
+						const team1_shots_total = response2.data.response[0].statistics[2].value;
+						const team2_shots_total= response2.data.response[1].statistics[2].value;
+						const team1_shots_blocked = response2.data.response[0].statistics[3].value;
+						const team2_shots_blocked= response2.data.response[1].statistics[3].value;
+						
+						const fouls1 = response2.data.response[0].statistics[6].value;
+						const fouls2 = response2.data.response[1].statistics[6].value;
+						const offsides1 = response2.data.response[0].statistics[8].value;
+						const offsides2 = response2.data.response[1].statistics[8].value;
+						const yellow1 = response2.data.response[0].statistics[10].value;
+						const yellow2 = response2.data.response[1].statistics[10].value;
+						const red1 = response2.data.response[0].statistics[11].value;
+						const red2 = response2.data.response[1].statistics[11].value;
+						const goalkeeper_saves1 = response2.data.response[0].statistics[12].value;
+						const goalkeeper_saves2 = response2.data.response[1].statistics[12].value;
+
+					await new Match({team1, team2, logo1, logo2, week, place,date, time, team1_goals, team2_goals, referee, team1_shots, team2_shots, team1_shots_off_goal, team2_shots_off_goal, team1_shots_total, team2_shots_total, team1_shots_blocked, team2_shots_blocked, fouls1, fouls2, yellow1, yellow2, red1, red2,offsides1, offsides2, goalkeeper_saves1, goalkeeper_saves2 }).save(); //db ye kayıt
+				  }).catch(function (error) {
+					  console.error(error);
+				  });
+				  
+				console.log("eklendi");
 		  }
 	    }
 		res.status(201).send({ message: "That week's matches are uploaded successfully" });
