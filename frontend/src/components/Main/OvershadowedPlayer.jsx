@@ -10,16 +10,16 @@ import cardInfo from "../cardInfo";
 
 
 const OverShadowedPlayer = () => {
-/*
-  const [player, setPlayer] = React.useState(cardInfo);
+
+  const [player, setPlayer] = React.useState();
   React.useEffect(() => {
     async function fetchData() {
-      const playerListUrl =
-        "http://localhost:8080/api/player/maxplayer";
+      const player =
+        "https://weeklysoccer.onrender.com/api/player/maxplayer";
 
-      const fetchedPlayerList = await axios.get(playerListUrl);
-      console.log(fetchedPlayerList.data[0]._id);
-      setPlayer(fetchedPlayerList.data[0]._id);
+      const fetchedPlayer = await axios.get(player);
+      console.log(fetchedPlayer.data[0]._id);
+      setPlayer(fetchedPlayer.data[0]._id);
      
     }
     fetchData();
@@ -28,8 +28,8 @@ const OverShadowedPlayer = () => {
 
     const id1 = player;
     console.log(id1)
-    */
-    const id1 = "63b4e6c27c20961432543b92";
+    
+    //const id1 = "63b4e6c27c20961432543b92";
 
     const[inputs,setInputs] = useState({});
     
