@@ -6,27 +6,31 @@ import { Link, useNavigate } from "react-router-dom";
 
 import axios from "axios";
 import { useState, useEffect } from "react";
+import cardInfo from "../cardInfo";
 
 
 const OverShadowedPlayer = () => {
-
-  const [player, setPlayer] = React.useState({});
+/*
+  const [player, setPlayer] = React.useState(cardInfo);
   React.useEffect(() => {
     async function fetchData() {
       const playerListUrl =
-        "https://weeklysoccer.onrender.com/api/player/maxplayer";
+        "http://localhost:8080/api/player/maxplayer";
 
       const fetchedPlayerList = await axios.get(playerListUrl);
-      console.log(fetchedPlayerList.data);
-      setPlayer(fetchedPlayerList.data);
+      console.log(fetchedPlayerList.data[0]._id);
+      setPlayer(fetchedPlayerList.data[0]._id);
      
     }
     fetchData();
   }, []);
 
 
-    const id1 = player[0]._id
-  
+    const id1 = player;
+    console.log(id1)
+    */
+    const id1 = "63b4e6c27c20961432543b92";
+
     const[inputs,setInputs] = useState({});
     
     
