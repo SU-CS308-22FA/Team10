@@ -121,7 +121,7 @@ const OverShadowedPlayer = () => {
                           Nationality: {inputs.nationality}<br/>
                           Rating: {inputs.totalrating}
                           </p>
-                        <Link to={inputs.link}>
+                        <Link to={inputs._id}>
                             <button type="button" className="_btn">
                                Go to profile
                             </button>
@@ -149,9 +149,9 @@ const OverShadowedPlayer = () => {
                         Time: {inputs2.time}<br/>
                         Rating: {inputs2.totalrating}<br/>
                         </p>
-                  <Link to={inputs2.link}>
+                  <Link to={inputs2._id}>
                     <button type="button" className="_btn">
-                      Go to match details
+                      Go to match statistics
                     </button>
                   </Link>
                 </div>
