@@ -18,7 +18,7 @@ class PythonOrgSearch(unittest.TestCase):
 
         time.sleep(2)
         
-        driver.get(LOCAL_LINK)
+        driver.get(WEB_LINK)
         time.sleep(2)
 
        

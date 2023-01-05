@@ -98,7 +98,7 @@ function MatchRate({props}) {
         <div className="heading-div">
             <div className="heading-img-div1" style={{ display: "flex" }}>
               <ReactRoundedImage
-                image={inputs.image1}
+                image={inputs.logo1}
                 roundedColor="#3b3db1"
                 imageWidth="250"
                 imageHeight="250"
@@ -107,9 +107,13 @@ function MatchRate({props}) {
                 hoverColor="#FFFFFF"
               />
             </div>
+            <h1 className="heading-text1" style={{ color: "#3B3DB1" }}>
+
+                {inputs.team1_goals} - {inputs.team2_goals}
+            </h1>
             <div className="heading-img-div1" style={{ display: "flex" }}>
               <ReactRoundedImage
-                image={inputs.image2}
+                image={inputs.logo2}
                 roundedColor="#3b3db1"
                 imageWidth="250"
                 imageHeight="250"

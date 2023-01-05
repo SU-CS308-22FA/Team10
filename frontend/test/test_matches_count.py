@@ -17,14 +17,13 @@ class PythonOrgSearch(unittest.TestCase):
         driver.maximize_window()
         time.sleep(2)
     
-        driver.get(LOCAL_LINK)
+        driver.get(WEB_LINK)
         time.sleep(5)
 
-        element=driver.find_element(By.NAME, "match-box-container")
-        element.click()
+        element=driver.find_elements(By.NAME, "match-box-container")
         time.sleep(2)
 
-        self.assertEqual(8, len(element))
+        self.assertEqual(9, len(element))
         time.sleep(4)
 
     def tearDown(self):
