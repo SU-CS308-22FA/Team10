@@ -185,7 +185,7 @@ function MatchProfile(props) {
                 <td className="card-body text-center">{inputs.goalkeeper_saves2}</td>
               </tr>
               <tr align="center">
-                <th scope="row" width="250px" className="card-body text-center" style={{ color: "#3B3DB1" }}>WinnerPrediction</th>
+                <th scope="row" width="250px" className="card-body text-center" style={{ color: "#3B3DB1" }}>Winner Prediction</th>
                 <td className="card-body text-center">{inputs.predictWinner1}</td>
                 <td className="card-body text-center">{inputs.predictWinner2}</td>
               </tr>
