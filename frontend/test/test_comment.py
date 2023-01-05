@@ -31,8 +31,8 @@ class PythonOrgSearch(unittest.TestCase):
         driver.get(href)
 
         
-        time.sleep(7)
-        elem = driver.find_element(By.XPATH, '//*[@id="root"]/div[1]/div[2]/div[5]/div[1]/div[2]/a[2]/button[1]')
+        time.sleep(12)
+        elem = driver.find_element(By.XPATH, '//*[@id="root"]/div[1]/div[2]/div[3]/div[1]/div[2]/a[2]/button[1]')
 
         driver.execute_script("arguments[0].click();", elem)
         time.sleep(4)
@@ -43,6 +43,10 @@ class PythonOrgSearch(unittest.TestCase):
         elem = driver.find_element(By.XPATH, "//body/div[@id='root']/div[1]/div[1]/div[4]/div[1]/form[1]/div[1]/button[1]")
         driver.execute_script("arguments[0].click();", elem)
         time.sleep(5)
+        actualUrl ="https://weeklysoccer.onrender.com/player/rate/"
+ 
+        expectedUrl = driver.current_url
+        self.assertTrue(expectedUrl.startswith(actualUrl))
         
        
         
