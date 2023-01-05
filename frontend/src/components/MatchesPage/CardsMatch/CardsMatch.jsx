@@ -24,7 +24,7 @@ const CardsMatch = () => {
 
   const renderCard = (card, index) => {
     return (
-      <div className="col" >
+      <div name ="match-box-container" className="col" >
         <div className="card h-100 w-100 text-center" key={index}>
           <div className="column">
              {<img src={card.logo1} width={100} alt="..."></img>}
