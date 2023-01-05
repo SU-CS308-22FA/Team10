@@ -37,6 +37,10 @@ class PythonOrgSearch(unittest.TestCase):
         driver.execute_script("arguments[0].click();", elem)
         time.sleep(4)
         driver.save_screenshot("./screen.png")
+        actualUrl ="https://weeklysoccer.onrender.com/match/"
+ 
+        expectedUrl = driver.current_url
+        self.assertTrue(expectedUrl.startswith(actualUrl))
     
     def tearDown(self):
         self.driver.close()
