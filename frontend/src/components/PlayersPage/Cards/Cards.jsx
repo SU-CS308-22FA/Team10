@@ -49,8 +49,8 @@ const Cards = () => {
                           Team: {card.club} {<img src= {card.icon} width={23} alt="..."></img>} <br/>
                           Age: {card.age}<br/>
                           Position: {card.position}<br/>
-
                           Nationality: {card.nationality}
+                          Rate: {card.totalrating}
                           </p>
                         <Link to={card._id}>
                             <button type="button" className="_btn" >

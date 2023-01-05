@@ -39,6 +39,8 @@ const CardsMatch = () => {
                     Date: {card.date}<br/>
                     Time: {card.time}<br/>
                     Week: {card.week}<br/>
+                    Score: {card.team1_goals} - {card.team2_goals}<br/><br/>
+
                     </p>
 
               <Link to={card._id}>
