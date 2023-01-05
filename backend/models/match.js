@@ -35,8 +35,8 @@ const matchSchema = new mongoose.Schema({
   goalkeeper_saves1:  { type: String },
   goalkeeper_saves2:  { type: String },
   comp: { type: String},
-  predictWinner1: {type: Boolean},
-  predictWinner2: {type: Boolean},
+  predictWinner1: {type: String},
+  predictWinner2: {type: String},
   ratings: [
     {
       star: Number,
