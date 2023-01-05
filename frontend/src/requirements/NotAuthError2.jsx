@@ -16,7 +16,7 @@ const NotAuthError= () => {
       }
     return (
         <div className={styles.login_container}>
-        <div className={styles.login_form_container}>
+        <div name = "login-error-message" className={styles.login_form_container}>
           <div className={styles.left}>
             <form
                 className={styles.form_container}
